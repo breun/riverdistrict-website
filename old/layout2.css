@@ -1,0 +1,92 @@
+#home{
+	/*background-image: url('../images/foto1a.jpg');*/
+	background-size:  auto 100%;
+}
+
+.threedee{
+	-moz-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
+-webkit-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
+-o-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
+-ms-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
+transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
+}
+
+.threedeetwo{
+-moz-transform: scale(1) rotate(330deg) translate(0px, 0px) skew(330deg, 0deg);
+-webkit-transform: scale(1) rotate(330deg) translate(0px, 0px) skew(330deg, 0deg);
+-o-transform: scale(1) rotate(330deg) translate(0px, 0px) skew(330deg, 0deg);
+-ms-transform: scale(1) rotate(330deg) translate(0px, 0px) skew(330deg, 0deg);
+transform: scale(1) rotate(330deg) translate(0px, 0px) skew(330deg, 0deg);
+}
+
+/* MAIN LAYOUT */
+body {
+    margin: 0;
+    background: black;
+    min-width: 240px;
+    -webkit-text-size-adjust: none; /* The text size is not adjusted for Safari on iPhone */
+}
+
+.even{
+	background-color:rgb(23,23,23);
+
+}
+.oneven{
+	background-color:rgb(34,34,34);
+
+}
+
+.onevenborder{
+	height:13px;
+	background-image: url("../border1.png");
+}
+.evenborder{
+	height:13px;
+	background-image: url("../border2.png");
+}
+
+#sidenav {
+	width: auto;
+	height: auto;
+	position: fixed;
+	z-index: 950;
+	left: 0px;
+	margin-top: -76px;
+	top: 50%;
+}
+#sidenav  .text{
+	font-size:24px;
+	margin-left: 30px;
+	padding-top:12px;
+
+}
+#sidenav .wrapper_sidenav {
+	width: 100px;
+	height: 44px;
+	margin:0;
+	padding:0;
+	display: block;
+	background-position:left top;
+	background-image:url('../point1.png') ;
+	background-repeat: no-repeat;
+	cursor:pointer;
+}
+#sidenav .active{
+	background-image:url('../point2.png')!important ;
+	text-decoration: underline;
+}
+
+
+.but{display:none;z-index:1000;width:100px;height: 100px;position:absolute;background-color: red;right: 0px;}
+
+.hiddenimgs img{display:none;}
+
+.typography img{border:none;margin-top:-50px;}
+
+.dragimg{position:absolute;  top:200px;left:200px;}
+
+#plaatjes1 img {
+			  opacity: 0;
+			  transition: opacity .3s ease-in;
+				}
+		#plaatjes1,#plaatjes2,#plaatjes3,#plaatjes4,#plaatjes5{width:1280px;height:700px;left:50%;margin-left:-700px;position:absolute;overflow:hidden;}
