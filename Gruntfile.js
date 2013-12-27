@@ -11,9 +11,14 @@ module.exports = function(grunt){
     		  dest: "allstyles.css"
     		},
   		},
+        watch: {
+            files: "./css/*.css",
+            tasks: ['concat_css']
+        },
     });
 
     grunt.loadNpmTasks('grunt-concat-css');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['concat_css']);
 

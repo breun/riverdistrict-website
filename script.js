@@ -10,30 +10,30 @@ $(document).ready(function() {
 	});
 
 
-	$.stellar({
-		//scrollProperty: 'transform'
-		 hideElement: function($elem) { $elem.fadeOut(); },
-  showElement: function($elem) { $elem.fadeIn(); }
-	});
+	// $.stellar({
+	// 	//scrollProperty: 'transform'
+	// 	 hideElement: function($elem) { $elem.fadeOut(); },
+    //  showElement: function($elem) { $elem.fadeIn(); }
+	// });
 
-			// $('.dragimg').click(function(){
-			// 	ztot=ztot+1;
-			// 	$(this).css('z-index', ztot);
+			ztot=10;
+			$('.dragimg').click(function(){
+				ztot=ztot+1;
+				$(this).css('z-index', ztot);
+			});
 
-			// });
+			$('.dragimg').draggable();
 
-			// $('.dragimg').draggable();
-			// ztot=10;
-			// $('.but').click(function(){
-			// 	pos='';
-			// 	$('.dragimg', $(this).parent()).each(function(){
-			// 		posi = $(this).position();
-			// 		id = $(this).attr('id');
-			// 		zid = $(this).css('z-index');
-			// 		pos= pos+ '#'+id + "{left: " + Math.floor(posi.left) +"px;z-index:" + zid +"; top: " + Math.floor(posi.top) + 'px;} \n';
-			// 	});
-			// 	alert(pos);
-			// });
+			$('.but').click(function(){
+				pos='';
+				$('.dragimg', $(this).parent()).each(function(){
+					posi = $(this).position();
+					id = $(this).attr('id');
+					zid = $(this).css('z-index');
+					pos= pos+ '#'+id + "{left: " + Math.floor(posi.left) +"px;z-index:" + zid +"; top: " + Math.floor(posi.top) + 'px;} \n';
+				});
+				alert(pos);
+			});
 
 
 

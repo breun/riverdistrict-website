@@ -36,19 +36,26 @@
 * https://github.com/stubbornella/oocss/wiki/grids
 */
 
-.but{display:none;z-index:1000;width:100px;height: 100px;position:absolute;background-color: red;right: 0px;}
+.but{/*display:none;*/z-index:1000;width:100px;height: 100px;position:absolute;background-color: red;right: 0px;}
+#plaatjes1,#plaatjes2,#plaatjes3,#plaatjes4,#plaatjes5,#plaatjes6{border:1px solid white;width:1020px;height:768px;left:50%;margin-left:-510px;position:absolute;overflow:hidden;}
+
+#plaatjes1{background-image:url('../screen1.png');}
+#plaatjes2{background-image:url('../screen2.png');}
+#plaatjes3{background-image:url('../screen3.png');}
+#plaatjes4{background-image:url('../screen4.png');}
+#plaatjes5{}
+#plaatjes6{}
 
 .hiddenimgs img{display:none;}
 
 .typography img{border:none;margin-top:-50px;}
 
-.dragimg{position:absolute;  top:200px;left:200px;}
+.dragimg{position:absolute;top:200px;left:200px;}
 
 #plaatjes1 img {
 			  opacity: 0;
 			  transition: opacity .3s ease-in;
 				}
-		#plaatjes1,#plaatjes2,#plaatjes3,#plaatjes4,#plaatjes5{width:1280px;height:700px;left:50%;margin-left:-700px;position:absolute;overflow:hidden;}
 
 
 .line, /* line - Groups units on one horizontal line. Note: for mobile layout units may be stacked to avoid horizontal scrolling. */
@@ -172,10 +179,15 @@ body {
 	top: 50%;
 }
 #sidenav  .text{
-	font-size:24px;
+	font-size:27px;
 	margin-left: 30px;
 	padding-top:12px;
-
+	border-bottom:4px solid rgba(255,255,255,0);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 #sidenav .wrapper_sidenav {
 	width: 100px;
@@ -183,20 +195,54 @@ body {
 	margin:0;
 	padding:0;
 	display: block;
-	background-position:left top;
-	background-image:url('../point1.png') ;
-	background-repeat: no-repeat;
+
 	cursor:pointer;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
-#sidenav .active{
-	background-image:url('../point2.png')!important ;
-	text-decoration: underline;
+.point{
+	float: left;
+	height:44px;
+	width:15px;
+	opacity:0.2;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
-	.main {
-	    /*//background: #fff;*/
-	    padding: 40px 0 60px;
-	    min-height: 700px;
-	}
+#sidenav .active .point{
+	opacity:1;
+}
+
+#sidenav .active::after {
+	opacity: 1;
+}
+
+#sidenav .wrapper_sidenav[rel='home']{
+	width:104px;
+}
+#sidenav .wrapper_sidenav[rel='music']{
+	width:103px;
+}
+#sidenav .wrapper_sidenav[rel='shows']{
+	width:110px;
+}
+#sidenav .wrapper_sidenav[rel='info']{
+	width:70px;
+}
+
+#sidenav .active .text{
+	border-bottom: 4px solid rgba(255,255,255,1);
+	padding-bottom: 2px;
+}
+.main {
+    padding: 40px 0 60px;
+    min-height: 700px;
+}
 
 
 
@@ -212,10 +258,10 @@ body {
 	}
 
 	.header .inner {
-	    /*padding-top: 15px;*/
 	    position: relative;
 	    min-height: 35px;
-	    margin-left:50px;
+	    margin-left:25px;
+  	    margin-top:25px;
 	}
 
 

@@ -8,7 +8,7 @@
     "grunt-contrib-cssmin": "*",
     "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
+    "grunt-contrib-watch": "~0.5.3",
     "grunt-cssc": "*",
     "grunt-htmlhint": "*",
     "matchdep": "*",
