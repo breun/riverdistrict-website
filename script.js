@@ -17,11 +17,11 @@ $(document).ready(function() {
 	});
 
 
-	$.stellar({
-		//scrollProperty: 'transform'
-		 hideElement: function($elem) { $elem.fadeOut(); },
-     showElement: function($elem) { $elem.fadeIn(); }
-	});
+	// $.stellar({
+	// 	//scrollProperty: 'transform'
+	// 	 hideElement: function($elem) { $elem.fadeOut(); },
+ //     showElement: function($elem) { $elem.fadeIn(); }
+	// });
 
 			ztot=10;
 			$('.dragimg').click(function(){
