@@ -36,16 +36,15 @@
 * https://github.com/stubbornella/oocss/wiki/grids
 */
 
-.but{/*display:none;*/z-index:1000;width:100px;height: 100px;position:absolute;background-color: red;right: 0px;}
-#plaatjes1,#plaatjes2,#plaatjes3,#plaatjes4,#plaatjes5,#plaatjes6{border:1px solid white;width:1020px;height:768px;left:50%;margin-left:-510px;position:absolute;overflow:hidden;}
+.but{display:none;z-index:1000;width:100px;height: 100px;position:absolute;background-color: red;right: 0px;}
+#plaatjes1,#plaatjes2,#plaatjes3,#plaatjes4,#plaatjes5,#plaatjes6{/*border:1px solid white;overflow:visible;*/width:1020px;height:768px;left:50%;margin-left:-510px;position:absolute;}
 
-#plaatjes1{background-image:url('../screen1.png');}
-#plaatjes2{background-image:url('../screen2.png');}
-#plaatjes3{background-image:url('../screen3.png');}
-#plaatjes4{background-image:url('../screen4.png');}
+/*#plaatjes1{background-image:url('../images/screen1.png');background-repeat: no-repeat;}
+#plaatjes2{background-image:url('../images/screen2.png');background-repeat: no-repeat;}
+#plaatjes3{background-image:url('../images/screen3.png');background-repeat: no-repeat;}
+#plaatjes4{background-image:url('../images/screen4.png');background-repeat: no-repeat;}
 #plaatjes5{}
-#plaatjes6{}
-
+#plaatjes6{}*/
 .hiddenimgs img{display:none;}
 
 .typography img{border:none;margin-top:-50px;}
@@ -149,6 +148,7 @@ body {
     margin: 0;
     background: black;
     min-width: 240px;
+    overflow-x:hidden;
     -webkit-text-size-adjust: none; /* The text size is not adjusted for Safari on iPhone */
 }
 
@@ -163,11 +163,11 @@ body {
 
 .onevenborder{
 	height:13px;
-	background-image: url("../border1.png");
+	background-image: url("../images/border1.png");
 }
 .evenborder{
 	height:13px;
-	background-image: url("../border2.png");
+	background-image: url("../images/border2.png");
 }
 #sidenav {
 	width: auto;
@@ -249,7 +249,8 @@ body {
 
 /* HEADER */
 .header {
-    background-color: none;
+/*	display: none;
+*/    background-color: none;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -458,7 +459,8 @@ body {
 	.sidebar {
 	    width: 100%; /* sidenav is now shown above the page content */
 	    margin-bottom: 30px;
-	}
+/*	    overflow:visible;
+*/	}
 		.typography h1 { /* decrease size of page heading due to smaller screen */
 		    font-size: 30px;
 			line-height:35px;
@@ -475,6 +477,7 @@ body {
 	}
 	.main .inner {
 	    padding: 0 22px;
+	    overflow:hidden;
 	}
 	/* Secondry Nav */
 	.secondary li a {

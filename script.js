@@ -3,6 +3,13 @@ jQuery.noConflict();
 (function($) {
 $(document).ready(function() {
 
+	$(".dragimg").each(function(){
+		nb = Math.floor((Math.random()*50)+100)/100;
+		console.log(nb);
+		$(this).attr('data-stellar-ratio', nb);
+	});
+
+
 	$(".dragimg img").unveil(200, function() {
   		$(this).load(function() {
     		this.style.opacity = 1;
@@ -10,11 +17,11 @@ $(document).ready(function() {
 	});
 
 
-	// $.stellar({
-	// 	//scrollProperty: 'transform'
-	// 	 hideElement: function($elem) { $elem.fadeOut(); },
-    //  showElement: function($elem) { $elem.fadeIn(); }
-	// });
+	$.stellar({
+		//scrollProperty: 'transform'
+		 hideElement: function($elem) { $elem.fadeOut(); },
+     showElement: function($elem) { $elem.fadeIn(); }
+	});
 
 			ztot=10;
 			$('.dragimg').click(function(){
