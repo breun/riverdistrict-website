@@ -38,7 +38,7 @@
 
 .but{display:none;z-index:1000;width:100px;height: 100px;position:absolute;background-color: red;right: 0px;}
 #plaatjes1,#plaatjes2,#plaatjes3,#plaatjes4,#plaatjes5,#plaatjes6{/*border:1px solid white;overflow:visible;*/width:1020px;height:768px;left:50%;margin-left:-510px;position:absolute;}
-
+.content{z-index:1;position:absolute;}
 /*#plaatjes1{background-image:url('../images/screen1.png');background-repeat: no-repeat;}
 #plaatjes2{background-image:url('../images/screen2.png');background-repeat: no-repeat;}
 #plaatjes3{background-image:url('../images/screen3.png');background-repeat: no-repeat;}
@@ -51,6 +51,14 @@
 
 .dragimg{position:absolute;top:200px;left:200px;}
 
+.dragimg img{width:100%;height:100%;}
+
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+.dragimg img{width:50%;height:50%;}
+}
 #plaatjes1 img {
 			  opacity: 0;
 			  transition: opacity .3s ease-in;
@@ -240,7 +248,7 @@ body {
 	padding-bottom: 2px;
 }
 .main {
-    padding: 40px 0 60px;
+    /*padding: 40px 0 60px;*/
     min-height: 700px;
 }
 

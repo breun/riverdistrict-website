@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 	$(".dragimg").each(function(){
 		nb = Math.floor((Math.random()*50)+100)/100;
-		console.log(nb);
+		//console.log(nb);
 		$(this).attr('data-stellar-ratio', nb);
 	});
 
@@ -17,30 +17,33 @@ $(document).ready(function() {
 	});
 
 
-	// $.stellar({
-	// 	//scrollProperty: 'transform'
-	// 	 hideElement: function($elem) { $elem.fadeOut(); },
- //     showElement: function($elem) { $elem.fadeIn(); }
-	// });
+	$.stellar({
+		//scrollProperty: 'transform'
+		horizontalScrolling: false,
+		hideElement: function($elem) { $elem.fadeOut(); },
+    	showElement: function($elem) { $elem.fadeIn(); }
+	});
 
-			ztot=10;
-			$('.dragimg').click(function(){
-				ztot=ztot+1;
-				$(this).css('z-index', ztot);
-			});
 
-			$('.dragimg').draggable();
 
-			$('.but').click(function(){
-				pos='';
-				$('.dragimg', $(this).parent()).each(function(){
-					posi = $(this).position();
-					id = $(this).attr('id');
-					zid = $(this).css('z-index');
-					pos= pos+ '#'+id + "{left: " + Math.floor(posi.left) +"px;z-index:" + zid +"; top: " + Math.floor(posi.top) + 'px;} \n';
-				});
-				alert(pos);
-			});
+			// ztot=10;
+			// $('.dragimg').click(function(){
+			// 	ztot=ztot+1;
+			// 	$(this).css('z-index', ztot);
+			// });
+
+			// $('.dragimg').draggable();
+
+			// $('.but').click(function(){
+			// 	pos='';
+			// 	$('.dragimg', $(this).parent()).each(function(){
+			// 		posi = $(this).position();
+			// 		id = $(this).attr('id');
+			// 		zid = $(this).css('z-index');
+			// 		pos= pos+ '#'+id + "{left: " + Math.floor(posi.left) +"px;z-index:" + zid +"; top: " + Math.floor(posi.top) + 'px;} \n';
+			// 	});
+			// 	alert(pos);
+			// });
 
 
 
