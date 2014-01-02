@@ -41,11 +41,14 @@
 
 /* These are the default styles for the Simple theme */
 body {
+/*    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;*/
     font-size: 13px; /* This overrides the browsers default font size */
     line-height: 20px; /* If you change the font-size make sure you change the line-height value as well - the usual ratio is around 1.5 (font-size x 1.5 = line-height) */
     margin-bottom: 20px;
     color: #eee;
-    font-family: "SofiaProRegular", Arial, Helvetica, sans-serif;
+    font-family: "SofiaProSemiBold", Arial, Helvetica, sans-serif;
+    /*letter-spacing: 0.0825em;*/
 }
   body a { text-decoration: none; } /* this removes the underline from all links */
   body a:link { -webkit-tap-highlight-color: #b80000 } /* this sets the highlight color when links are tapped on Safari (browser) on iPhone */
@@ -62,6 +65,7 @@ body {
     font-weight: normal;
     margin-bottom: 10px;
     color: #eee;
+    /*letter-spacing: 0.0625em;*/
 }
 .typography h1 {
 
@@ -76,6 +80,7 @@ body {
 .typography h4 { font-size: 18px; line-height: 25px; margin-bottom: 5px; }
 .typography h5 { font-size: 16px; line-height: 20px; margin-bottom: 5px; }
 .typography h6 { font-size: 14px; line-height: 20px; margin-bottom: 5px; }
+
 
 
 /* PARAGRAGHS */
@@ -98,12 +103,12 @@ body {
 /* LINKS */
 .typography a,
 .typography a.intro {
-    color: #B80000;
+    color: #fff;
     text-decoration: none;
 }
   .typography a:hover {
-    color: #D80000;
-    border-bottom: 1px dashed #B80000;
+    color: #fff;
+    border-bottom: 1px solid #fff
   }
   .typography a:focus { }
 
@@ -113,7 +118,7 @@ body {
 .typography ul,
 .typography ol,
 .typography dl { margin: 0 0 20px 25px; }
-.typography ul li { list-style-type: disc; } /* adds disc style bullet to the list */
+.typography ul li { list-style-type: none; } /* adds disc style bullet to the list */
   .typography li { margin-bottom: 5px; }
 
 

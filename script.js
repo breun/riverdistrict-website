@@ -4,18 +4,63 @@ jQuery.noConflict();
 $(document).ready(function() {
 
 	$(".dragimg").each(function(){
-		nb = Math.floor((Math.random()*50)+100)/100;
+		nb = Math.floor((Math.random()*50)+100)/100; //1-1.5
 		//console.log(nb);
 		$(this).attr('data-stellar-ratio', nb);
+		if ($(this).hasClass('mapobject')===false){
+			$(this).clone().appendTo( "#plaatjes5" );
+		}
 	});
 
+	maxheight=700;
+	$("#underground .dragimg ").each(function(){
+		nb = Math.floor((Math.random()*100)+100)/100; //1-1.5
+		//console.log(nb);
+		$(this).attr('data-stellar-ratio', nb);
 
-	$(".dragimg img").unveil(200, function() {
+		leftpos = Math.floor((Math.random()*700)); //0-700
+		toppos = Math.floor((Math.random()*7500));  // 0-1500
+		rot = Math.floor((Math.random()*360)); //1-1.5
+  		$(this).css('left', leftpos);
+  		$(this).css('top', toppos);
+  		$(this).rotate(rot);
+  		if (toppos > maxheight ){
+  			$("#plaatjes5").css('height', toppos+200);
+  			maxheight= toppos+200;
+  			$("#underground").css('height', toppos+200);
+  		}
+
+	});
+
+	$("#home .dragimg img").unveil(200, function() {
   		$(this).load(function() {
     		this.style.opacity = 1;
  		 });
 	});
 
+	$("#music .dragimg img").unveil(200, function() {
+  		$(this).load(function() {
+    		this.style.opacity = 1;
+ 		 });
+	});
+
+	$("#shows .dragimg img").unveil(200, function() {
+  		$(this).load(function() {
+    		this.style.opacity = 1;
+ 		 });
+	});
+
+	$("#info .dragimg img").unveil(200, function() {
+  		$(this).load(function() {
+    		this.style.opacity = 1;
+ 		 });
+	});
+
+	$("#underground .dragimg img").unveil(200, function() {
+  		$(this).load(function() {
+    		this.style.opacity = 1;
+ 		 });
+	});
 
 	$.stellar({
 		//scrollProperty: 'transform'
@@ -71,7 +116,7 @@ function oldGigs(amount){
 				        var wit = "";
 				      }
 
-				      $li = $("<li>"+date+"<!--<br>--> "+gig.location.city+"<!--<br>--> "+place+wit+"<!--<br>--> <a href='"+gig.uri+"' target='_blank'>More Info</a></li>").appendTo("#gigs");
+				      $li = $("<li><a href='"+gig.uri+"' target='_blank'><span class='gigdate'>"+date+"</span><br><span class='gigloc'>"+gig.location.city+" - "+place+wit+"</span></a></li>").appendTo("#gigs");
 
 				    });
 
@@ -84,7 +129,7 @@ function oldGigs(amount){
    				 $("#gigs").empty();
     			 var gigs = data.resultsPage.results.event;
    			    if (!gigs){
-				    	oldGigs(5);
+				    	oldGigs(4);
 				    }else{
 				    $.each(gigs, function(index, gig) {
 
@@ -102,13 +147,13 @@ function oldGigs(amount){
 				        var wit = "";
 				      }
 
-				      $li = $("<li>"+date+"<!--<br>--> "+gig.location.city+"<!--<br>--> "+place+wit+"<!--<br>--> <a href='"+gig.uri+"' target='_blank'>More Info</a></li>").appendTo("#gigs");
+				      $li = $("<li><a href='"+gig.uri+"' target='_blank'><span class='gigdate'>"+date+"</span><br><span class='gigloc'>"+gig.location.city+" - "+place+wit+"</span></a></li>").appendTo("#gigs");
 
 				    });
 				    }
 
-				    if (gigs.length > 5){
-				    	oldGigs(5-gigs.length);
+				    if (gigs.length > 4){
+				    	oldGigs(4-gigs.length);
 				    }
 
  	});
