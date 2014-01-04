@@ -5,25 +5,24 @@ $(document).ready(function() {
 
 	$(".dragimg").each(function(){
 		nb = Math.floor((Math.random()*50)+100)/100; //1-1.5
-		//console.log(nb);
 		$(this).attr('data-stellar-ratio', nb);
 		if ($(this).hasClass('mapobject')===false){
-			$(this).clone().appendTo( "#plaatjes5" );
+			$(this).clone().prop({id: ""}).appendTo( "#plaatjes5" );
 		}
 	});
 
 	maxheight=700;
 	$("#underground .dragimg ").each(function(){
 		nb = Math.floor((Math.random()*100)+100)/100; //1-1.5
-		//console.log(nb);
 		$(this).attr('data-stellar-ratio', nb);
-
 		leftpos = Math.floor((Math.random()*700)); //0-700
 		toppos = Math.floor((Math.random()*7500));  // 0-1500
 		rot = Math.floor((Math.random()*360)); //1-1.5
+
   		$(this).css('left', leftpos);
   		$(this).css('top', toppos);
   		$(this).rotate(rot);
+
   		if (toppos > maxheight ){
   			$("#plaatjes5").css('height', toppos+200);
   			maxheight= toppos+200;
