@@ -1,0 +1,6 @@
+- add zip
+- mail jasper
+- arrows + messages
+- responsive
+- css fix player
+- 

@@ -8,12 +8,13 @@ $(document).ready(function() {
 		$(this).attr('data-stellar-ratio', nb);
 		if ($(this).hasClass('mapobject')===false){
 			$(this).clone().prop({id: ""}).appendTo( "#plaatjes5" );
+			$(this).clone().prop({id: ""}).appendTo( "#plaatjes5" );
 		}
 	});
 
 	maxheight=700;
 	$("#underground .dragimg ").each(function(){
-		nb = Math.floor((Math.random()*100)+100)/100; //1-1.5
+		nb = Math.floor((Math.random()*200)+50)/100; //1-1.5
 		$(this).attr('data-stellar-ratio', nb);
 		leftpos = Math.floor((Math.random()*700)); //0-700
 		toppos = Math.floor((Math.random()*7500));  // 0-1500
