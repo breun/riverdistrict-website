@@ -3,22 +3,68 @@ jQuery.noConflict();
 (function($) {
 $(document).ready(function() {
 
+
+if (Modernizr.touch) {
+    var myScroller = new iScroll('scroller');
+    alert('asf');
+}else{
+	alert('notouch');
+}
+
+function getScroll(elem, iscroll) {
+  var x, y;
+
+  if (Modernizr.touch && iscroll) {
+    x = iscroll.x * -1;
+    y = iscroll.y * -1;
+  } else {
+    x = elem.scrollTop;
+    y = elem.scrollLeft;
+  }
+
+  return {x: x, y: y};
+}
+
+(function animationLoop(){
+    window.requestAnimationFrame(animationLoop);
+    // Now we'll use our 'getScroll' function
+    var scroll = getScroll(window, myScroller);
+    // Values are now normalised cross platform:
+    scroll.x;
+    scroll.y;
+})();
+
+
+
+
 	$(".dragimg").each(function(){
-		nb = Math.floor((Math.random()*50)+100)/100; //1-1.5
+		nb = Math.floor((Math.random()*50)+100)/100; // 1-1.5
+		//nb2 = Math.floor((Math.random()*50)+50); // 1-1.5
 		$(this).attr('data-stellar-ratio', nb);
+		// thistop = $(this).position().top;
+		// console.log(thistop);
+		// thistop1= "top:"+(thistop - nb2)+"px;";
+		// thistop2= "top:"+(thistop + nb2)+"px;";
+		// $(this).attr('data-top', thistop1 );
+		// $(this).attr('data-bottom', thistop2 );
+
+
 		if ($(this).hasClass('mapobject')===false){
 			$(this).clone().prop({id: ""}).appendTo( "#plaatjes5" );
 			$(this).clone().prop({id: ""}).appendTo( "#plaatjes5" );
 		}
 	});
 
+	 // skrollr.init({ forceHeight: false });
+
+
 	maxheight=700;
 	$("#underground .dragimg ").each(function(){
-		nb = Math.floor((Math.random()*200)+50)/100; //1-1.5
+		nb = Math.floor((Math.random()*200)+50)/100; // 1-1.5
 		$(this).attr('data-stellar-ratio', nb);
-		leftpos = Math.floor((Math.random()*700)); //0-700
-		toppos = Math.floor((Math.random()*7500));  // 0-1500
-		rot = Math.floor((Math.random()*360)); //1-1.5
+		leftpos = Math.floor((Math.random()*700));   // 0-700
+		toppos = Math.floor((Math.random()*7500));   // 0-1500
+		rot = Math.floor((Math.random()*360));       // 1-1.5
 
   		$(this).css('left', leftpos);
   		$(this).css('top', toppos);
@@ -31,36 +77,40 @@ $(document).ready(function() {
   		}
 
 	});
-
-	$("#home .dragimg img").unveil(200, function() {
-  		$(this).load(function() {
-    		this.style.opacity = 1;
- 		 });
+	$(".dragimg img").each(function(){
+		$(this).css('opacity',1);
+		src = $(this).attr('data-src');
+		$(this).attr('src',src);
 	});
+	// $("#home .dragimg img").unveil(200, function() {
+ //  		$(this).load(function() {
+ //    		this.style.opacity = 1;
+ // 		 });
+	// });
 
-	$("#music .dragimg img").unveil(200, function() {
-  		$(this).load(function() {
-    		this.style.opacity = 1;
- 		 });
-	});
+	// $("#music .dragimg img").unveil(200, function() {
+ //  		$(this).load(function() {
+ //    		this.style.opacity = 1;
+ // 		 });
+	// });
 
-	$("#shows .dragimg img").unveil(200, function() {
-  		$(this).load(function() {
-    		this.style.opacity = 1;
- 		 });
-	});
+	// $("#shows .dragimg img").unveil(200, function() {
+ //  		$(this).load(function() {
+ //    		this.style.opacity = 1;
+ // 		 });
+	// });
 
-	$("#info .dragimg img").unveil(200, function() {
-  		$(this).load(function() {
-    		this.style.opacity = 1;
- 		 });
-	});
+	// $("#info .dragimg img").unveil(200, function() {
+ //  		$(this).load(function() {
+ //    		this.style.opacity = 1;
+ // 		 });
+	// });
 
-	$("#underground .dragimg img").unveil(200, function() {
-  		$(this).load(function() {
-    		this.style.opacity = 1;
- 		 });
-	});
+	// $("#underground .dragimg img").unveil(200, function() {
+ //  		$(this).load(function() {
+ //    		this.style.opacity = 1;
+ // 		 });
+	// });
 
 	$.stellar({
 		//scrollProperty: 'transform'
