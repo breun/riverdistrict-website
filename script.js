@@ -1,38 +1,33 @@
+
 jQuery.noConflict();
 
+
+
+
+
 (function($) {
-$(document).ready(function() {
+	var ua = navigator.userAgent,
+		isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
+
+	if (isMobileWebkit) {
+		$('html').addClass('mobile');
+	}
+
+	$(document).ready(function() {
 
 
-if (Modernizr.touch) {
-    var myScroller = new iScroll('scroller');
-    alert('asf');
-}else{
-	alert('notouch');
-}
 
-function getScroll(elem, iscroll) {
-  var x, y;
 
-  if (Modernizr.touch && iscroll) {
-    x = iscroll.x * -1;
-    y = iscroll.y * -1;
-  } else {
-    x = elem.scrollTop;
-    y = elem.scrollLeft;
-  }
 
-  return {x: x, y: y};
-}
 
-(function animationLoop(){
-    window.requestAnimationFrame(animationLoop);
-    // Now we'll use our 'getScroll' function
-    var scroll = getScroll(window, myScroller);
-    // Values are now normalised cross platform:
-    scroll.x;
-    scroll.y;
-})();
+	// $("#home .dragimg img").each(function(){
+	// 	$(this).css('opacity',1);
+	// 	$(this).css('display','block');
+	// 	src = $(this).attr('data-src');
+	// 	$(this).attr('src',src);
+	// });
+
+
 
 
 
@@ -49,13 +44,12 @@ function getScroll(elem, iscroll) {
 		// $(this).attr('data-bottom', thistop2 );
 
 
-		if ($(this).hasClass('mapobject')===false){
-			$(this).clone().prop({id: ""}).appendTo( "#plaatjes5" );
-			$(this).clone().prop({id: ""}).appendTo( "#plaatjes5" );
-		}
+		 if ($(this).hasClass('mapobject')===false){
+		 	$(this).clone().prop({id: ""}).appendTo( "#plaatjes5" );
+		 	$(this).clone().prop({id: ""}).appendTo( "#plaatjes5" );
+		 }
 	});
 
-	 // skrollr.init({ forceHeight: false });
 
 
 	maxheight=700;
@@ -63,7 +57,7 @@ function getScroll(elem, iscroll) {
 		nb = Math.floor((Math.random()*200)+50)/100; // 1-1.5
 		$(this).attr('data-stellar-ratio', nb);
 		leftpos = Math.floor((Math.random()*700));   // 0-700
-		toppos = Math.floor((Math.random()*7500));   // 0-1500
+		toppos = Math.floor((Math.random()*7500))+100;   // 0-1500
 		rot = Math.floor((Math.random()*360));       // 1-1.5
 
   		$(this).css('left', leftpos);
@@ -77,47 +71,58 @@ function getScroll(elem, iscroll) {
   		}
 
 	});
-	$(".dragimg img").each(function(){
-		$(this).css('opacity',1);
-		src = $(this).attr('data-src');
-		$(this).attr('src',src);
+
+	$("#home .dragimg img").unveil(0, function() {
+  		$(this).load(function() {
+    		this.style.opacity = 1;
+ 		 });
 	});
-	// $("#home .dragimg img").unveil(200, function() {
- //  		$(this).load(function() {
- //    		this.style.opacity = 1;
- // 		 });
-	// });
 
-	// $("#music .dragimg img").unveil(200, function() {
- //  		$(this).load(function() {
- //    		this.style.opacity = 1;
- // 		 });
-	// });
-
-	// $("#shows .dragimg img").unveil(200, function() {
- //  		$(this).load(function() {
- //    		this.style.opacity = 1;
- // 		 });
-	// });
-
-	// $("#info .dragimg img").unveil(200, function() {
- //  		$(this).load(function() {
- //    		this.style.opacity = 1;
- // 		 });
-	// });
-
-	// $("#underground .dragimg img").unveil(200, function() {
- //  		$(this).load(function() {
- //    		this.style.opacity = 1;
- // 		 });
-	// });
-
-	$.stellar({
-		//scrollProperty: 'transform'
-		horizontalScrolling: false,
-		hideElement: function($elem) { $elem.fadeOut(); },
-    	showElement: function($elem) { $elem.fadeIn(); }
+	$("#music .dragimg img").unveil(200, function() {
+  		$(this).load(function() {
+    		this.style.opacity = 1;
+ 		 });
 	});
+
+	$("#shows .dragimg img").unveil(200, function() {
+  		$(this).load(function() {
+    		this.style.opacity = 1;
+ 		 });
+	});
+
+	$("#info .dragimg img").unveil(200, function() {
+  		$(this).load(function() {
+    		this.style.opacity = 1;
+ 		 });
+	});
+
+	$("#underground .dragimg img").unveil(200, function() {
+  		$(this).load(function() {
+    		this.style.opacity = 1;
+ 		 });
+	});
+
+	var iScrollInstance;
+
+	if (isMobileWebkit) {
+		// iScrollInstance = new iScroll('wrapper');
+
+		// $('#scroller').stellar({
+		// 	scrollProperty: 'transform',
+	 //        positionProperty: 'transform',
+		// 	horizontalScrolling: false,
+		// 	hideElement: function($elem) { $elem.fadeOut(); },
+  //   	    showElement: function($elem) { $elem.fadeIn(); }
+		// 	//verticalOffset: 150
+		// });
+	} else {
+		$.stellar({
+			horizontalScrolling: false,
+	      	hideElement: function($elem) { $elem.fadeOut(); },
+    	  	showElement: function($elem) { $elem.fadeIn(); }
+			//verticalOffset: 150
+		});
+	}
 
 
 
@@ -144,7 +149,6 @@ function getScroll(elem, iscroll) {
 
 
 function oldGigs(amount){
-	//console.log('test');
 	$.getJSON('http://api.songkick.com/api/3.0/artists/4597758-riverdistrict/gigography.json?apikey=91AN7asUxDaqHrrv&order=desc&per_page='+amount+'&jsoncallback=?',
     		function(data){
    				//console.log(data);
@@ -208,6 +212,9 @@ function oldGigs(amount){
 
  	});
 
+		$('#goup').click(function(){
+			$(".wrapper_sidenav[rel='info']").click();
+		});
 
 
 		$('.wrapper_sidenav').click(function(){
@@ -249,6 +256,12 @@ var aChildren = $("#sidenav").children(); // find the a children of the list ite
             } else {
                 $(".wrapper_sidenav[rel='"+ theID + "']").removeClass("active");
             }
+        }
+
+        if (windowPos>3000){
+        	$('#goup').css('display', 'block');
+        }else{
+        	$('#goup').css('display', 'none');
         }
 
         // if(windowPos + windowHeight == docHeight) {
@@ -294,7 +307,6 @@ var aChildren = $("#sidenav").children(); // find the a children of the list ite
 	// 	    0, // scroll duration of tween (0 means autoplay)
 	// 	    -200); // offset the start of the tween by 200 pixels
 
-		/* removes text from search form on focus and replaces it on unfocus - if text is entered then it does not get replaced with default on unfocus */
 
 	});
 }(jQuery));

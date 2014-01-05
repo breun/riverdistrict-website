@@ -1,6 +1,6 @@
 - add zip
 - mail jasper
-- arrows + messages
+X arrows + messages
 - responsive
-- css fix player
-- 
+X css fix player
+X stellar not on mobile
