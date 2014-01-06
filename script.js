@@ -1,7 +1,4 @@
-
 jQuery.noConflict();
-
-
 
 
 
@@ -15,297 +12,272 @@ jQuery.noConflict();
 
 	$(document).ready(function() {
 
+		var isPhone = false;
+		if ($('#sidenav').css('display') == 'none') {
+			isPhone = true;
+		}
 
-
-
-
-
-	// $("#home .dragimg img").each(function(){
-	// 	$(this).css('opacity',1);
-	// 	$(this).css('display','block');
-	// 	src = $(this).attr('data-src');
-	// 	$(this).attr('src',src);
-	// });
-
-
-
-
-
-
-	$(".dragimg").each(function(){
-		nb = Math.floor((Math.random()*50)+100)/100; // 1-1.5
-		//nb2 = Math.floor((Math.random()*50)+50); // 1-1.5
-		$(this).attr('data-stellar-ratio', nb);
-		// thistop = $(this).position().top;
-		// console.log(thistop);
-		// thistop1= "top:"+(thistop - nb2)+"px;";
-		// thistop2= "top:"+(thistop + nb2)+"px;";
-		// $(this).attr('data-top', thistop1 );
-		// $(this).attr('data-bottom', thistop2 );
-
-
-		 if ($(this).hasClass('mapobject')===false){
-		 	$(this).clone().prop({id: ""}).appendTo( "#plaatjes5" );
-		 	$(this).clone().prop({id: ""}).appendTo( "#plaatjes5" );
-		 }
-	});
-
-
-
-	maxheight=700;
-	$("#underground .dragimg ").each(function(){
-		nb = Math.floor((Math.random()*200)+50)/100; // 1-1.5
-		$(this).attr('data-stellar-ratio', nb);
-		leftpos = Math.floor((Math.random()*700));   // 0-700
-		toppos = Math.floor((Math.random()*7500))+100;   // 0-1500
-		rot = Math.floor((Math.random()*360));       // 1-1.5
-
-  		$(this).css('left', leftpos);
-  		$(this).css('top', toppos);
-  		$(this).rotate(rot);
-
-  		if (toppos > maxheight ){
-  			$("#plaatjes5").css('height', toppos+200);
-  			maxheight= toppos+200;
-  			$("#underground").css('height', toppos+200);
-  		}
-
-	});
-
-	$("#home .dragimg img").unveil(0, function() {
-  		$(this).load(function() {
-    		this.style.opacity = 1;
- 		 });
-	});
-
-	$("#music .dragimg img").unveil(200, function() {
-  		$(this).load(function() {
-    		this.style.opacity = 1;
- 		 });
-	});
-
-	$("#shows .dragimg img").unveil(200, function() {
-  		$(this).load(function() {
-    		this.style.opacity = 1;
- 		 });
-	});
-
-	$("#info .dragimg img").unveil(200, function() {
-  		$(this).load(function() {
-    		this.style.opacity = 1;
- 		 });
-	});
-
-	$("#underground .dragimg img").unveil(200, function() {
-  		$(this).load(function() {
-    		this.style.opacity = 1;
- 		 });
-	});
-
-	var iScrollInstance;
-
-	if (isMobileWebkit) {
-		// iScrollInstance = new iScroll('wrapper');
-
-		// $('#scroller').stellar({
-		// 	scrollProperty: 'transform',
-	 //        positionProperty: 'transform',
-		// 	horizontalScrolling: false,
-		// 	hideElement: function($elem) { $elem.fadeOut(); },
-  //   	    showElement: function($elem) { $elem.fadeIn(); }
-		// 	//verticalOffset: 150
-		// });
-	} else {
-		$.stellar({
-			horizontalScrolling: false,
-	      	hideElement: function($elem) { $elem.fadeOut(); },
-    	  	showElement: function($elem) { $elem.fadeIn(); }
-			//verticalOffset: 150
+		$(".dragimg").each(function() {
+			nb = Math.floor((Math.random() * 50) + 100) / 100; // 1-1.5
+			$(this).attr('data-stellar-ratio', nb);
+			if ($(this).hasClass('mapobject') === false) {
+				$(this).clone().prop({
+					id: ""
+				}).appendTo("#plaatjes5");
+				$(this).clone().prop({
+					id: ""
+				}).appendTo("#plaatjes5");
+			}
 		});
-	}
 
 
 
-			// ztot=10;
-			// $('.dragimg').click(function(){
-			// 	ztot=ztot+1;
-			// 	$(this).css('z-index', ztot);
+		maxheight = 700;
+		$("#underground .dragimg ").each(function() {
+			nb = Math.floor((Math.random() * 200) + 50) / 100; // 1-1.5
+			$(this).attr('data-stellar-ratio', nb);
+			leftpos = Math.floor((Math.random() * 700)); // 0-700
+			toppos = Math.floor((Math.random() * 7500)) + 100; // 0-1500
+			rot = Math.floor((Math.random() * 360)); // 1-1.5
+
+			$(this).css('left', leftpos);
+			$(this).css('top', toppos);
+			$(this).rotate(rot);
+
+			if (toppos > maxheight) {
+				$("#plaatjes5").css('height', toppos + 200);
+				maxheight = toppos + 200;
+				$("#underground").css('height', toppos + 200);
+			}
+
+		});
+
+		$("#home .dragimg img").unveil(0, function() {
+			$(this).load(function() {
+				this.style.opacity = 1;
+			});
+		});
+
+		$("#music .dragimg img").unveil(200, function() {
+			$(this).load(function() {
+				this.style.opacity = 1;
+			});
+		});
+
+		$("#shows .dragimg img").unveil(200, function() {
+			$(this).load(function() {
+				this.style.opacity = 1;
+			});
+		});
+
+		$("#info .dragimg img").unveil(200, function() {
+			$(this).load(function() {
+				this.style.opacity = 1;
+			});
+		});
+
+		$("#underground .dragimg img").unveil(200, function() {
+			$(this).load(function() {
+				this.style.opacity = 1;
+			});
+		});
+
+		var iScrollInstance;
+
+		if (isMobileWebkit) {
+			// iScrollInstance = new iScroll('wrapper');
+
+			// $('#scroller').stellar({
+			// 	scrollProperty: 'transform',
+			//        positionProperty: 'transform',
+			// 	horizontalScrolling: false,
+			// 	hideElement: function($elem) { $elem.fadeOut(); },
+			//   	    showElement: function($elem) { $elem.fadeIn(); }
+			// 	//verticalOffset: 150
 			// });
-
-			// $('.dragimg').draggable();
-
-			// $('.but').click(function(){
-			// 	pos='';
-			// 	$('.dragimg', $(this).parent()).each(function(){
-			// 		posi = $(this).position();
-			// 		id = $(this).attr('id');
-			// 		zid = $(this).css('z-index');
-			// 		pos= pos+ '#'+id + "{left: " + Math.floor(posi.left) +"px;z-index:" + zid +"; top: " + Math.floor(posi.top) + 'px;} \n';
-			// 	});
-			// 	alert(pos);
-			// });
-
+		} else {
+			$.stellar({
+				horizontalScrolling: false,
+				hideElement: function($elem) {
+					$elem.fadeOut();
+				},
+				showElement: function($elem) {
+					$elem.fadeIn();
+				}
+				//verticalOffset: 150
+			});
+		}
 
 
+		if (isPhone) {
+			players = '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=e32c14/transparent=true/" seamless=""><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=e32c14/transparent=true/" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=e32c14/transparent=true/" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
+		} else {
+			players = '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
 
-function oldGigs(amount){
-	$.getJSON('http://api.songkick.com/api/3.0/artists/4597758-riverdistrict/gigography.json?apikey=91AN7asUxDaqHrrv&order=desc&per_page='+amount+'&jsoncallback=?',
-    		function(data){
-   				//console.log(data);
-    			 var gigs = data.resultsPage.results.event;
+		}
+		$('#players').html(players);
 
-				    $.each(gigs, function(index, gig) {
+		// ztot=10;
+		// $('.dragimg').click(function(){
+		// 	ztot=ztot+1;
+		// 	$(this).css('z-index', ztot);
+		// });
 
-				      if(gig.series){
-				        var place = gig.series.displayName;
-				      } else {
-				        var place = gig.venue.displayName;
-				      }
+		// $('.dragimg').draggable();
 
-				      date = Date.parse(gig.start.date).toString('MMMM d, yyyy');
-
-				      if(gig.performance && !gig.series && gig.performance[0].artist.displayName != "Riverdistrict") {
-				        var wit = "<br>w/ "+gig.performance[0].artist.displayName;
-				      } else {
-				        var wit = "";
-				      }
-
-				      $li = $("<li><a href='"+gig.uri+"' target='_blank'><span class='gigdate'>"+date+"</span><br><span class='gigloc'>"+gig.location.city+" - "+place+wit+"</span></a></li>").appendTo("#gigs");
-
-				    });
+		// $('.but').click(function(){
+		// 	pos='';
+		// 	$('.dragimg', $(this).parent()).each(function(){
+		// 		posi = $(this).position();
+		// 		id = $(this).attr('id');
+		// 		zid = $(this).css('z-index');
+		// 		pos= pos+ '#'+id + "{left: " + Math.floor(posi.left) +"px;z-index:" + zid +"; top: " + Math.floor(posi.top) + 'px;} \n';
+		// 	});
+		// 	alert(pos);
+		// });
 
 
- 	});
-}
 
-    $.getJSON('http://api.songkick.com/api/3.0/artists/4597758-riverdistrict/calendar.json?apikey=91AN7asUxDaqHrrv&per_page=100&page=1&jsoncallback=?',
-    		function(data){
-   				 $("#gigs").empty();
-    			 var gigs = data.resultsPage.results.event;
-   			    if (!gigs){
-				    	oldGigs(4);
-				    }else{
-				    $.each(gigs, function(index, gig) {
+		function oldGigs(amount) {
+			$.getJSON('http://api.songkick.com/api/3.0/artists/4597758-riverdistrict/gigography.json?apikey=91AN7asUxDaqHrrv&order=desc&per_page=' + amount + '&jsoncallback=?',
+				function(data) {
+					var gigs = data.resultsPage.results.event;
 
-				      if(gig.series){
-				        var place = gig.series.displayName;
-				      } else {
-				        var place = gig.venue.displayName;
-				      }
+					$.each(gigs, function(index, gig) {
 
-				      date = Date.parse(gig.start.date).toString('MMMM d, yyyy');
+						if (gig.series) {
+							var place = gig.series.displayName;
+						} else {
+							var place = gig.venue.displayName;
+						}
 
-				      if(gig.performance && !gig.series && gig.performance[0].artist.displayName != "Riverdistrict") {
-				        var wit = "<br>w/ "+gig.performance[0].artist.displayName;
-				      } else {
-				        var wit = "";
-				      }
+						date = Date.parse(gig.start.date).toString('MMMM d, yyyy');
 
-				      $li = $("<li><a href='"+gig.uri+"' target='_blank'><span class='gigdate'>"+date+"</span><br><span class='gigloc'>"+gig.location.city+" - "+place+wit+"</span></a></li>").appendTo("#gigs");
+						if (gig.performance && !gig.series && gig.performance[0].artist.displayName != "Riverdistrict") {
+							var wit = "<br>w/ " + gig.performance[0].artist.displayName;
+						} else {
+							var wit = "";
+						}
 
-				    });
-				    }
+						$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + gig.location.city + " - " + place + wit + "</span></a></li>").appendTo("#gigs");
 
-				    if (gigs.length > 4){
-				    	oldGigs(4-gigs.length);
-				    }
+					});
 
- 	});
 
-		$('#goup').click(function(){
+				});
+		}
+
+		$.getJSON('http://api.songkick.com/api/3.0/artists/4597758-riverdistrict/calendar.json?apikey=91AN7asUxDaqHrrv&per_page=100&page=1&jsoncallback=?',
+			function(data) {
+				$("#gigs").empty();
+				var gigs = data.resultsPage.results.event;
+				if (!gigs) {
+					oldGigs(4);
+				} else {
+					$.each(gigs, function(index, gig) {
+
+						if (gig.series) {
+							var place = gig.series.displayName;
+						} else {
+							var place = gig.venue.displayName;
+						}
+
+						date = Date.parse(gig.start.date).toString('MMMM d, yyyy');
+
+						if (gig.performance && !gig.series && gig.performance[0].artist.displayName != "Riverdistrict") {
+							var wit = "<br>w/ " + gig.performance[0].artist.displayName;
+						} else {
+							var wit = "";
+						}
+
+						$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + gig.location.city + " - " + place + wit + "</span></a></li>").appendTo("#gigs");
+
+					});
+				}
+
+				if (gigs && gigs.length > 4) {
+					oldGigs(4 - gigs.length);
+				}
+
+			});
+
+		$('#goup').click(function() {
 			$(".wrapper_sidenav[rel='info']").click();
 		});
 
 
-		$('.wrapper_sidenav').click(function(){
+		$('.wrapper_sidenav').click(function() {
 			id = $(this).attr('rel');
-			  $('html, body').animate({
-        			 scrollTop: $("#"+id).offset().top
-    			 }, 2000,'swing');
+			$('html, body').animate({
+				scrollTop: $("#" + id).offset().top
+			}, 2000, 'swing');
 		});
 
 
-var aChildren = $("#sidenav").children(); // find the a children of the list items
-//console.log(aChildren);
-    var aArray = []; // create the empty aArray
-    for (var i=0; i < aChildren.length; i++) {
-        var aChild = aChildren[i];
-        var ahref = $(aChild).attr('rel');
-        aArray.push(ahref);
-    } // this for loop fills the aArray with attribute href values
- 	//console.log(aArray);
+		var aChildren = $("#sidenav").children(); // find the a children of the list items
+		//console.log(aChildren);
+		var aArray = []; // create the empty aArray
+		for (var i = 0; i < aChildren.length; i++) {
+			var aChild = aChildren[i];
+			var ahref = $(aChild).attr('rel');
+			aArray.push(ahref);
+		} // this for loop fills the aArray with attribute href values
+		//console.log(aArray);
 
- 	opened=false;
-    oriheight = $(document).height();
-    oriy = $('#underground').height();
+		opened = false;
+		oriheight = $(document).height();
+		oriy = $('#underground').height();
 
-    $(window).scroll(function(){
-        var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
-        var windowHeight = $(window).height(); // get the height of the window
-        var docHeight = $(document).height();
+		$(window).scroll(function() {
+			var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
+			var windowHeight = $(window).height(); // get the height of the window
+			var docHeight = $(document).height();
 
-        for (var i=0; i < aArray.length; i++) {
-            var theID = aArray[i];
-            //console.log(theID);
-            var divPos = $('#'+theID).offset().top-110; // get the offset of the div from the top of page
-			//console.log(theID);
+			for (var i = 0; i < aArray.length; i++) {
+				var theID = aArray[i];
+				//console.log(theID);
+				var divPos = $('#' + theID).offset().top - 110; // get the offset of the div from the top of page
+				//console.log(theID);
 
-            var divHeight = $('#'+theID).height(); // get the height of the div in question
-            if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
-                $(".wrapper_sidenav[rel='" + theID + "']").addClass("active");
-            } else {
-                $(".wrapper_sidenav[rel='"+ theID + "']").removeClass("active");
-            }
-        }
+				var divHeight = $('#' + theID).height(); // get the height of the div in question
+				if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
+					$(".wrapper_sidenav[rel='" + theID + "']").addClass("active");
+				} else {
+					$(".wrapper_sidenav[rel='" + theID + "']").removeClass("active");
+				}
+			}
 
-        if (windowPos>3000){
-        	$('#goup').css('display', 'block');
-        }else{
-        	$('#goup').css('display', 'none');
-        }
+			if (windowPos > 3000) {
+				$('#goup').css('display', 'block');
+			} else {
+				$('#goup').css('display', 'none');
+			}
 
-        // if(windowPos + windowHeight == docHeight) {
-        //    y = $('#underground').height();
-        //    $('#underground').height(y+25);
-        //   	if (opened==false){
-        //   		$('.footer').animate({'bottom': '0'}, 2000);
-        //   		opened=true;
-        //   	}
-        //   	// if ((windowPos + windowHeight)%1000){
-        //   	// 	console.log((windowPos + windowHeight)%1000);
-        //   	// 	console.log('animate');
-        //   	// }
-        // }
-       	// if(windowPos + windowHeight < oriheight){
-       	// 	 if (opened==true){
-       	// 	 	$('#underground').height(oriy);
-        //   		$('.footer').animate({'bottom': '-250'}, 2000);
-        //   		opened=false;
-        //   	}
-       	// }
+			// if(windowPos + windowHeight == docHeight) {
+			//    y = $('#underground').height();
+			//    $('#underground').height(y+25);
+			//   	if (opened==false){
+			//   		$('.footer').animate({'bottom': '0'}, 2000);
+			//   		opened=true;
+			//   	}
+			//   	// if ((windowPos + windowHeight)%1000){
+			//   	// 	console.log((windowPos + windowHeight)%1000);
+			//   	// 	console.log('animate');
+			//   	// }
+			// }
+			// if(windowPos + windowHeight < oriheight){
+			// 	 if (opened==true){
+			// 	 	$('#underground').height(oriy);
+			//   		$('.footer').animate({'bottom': '-250'}, 2000);
+			//   		opened=false;
+			//   	}
+			// }
 
-    });
+		});
 
 
 		var controller = $.superscrollorama();
 
-	// 	controller.addTween('#info',
-	// 	  TweenMax.from($('#info'),.5,{
-	// 	    css:{opacity:0}}),
-	// 	    0, // scroll duration of tween (0 means autoplay)
-	// 	    -200); // offset the start of the tween by 200 pixels
-
-	// controller.addTween('#music',
-	// 	  TweenMax.from($('#music'),.5,{
-	// 	    css:{opacity:0}}),
-	// 	    0, // scroll duration of tween (0 means autoplay)
-	// 	    -200); // offset the start of the tween by 200 pixels
-
-	// controller.addTween('#shows',
-	// 	  TweenMax.from($('#shows'),.5,{
-	// 	    css:{opacity:0}}),
-	// 	    0, // scroll duration of tween (0 means autoplay)
-	// 	    -200); // offset the start of the tween by 200 pixels
 
 
 	});
