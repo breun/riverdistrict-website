@@ -116,10 +116,7 @@ footer {
     width:100%;
     background-color: black;
 }
-#home {
-    background-image: url('../images/foto1a.jpg');
-    background-size: auto 100%;
-}
+
 .threedee {
     -moz-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
     -webkit-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
@@ -141,7 +138,7 @@ footer {
     min-width: 240px;
     overflow-x:hidden;
     width:100%;
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(23, 23, 23);
     -webkit-text-size-adjust: none;
     /* The text size is not adjusted for Safari on iPhone */
 }
@@ -153,11 +150,11 @@ footer {
 }
 .onevenborder {
     height:13px;
-    background-image: url("../images/border1.png");
+    background-image: url("./images/border1.png");
 }
 .evenborder {
     height:13px;
-    background-image: url("../images/border2.png");
+    background-image: url("./images/border2.png");
 }
 #sidenav {
     width: auto;
@@ -168,6 +165,13 @@ footer {
     margin-top: -76px;
     top: 50%;
     font-weight: normal;
+}
+#godown{
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 #sidenav .text {
     font-size:27px;
@@ -204,6 +208,7 @@ footer {
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
+.active .point{opacity:1;}
 
 #sidenav .wrapper_sidenav[rel='home'] {
     width:104px;
@@ -238,7 +243,7 @@ footer {
     top: 0;
     left: 0;
     width: 300px;
-    z-index: 1000;
+    z-index:1000000;
 }
 .header .inner {
     position: relative;
@@ -261,111 +266,3 @@ footer {
 }
 
 
-/* BREAKPOINT 960px */
- @media only screen and (max-width: 960px) {
-    .content img {
-        /*max-width: 97%;*/
-        height: auto;
-    }
-    .nottablet{display:none!important;}
-    .header .primary ul {
-        margin-left: -12px;
-        -webkit-padding-start: 0px;
-        /* removes default webkit padding on ul items */
-    }
-}
-/* BREAKPOINT 640px */
-
-/* when changing the breakpoint below, change it ito the same value in the script.js file as well */
- @media only screen and (max-width: 640px) {
-    body {
-        max-width: 640px;
-    }
-    .header {
-        text-align:center;
-        width:100%;
-        margin: 0 auto;
-    }
-    #sidenav {
-        display:none;
-    }
-    .header .inner {
-        margin-left: 0px;
-    }
-    .dragimg img {
-        display:none;
-    }
-    .threedee {
-        -moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-        -webkit-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-        -o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-        -ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-        transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-    }
-    #gigs {
-        top:0;
-        left:0;
-        width:80%;
-        margin:0 auto;
-    }
-    #testintro{        top:0;
-        left:0;
-        width:80%;
-        margin:0 auto;}
-    #underground {
-        display:none;
-    }
-    #plaatjes1, #plaatjes2, #plaatjes3, #plaatjes4, #plaatjes5, #plaatjes6 {
-        padding:0;
-        margin:0;
-        overflow:hidden;
-        width:100%;
-        height:auto;
-        left:0;
-        margin-left:auto;
-        position:relative;
-    }
-    #plaatjes2 .content {
-        position:relative;
-        padding:25px;
-    }
-    #player1 {
-        position: relative;
-        top:0;
-        left:0;
-        display:block;
-        margin:0 auto;
-        border: 0;
-        max-width:300px;
-        width: 100%;
-        height: 500px;
-        margin-bottom:25px;
-    }
-    #player2 {
-        position: relative;
-        top:0;
-        left:0;
-        display:block;
-        margin:0 auto;
-        border: 0;
-        max-width:300px;
-        width: 100%;
-        height: 500px;
-        margin-bottom:25px;
-    }
-    #player3 {
-        position: relative;
-        top:0;
-        left:0;
-        display:block;
-        margin:0 auto;
-        border: 0;
-        max-width:300px;
-        width: 100%;
-        height: 500px;
-        margin-bottom:25px;
-    }
-    #media-query-trigger {
-        visibility: visible;
-    }
-}

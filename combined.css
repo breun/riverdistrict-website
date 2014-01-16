@@ -269,7 +269,10 @@ footer {
     width:100%;
     background-color: black;
 }
-
+#home {
+    background-image: url('../images/foto1a.jpg');
+    background-size: auto 100%;
+}
 .threedee {
     -moz-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
     -webkit-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
@@ -291,7 +294,7 @@ footer {
     min-width: 240px;
     overflow-x:hidden;
     width:100%;
-    background-color: rgb(23, 23, 23);
+    background-color: rgb(34, 34, 34);
     -webkit-text-size-adjust: none;
     /* The text size is not adjusted for Safari on iPhone */
 }
@@ -303,11 +306,11 @@ footer {
 }
 .onevenborder {
     height:13px;
-    background-image: url("./images/border1.png");
+    background-image: url("../images/border1.png");
 }
 .evenborder {
     height:13px;
-    background-image: url("./images/border2.png");
+    background-image: url("../images/border2.png");
 }
 #sidenav {
     width: auto;
@@ -318,13 +321,6 @@ footer {
     margin-top: -76px;
     top: 50%;
     font-weight: normal;
-}
-#godown{
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
 }
 #sidenav .text {
     font-size:27px;
@@ -354,14 +350,14 @@ footer {
     float: left;
     height:44px;
     width:15px;
-    opacity:0.2;
+    opacity:0.5;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
-.active .point{opacity:1;}
+.point{opacity:1;}
 
 #sidenav .wrapper_sidenav[rel='home'] {
     width:104px;
@@ -396,7 +392,7 @@ footer {
     top: 0;
     left: 0;
     width: 300px;
-    z-index:1000000;
+    z-index: 1000;
 }
 .header .inner {
     position: relative;
@@ -419,16 +415,24 @@ footer {
 }
 
 
+/* BREAKPOINT 960px */
+ @media only screen and (max-width: 960px) {
+    .content img {
+        /*max-width: 97%;*/
+        height: auto;
+    }
+    .nottablet{display:none!important;}
+    .header .primary ul {
+        margin-left: -12px;
+        -webkit-padding-start: 0px;
+        /* removes default webkit padding on ul items */
+    }
+}
+/* BREAKPOINT 640px */
 
-
-
-/* max-width for desktop
-/* max-device-width for devices
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen  and (max-width : 700px) {
-	body{color:#f00 !important;}
-	    body {
+/* when changing the breakpoint below, change it ito the same value in the script.js file as well */
+ @media only screen and (max-width: 640px) {
+    body {
         max-width: 640px;
     }
     .main{min-height:200px;padding:25px 0px;}
@@ -442,7 +446,7 @@ footer {
     #sidenav {
         display:none;
     }
-    .footer{ background-color:rgb(23, 23, 23) !important;z-index:10000;}
+    .footer{ background-color:rgb(23, 23, 23) !important;}
     .header .inner {
         margin-left: 0px;
     }
@@ -526,30 +530,52 @@ footer {
     #media-query-trigger {
         visibility: visible;
     }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen  and (max-device-width : 480px) {
+
 /* Styles */
 }
 
-/* iPads (landscape) ----------- (orientation : landscape */
-@media only screen and (min-width : 700px) and (max-width : 1024px) and (max-height: 600px) {
-/* Styles */
-	body{color:yellow !important; }
-}
-
-/* iPads (portrait) ----- ----- and (orientation : portrait)*/
-@media only screen and (min-width : 700px) and (max-width : 1024px) and (min-height: 600px)  {
-/* Styles */
-	body{color:pink !important;}
+/* Smartphones (landscape)
+@media only screen and (min-width : 321px) {
 
 }
 
+ Smartphones (portrait) -----------
+@media only screen and (max-width : 320px) {
+/* Styles */
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
+}
 
 /* Desktops and laptops ----------- */
-@media only screen and (min-width : 1024px) {
+@media only screen and (min-width : 1224px) {
 /* Styles */
-	body{color:#0f0 !important;}
 }
 
+/* Large screens -----------
+@media only screen and (min-width : 1824px) {
+}
 
+ iPhone 4 -----------
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+}*/
 /* This reset is loosely derived from HTML5 boilerplate 
 for more information visit http://html5boilerplate.com/ */
 

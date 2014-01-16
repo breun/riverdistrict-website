@@ -1,6 +1,22 @@
+Timo:
 - add zip
-- mail jasper
 X arrows + messages
-- responsive
+X add 4 queries
 X css fix player
-X stellar not on mobile
+- stellar not on mobile
+X add underground text
+- add blue button rollover images
+X uglify css
+X minify js
+- remove undergound on mobile
+
+Jasper:
+- 4 nieuwe positievarianten
+    - 1024 = standaard huidige
+    - 1024 en kleiner dan 700 hoog = liggende tablet versie 1024x600
+    - tussen 700 en 1024 breed  = staande tablet versie 
+    - alles kleiner dan 700px = mobiele versie
+- voor mobiele versie, 4 header plaatjes + blauwe buttons
+- blauwe buttons - hover states
+- 
+
