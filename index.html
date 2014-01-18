@@ -6,7 +6,9 @@
 		</title>
 		<meta name="description" content="Riverdistrict plays true alt.pop with dashes of surf, alternative rock and indie folk. Atmospheric songs with catchy hooks." />
 
- 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+				<meta name="apple-mobile-web-app-capable" content="yes">
 
 		<link rel="shortcut icon" href="favicon.ico">
 
@@ -14,9 +16,6 @@
 		<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
 
 		<style>
-		.scrollable{
-			-webkit-transform: translate3d(0,0,0);
-		}
 
 		.dragimg{
 		   -webkit-backface-visibility: hidden;
@@ -33,45 +32,30 @@
 		  overflow: hidden;
 		}
 
-		.mobile #page {
+		.mobile #wrapper {
 		  position: absolute;
 		  top: 0;
 		  bottom: 0;
 		  left: 0;
 		  width: 100%;
-		  		   -webkit-backface-visibility: hidden;
-		   -webkit-perspective: 1000;
-
-		   -webkit-transform: translate3d(0, 0, 0);
-		   -moz-transform: translate3d(0, 0, 0);
-		   -ms-transform: translate3d(0, 0, 0);
-		   transform: translate3d(0, 0, 0);
 		  /*background-color: green !important*/
 		}
 
 		.mobile #scroller {
 		  height: 3000px;
-		  -webkit-backface-visibility: hidden;
-		   -webkit-perspective: 1000;
 
-		   -webkit-transform: translate3d(0, 0, 0);
-		   -moz-transform: translate3d(0, 0, 0);
-		   -ms-transform: translate3d(0, 0, 0);
-		   transform: translate3d(0, 0, 0);
-/*			overflow: hidden;
-			position:absolute;*/
 		}
 		.mobile #scroller img{
 		  /*border: 1px solid blue !important;*/
-			width:30px;height:30px;background-color: red;
+
 		}
 
 
 		</style>
 	</head>
 
-	<body class="Page" style="test;zoom: 1;">
-<!--
+	<body class="Page" style="test">
+
 		<header class="header" role="banner">
 			<div class="inner">
 				<div class="  ">
@@ -106,17 +90,16 @@
 			</li>
 
 		</ul>
-		-->
 
- 		<div id='page'>
-		<div id='scroller' class='scrollable vertical'>
+ 		<div id='container'>
+		<div id='scene'>
 
 		<div class="main even" id="home" role="main" >
 			<div class="but"></div>
 
 			<div class="inner typography ">
 				<div id='plaatjes1' class="content-container  ">
-					<div class="dragimg" id="img1x4" data-stellar-ratio='2' >
+					<div class="dragimg" id="img1x4">
 						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img109.png" data-src-retina="images/resp_images/_home/img109@High.png"   alt="">
 					</div>
 					<div class="dragimg" id="img1x5"  >
@@ -141,11 +124,11 @@
 						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img48.png" data-src-retina="images/resp_images/_home/img48@High.png"  usemap="#map1" id='map1selector' alt="">
 							<map name="map1">
 
-							<area data-image='area1x1' shape="poly" coords="3,12,148,94,166,125,147,137,0,51" href="https://www.facebook.com/riverdistrictmusic" target='_blank' />
+							<area data-image='images/resp_images/_home/img48a.png' shape="poly" coords="3,12,148,94,166,125,147,137,0,51" href="https://www.facebook.com/riverdistrictmusic" target='_blank' />
 
-							<area data-image='area1x2' shape="poly" coords="15,73,149,148,166,178,147,189,13,111" href="http://www.youtube.com/user/riverdistrictmusic" target='_blank' />
+							<area data-image='images/resp_images/_home/img48b.png' shape="poly" coords="15,73,149,148,166,178,147,189,13,111" href="http://www.youtube.com/user/riverdistrictmusic" target='_blank' />
 
-							<area data-image='area1x3' shape="poly" coords="17,127,151,203,167,230,146,239,14,166" href="https://twitter.com/riverdistrict" target='_blank' />
+							<area data-image='images/resp_images/_home/img48c.png' shape="poly" coords="17,127,151,203,167,230,146,239,14,166" href="https://twitter.com/riverdistrict" target='_blank' />
 						</map>
 					</div>
 					<div class="dragimg" id="img1x13"  >
@@ -169,7 +152,7 @@
 					<div class="dragimg" id="img1x19"  >
 						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img74.png" data-src-retina="images/resp_images/_home/img74@High.png"   alt="">
 					</div>
-					<div class="dragimg" id="img1x20">
+ 					<div class="dragimg" id="img1x20">
 						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img75.png" data-src-retina="images/resp_images/_home/img75@High.png"   alt="">
 					</div>
 					<div class="dragimg" id="img1x21"  >
@@ -235,7 +218,6 @@
 				</div>
 			</div>
 		</div>
-		<!--
 		<div class="evenborder"></div>
 		<div class="main  oneven" id="music" role="main">
 			<div class="but"></div>
@@ -257,21 +239,27 @@
 					<div class="dragimg nottablet" id="img2x4"  >
 						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img107.png" data-src-retina="images/resp_images/_music/img107@High.png"   alt="">
 					</div>
-					<div class="dragimg" id="img2x5"  >
+					<div class="dragimg nottablet" id="img2x4a"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img133.png" data-src-retina="images/resp_images/_music/img133@High.png"   alt="">
+					</div>
+					<!-- music -->
+					<div class="dragimg  onlylarge" id="img2x5"  >
 						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img124.png" data-src-retina="images/resp_images/_music/img124@High.png"   alt="">
 					</div>
-					<div class="dragimg" id="img2x6">
+					<div class="dragimg  onlylarge" id="img2x6">
 						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img125.png" data-src-retina="images/resp_images/_music/img125@High.png"   alt="">
 					</div>
-					<div class="dragimg" id="img2x7"  >
+					<div class="dragimg  onlylarge" id="img2x7"  >
 						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img126.png" data-src-retina="images/resp_images/_music/img126@High.png"   alt="">
 					</div>
-					<div class="dragimg" id="img2x9"  >
+					<div class="dragimg  onlylarge" id="img2x9"  >
 						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img127.png" data-src-retina="images/resp_images/_music/img127@High.png"   alt="">
 					</div>
-					<div class="dragimg" id="img2x10"  >
+					<div class="dragimg onlylarge" id="img2x10"  >
 						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img128.png" data-src-retina="images/resp_images/_music/img128@High.png"   alt="">
 					</div>
+					<!-- /music -->
+
 					<div class="dragimg" id="img2x11"  >
 						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img29.png" data-src-retina="images/resp_images/_music/img29@High.png"   alt="">
 					</div>
@@ -304,10 +292,10 @@
 
 						<map name="map3">
 
-							<area data-image='area2x1' shape="poly" coords="41,12,166,82,179,111,162,123,40,52" href="https://play.spotify.com/artist/6PRh3i9dak7mxXn5hhBfuG" target='_blank' />
-							<area data-image='area2x2' shape="poly" coords="42,66,164,135,181,164,164,176,40,105" href="https://itunes.apple.com/ca/artist/riverdistrict/id419122874" target='_blank' />
-							<area data-image='area2x3' shape="poly" coords="4,95,165,189,179,219,164,227,1,133" href="http://shop.riverdistrictmusic.com/" target='_blank' />
-							<area data-image='area2x4' shape="poly" coords="4,149,163,239,180,270,162,278,0,185" href="https://soundcloud.com/riverdistrict" target='_blank' />
+							<area data-image='images/resp_images/_music/img38a.png' shape="poly" coords="41,12,166,82,179,111,162,123,40,52" href="https://play.spotify.com/artist/6PRh3i9dak7mxXn5hhBfuG" target='_blank' />
+							<area data-image='images/resp_images/_music/img38b.png' shape="poly" coords="42,66,164,135,181,164,164,176,40,105" href="https://itunes.apple.com/ca/artist/riverdistrict/id419122874" target='_blank' />
+							<area data-image='images/resp_images/_music/img38c.png' shape="poly" coords="4,95,165,189,179,219,164,227,1,133" href="http://shop.riverdistrictmusic.com/" target='_blank' />
+							<area data-image='images/resp_images/_music/img38d.png' shape="poly" coords="4,149,163,239,180,270,162,278,0,185" href="https://soundcloud.com/riverdistrict" target='_blank' />
 						</map>
 
 					</div>
@@ -350,6 +338,28 @@
 					<div class="dragimg" id="img2x33">
 						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img99.png" data-src-retina="images/resp_images/_music/img99@High.png"   alt="">
 					</div>
+
+					<!-- music -->
+					<div class="dragimg" id="img2x34"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img136.png" data-src-retina="images/resp_images/_music/img136@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x35">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img137.png" data-src-retina="images/resp_images/_music/img137@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x36"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img138.png" data-src-retina="images/resp_images/_music/img138@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x37"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img139.png" data-src-retina="images/resp_images/_music/img139@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x38"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img140.png" data-src-retina="images/resp_images/_music/img140@High.png"   alt="">
+					</div>
+
+					<div class="dragimg" id="img2x39"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img134.png" data-src-retina="images/resp_images/_music/img134@High.png"   alt="">
+					</div>
+					<!-- /music -->
 
 					<div id='players' class="content">
 
@@ -448,7 +458,7 @@
 
 						<map name="map2">
 
-							<area data-image='area3x1' shape="poly" coords="4,13,145,93,159,124,139,130,1,51" href="http://www.songkick.com/artists/4597758-riverdistrict" target='_blank' />
+							<area data-image='images/resp_images/_shows/img47a.png' shape="poly" coords="4,13,145,93,159,124,139,130,1,51" href="http://www.songkick.com/artists/4597758-riverdistrict" target='_blank' />
 						</map>
 
 					</div>
@@ -477,7 +487,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="evenborder test"  style=''></div>
+		<div class="evenborder test "  style=''></div>
 		<div class="main  oneven" id="info" role="main" style="">
 			<div class="but"></div>
 
@@ -532,13 +542,26 @@
 						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img59.png" data-src-retina="images/resp_images/_bio/img59@High.png"   alt="">
 					</div>
 					<div class="dragimg mapobject" id="img4x17"  >
+						<a href='riverdistrict-presskit.zip' target='_blank'>
 						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img6.png" data-src-retina="images/resp_images/_bio/img6@High.png"   alt="">
+						</a>
 					</div>
 					<div class="dragimg" id="img4x18"  >
 						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img61.png" data-src-retina="images/resp_images/_bio/img61@High.png"   alt="">
 					</div>
 					<div class="dragimg" id="img4x19"  >
 						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img60.png" data-src-retina="images/resp_images/_bio/img60@High.png"   alt="">
+					</div>
+
+					<div class="dragimg" id="img4x20"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img18.png" data-src-retina="images/resp_images/_shows/img18@High.png"   alt="">
+					</div>
+
+					<div class="dragimg" id="img4x21"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img78.png" data-src-retina="images/resp_images/_home/img78@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x22">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img79.png" data-src-retina="images/resp_images/_home/img79@High.png"   alt="">
 					</div>
 
 					<div class="content"></div>
@@ -556,7 +579,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="onevenborder"  style=''></div>
+		<div class="onevenborder "  style=''></div>
 		<div class="main page6 even" id="underground" role="main" style="">
 			<div class="inner typography line">
 				<div class="content-container">
@@ -571,8 +594,10 @@
 			</div>
 		</div>
 
-			<footer class="footer oneven" role="contentinfo">
-			<div class="evenborder footerborder"  style=''></div>
+		<div class="evenborder lastborder"  style=''></div>
+
+		<footer class="footer oneven" role="contentinfo">
+			<div class="evenborder footerborder lastborder"  style=''></div>
 			<div class="inner">
 				<div class=" ">
 					<div class="left">
@@ -590,11 +615,10 @@ Musician: 		The characteristic of the true musician
 			</div>
 			<div id="media-query-trigger"></div>
 		</footer>
--->
 
 		<!-- wrpapper and croller -->
 		</div>
- 		</div>
+		</div>
 
 
 

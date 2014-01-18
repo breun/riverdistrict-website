@@ -1,14 +1,21 @@
 Timo:
-- add zip
+
 X arrows + messages
 X add 4 queries
 X css fix player
-- stellar not on mobile
+X stellar not on mobile
 X add underground text
-- add blue button rollover images
 X uglify css
 X minify js
+X add blue button rollover images
+- add zip
 - remove undergound on mobile
+X query images 
+- center on big screen
+X new images
+X ipad scroll
+- ipad effect / CSS
+
 
 Jasper:
 - 4 nieuwe positievarianten

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>
+			Riverdistrict
+		</title>
+		<meta name="description" content="Riverdistrict plays true alt.pop with dashes of surf, alternative rock and indie folk. Atmospheric songs with catchy hooks." />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+
+		<link rel="shortcut icon" href="favicon.ico">
+
+		<!--<link rel="stylesheet" type="text/css" href="./allstyles.min.css">-->
+		<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
+		<script type="text/javascript" src="./scrollability.min.js"></script>
+		<script type="text/javascript" src="./jquery.min.js"></script>
+		<script type="text/javascript" src="./used/jquery.stellar.min.js"></script>
+		<style>
+		.scrollable{-webkit-transform:translate3d(0,0,0)}
+		.dragimg{position:absolute;display:block!important;}
+				html {
+		    overflow: hidden;
+		    background: #333;
+		    font-family: Helvetica;
+		}
+
+		#page {
+			height: 3000px;
+			overflow: hidden;
+			position: relative;
+		}
+
+		#container {
+		    position: absolute;
+		    left: 0;
+		    width: 100%;
+		    background: black;
+		    overflow: hidden;
+		}
+		.main{height:600px;position:relative;}
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="./css/images.css">
+
+		<script language="javascript">
+		$(function(){
+
+			$('.dragimg img').each(function(){
+				$(this).attr('src', $(this).attr('data-src'));
+				$(this).css('opacity',1);
+			});
+
+			$('.dragimg').css('display','block');
+
+			$(".dragimg").each(function() {
+				nb = Math.floor((Math.random() * 65) + 100) / 100; // 1-1.5
+				$(this).attr('data-stellar-ratio', nb);
+			});
+
+
+			$('#page').stellar({
+				horizontalScrolling: false,
+				scrollProperty: 'transform',
+				positionProperty: 'transform',
+				verticalOffset: -100
+			});
+
+			//Prevent text selection
+			$(document).mousedown(function(e){
+				e.preventDefault();
+			});
+		});
+		</script>
+
+		</head>
+
+	<body style="zoom: 1;" >
+
+ 		<div id='container'>
+		<div id='page' class="scrollable vertical">
+
+		<div class="main even" id="home" role="main" >
+			<div class="but"></div>
+
+					<div class="dragimg" id="img1x4">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img109.png" data-src-retina="images/resp_images/_home/img109@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x5"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img130.png" data-src-retina="images/resp_images/_home/img130@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x6">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img131.png" data-src-retina="images/resp_images/_home/img131@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x7"  data-stellar-ratio='2'>
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img43.png" data-src-retina="images/resp_images/_home/img43@High.png"  alt="">
+					</div>
+					<div class="dragimg" id="img1x9"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img44.png" data-src-retina="images/resp_images/_home/img44@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x10"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img45.png" data-src-retina="images/resp_images/_home/img45@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x11"  data-stellar-ratio='2'>
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img46.png" data-src-retina="images/resp_images/_home/img46@High.png"   alt="">
+					</div>
+					<div class="dragimg mapobject" id="img1x12">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img48.png" data-src-retina="images/resp_images/_home/img48@High.png"  usemap="#map1" id='map1selector' alt="">
+							<map name="map1">
+
+							<area data-image='area1x1' shape="poly" coords="3,12,148,94,166,125,147,137,0,51" href="https://www.facebook.com/riverdistrictmusic" target='_blank' />
+
+							<area data-image='area1x2' shape="poly" coords="15,73,149,148,166,178,147,189,13,111" href="http://www.youtube.com/user/riverdistrictmusic" target='_blank' />
+
+							<area data-image='area1x3' shape="poly" coords="17,127,151,203,167,230,146,239,14,166" href="https://twitter.com/riverdistrict" target='_blank' />
+						</map>
+					</div>
+					<div class="dragimg" id="img1x13"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img50.png" data-src-retina="images/resp_images/_home/img50@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x14"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img54.png" data-src-retina="images/resp_images/_home/img54@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x15"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img62.png" data-src-retina="images/resp_images/_home/img62@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x16">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img63.png" data-src-retina="images/resp_images/_home/img63@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x17"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img72.png" data-src-retina="images/resp_images/_home/img72@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x18"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img73.png" data-src-retina="images/resp_images/_home/img73@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x19"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img74.png" data-src-retina="images/resp_images/_home/img74@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x20">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img75.png" data-src-retina="images/resp_images/_home/img75@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x21"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img76.png" data-src-retina="images/resp_images/_home/img76@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x22"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img77.png" data-src-retina="images/resp_images/_home/img77@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x23"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img78.png" data-src-retina="images/resp_images/_home/img78@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x24">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img79.png" data-src-retina="images/resp_images/_home/img79@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x25"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img80.png" data-src-retina="images/resp_images/_home/img80@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x26"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img81.png" data-src-retina="images/resp_images/_home/img81@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x27"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img82.png" data-src-retina="images/resp_images/_home/img82@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x28"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img83.png" data-src-retina="images/resp_images/_home/img83@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x29"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img84.png" data-src-retina="images/resp_images/_home/img84@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x30"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img85.png" data-src-retina="images/resp_images/_home/img85@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x31"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img86.png" data-src-retina="images/resp_images/_home/img86@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x32"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img87.png" data-src-retina="images/resp_images/_home/img87@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x33"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img88.png" data-src-retina="images/resp_images/_home/img88@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x34"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img89.png" data-src-retina="images/resp_images/_home/img89@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x35"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img90.png" data-src-retina="images/resp_images/_home/img90@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x36"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img91.png" data-src-retina="images/resp_images/_home/img91@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x37"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img92.png" data-src-retina="images/resp_images/_home/img92@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x38"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img93.png" data-src-retina="images/resp_images/_home/img93@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x39"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img94.png" data-src-retina="images/resp_images/_home/img94@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img1x40"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_home/img95.png" data-src-retina="images/resp_images/_home/img95@High.png"   alt="">
+					</div>
+				</div>
+
+
+		<div class="main  oneven" id="music" role="main">
+			<div class="but"></div>
+
+
+					<div id='plaatjes2' class="content-container ">
+
+
+					<div class="dragimg" id="img2x1" data-stellar-ratio='2' >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img100.png" data-src-retina="images/resp_images/_music/img100@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x2" data-stellar-ratio='2' >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img101.png" data-src-retina="images/resp_images/_music/img101@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x3" data-stellar-ratio='2' >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img102.png" data-src-retina="images/resp_images/_music/img102@High.png"   alt="">
+					</div>
+					<div class="dragimg nottablet" id="img2x4"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img107.png" data-src-retina="images/resp_images/_music/img107@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x5"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img124.png" data-src-retina="images/resp_images/_music/img124@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x6">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img125.png" data-src-retina="images/resp_images/_music/img125@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x7"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img126.png" data-src-retina="images/resp_images/_music/img126@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x9"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img127.png" data-src-retina="images/resp_images/_music/img127@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x10"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img128.png" data-src-retina="images/resp_images/_music/img128@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x11"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img29.png" data-src-retina="images/resp_images/_music/img29@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x12">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img30.png" data-src-retina="images/resp_images/_music/img30@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x13"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img31.png" data-src-retina="images/resp_images/_music/img31@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x14"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img32.png" data-src-retina="images/resp_images/_music/img32@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x15"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img33.png" data-src-retina="images/resp_images/_music/img33@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x16">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img34.png" data-src-retina="images/resp_images/_music/img34@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x17"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img35.png" data-src-retina="images/resp_images/_music/img35@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x18"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img36.png" data-src-retina="images/resp_images/_music/img36@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x19"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img37.png" data-src-retina="images/resp_images/_music/img37@High.png"   alt="">
+					</div>
+					<div class="dragimg mapobject" id="img2x20"  >
+						<img id='map3selector' src="1x1-pixel.png" data-src="images/resp_images/_music/img38.png" data-src-retina="images/resp_images/_music/img38@High.png"   alt=""  usemap="#map3" />
+
+						<map name="map3">
+
+							<area data-image='area2x1' shape="poly" coords="41,12,166,82,179,111,162,123,40,52" href="https://play.spotify.com/artist/6PRh3i9dak7mxXn5hhBfuG" target='_blank' />
+							<area data-image='area2x2' shape="poly" coords="42,66,164,135,181,164,164,176,40,105" href="https://itunes.apple.com/ca/artist/riverdistrict/id419122874" target='_blank' />
+							<area data-image='area2x3' shape="poly" coords="4,95,165,189,179,219,164,227,1,133" href="http://shop.riverdistrictmusic.com/" target='_blank' />
+							<area data-image='area2x4' shape="poly" coords="4,149,163,239,180,270,162,278,0,185" href="https://soundcloud.com/riverdistrict" target='_blank' />
+						</map>
+
+					</div>
+					<div class="dragimg" id="img2x21">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img39.png" data-src-retina="images/resp_images/_music/img39@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x22"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img64.png" data-src-retina="images/resp_images/_music/img64@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x23"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img65.png" data-src-retina="images/resp_images/_music/img65@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x24">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img66.png" data-src-retina="images/resp_images/_music/img66@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x25"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img67.png" data-src-retina="images/resp_images/_music/img67@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x26"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img68.png" data-src-retina="images/resp_images/_music/img68@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x27"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img69.png" data-src-retina="images/resp_images/_music/img69@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x28"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img70.png" data-src-retina="images/resp_images/_music/img70@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x29">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img71.png" data-src-retina="images/resp_images/_music/img71@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x30"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img96.png" data-src-retina="images/resp_images/_music/img96@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x31"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img97.png" data-src-retina="images/resp_images/_music/img97@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x32"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img98.png" data-src-retina="images/resp_images/_music/img98@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img2x33">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_music/img99.png" data-src-retina="images/resp_images/_music/img99@High.png"   alt="">
+					</div>
+
+					<div id='players' class="content">
+
+					</div>
+
+				</div>
+
+
+		</div>
+		<div class="main even" id="shows" role="main" style="">
+			<div class="but"></div>
+
+			<div class="inner typography ">
+				<div class="content-container  ">
+					<div id='plaatjes3' class="content-container  ">
+					<div class="dragimg" id="img3x0"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img113.png" data-src-retina="images/resp_images/_shows/img113@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x1"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img0.png" data-src-retina="images/resp_images/_shows/img0@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x2"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img10.png" data-src-retina="images/resp_images/_shows/img10@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x3"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img104.png" data-src-retina="images/resp_images/_shows/img104@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x4"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img11.png" data-src-retina="images/resp_images/_shows/img11@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x5"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img114.png" data-src-retina="images/resp_images/_shows/img114@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x6">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img115.png" data-src-retina="images/resp_images/_shows/img115@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x7"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img116.png" data-src-retina="images/resp_images/_shows/img116@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x9"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img117.png" data-src-retina="images/resp_images/_shows/img117@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x10"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img118.png" data-src-retina="images/resp_images/_shows/img118@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x11"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img12.png" data-src-retina="images/resp_images/_shows/img12@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x12">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img123.png" data-src-retina="images/resp_images/_shows/img123@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x13"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img13.png" data-src-retina="images/resp_images/_shows/img13@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x14"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img132.png" data-src-retina="images/resp_images/_shows/img132@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x15"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img14.png" data-src-retina="images/resp_images/_shows/img14@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x16">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img15.png" data-src-retina="images/resp_images/_shows/img15@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x17"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img18.png" data-src-retina="images/resp_images/_shows/img18@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x18"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img19.png" data-src-retina="images/resp_images/_shows/img19@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x19"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img21.png" data-src-retina="images/resp_images/_shows/img21@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x20">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img22.png" data-src-retina="images/resp_images/_shows/img22@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x21"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img23.png" data-src-retina="images/resp_images/_shows/img23@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x22"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img24.png" data-src-retina="images/resp_images/_shows/img24@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x23"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img25.png" data-src-retina="images/resp_images/_shows/img25@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x24">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img26.png" data-src-retina="images/resp_images/_shows/img26@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x25"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img27.png" data-src-retina="images/resp_images/_shows/img27@High.png"   alt="">
+					</div>
+					<div class="dragimg mapobject" id="img3x26"  >
+						<img id='map2selector' src="1x1-pixel.png" data-src="images/resp_images/_shows/img47.png" data-src-retina="images/resp_images/_shows/img47@High.png"   alt="" usemap="#map2" />
+
+						<map name="map2">
+
+							<area data-image='area3x1' shape="poly" coords="4,13,145,93,159,124,139,130,1,51" href="http://www.songkick.com/artists/4597758-riverdistrict" target='_blank' />
+						</map>
+
+					</div>
+					<div class="dragimg" id="img3x27"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img7.png" data-src-retina="images/resp_images/_shows/img7@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x28"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img8.png" data-src-retina="images/resp_images/_shows/img8@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x29">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img28.png" data-src-retina="images/resp_images/_shows/img28@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img3x30"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_shows/img9.png" data-src-retina="images/resp_images/_shows/img9@High.png"   alt="">
+					</div>
+				<div class="content"></div>
+
+					<ul id='gigs' class='threedee' style=''>
+						<li>
+						</li>
+					</ul>
+
+				</div>
+
+		</div>
+		<div class="evenborder test"  style=''></div>
+		<div class="main  oneven" id="info" role="main" style="">
+			<div class="but"></div>
+
+
+					<div id='plaatjes4' class=" content-container  ">
+
+					<div class="dragimg" id="img4x1"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img1.png" data-src-retina="images/resp_images/_bio/img1@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x2"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img2.png" data-src-retina="images/resp_images/_bio/img2@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x3"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img20.png" data-src-retina="images/resp_images/_bio/img20@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x4"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img3.png" data-src-retina="images/resp_images/_bio/img3@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x5"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img4.png" data-src-retina="images/resp_images/_bio/img4@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x6">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img41.png" data-src-retina="images/resp_images/_bio/img41@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x7"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img42.png" data-src-retina="images/resp_images/_bio/img42@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x9"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img49.png" data-src-retina="images/resp_images/_bio/img49@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x10"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img5.png" data-src-retina="images/resp_images/_bio/img5@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x11"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img51.png" data-src-retina="images/resp_images/_bio/img51@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x12"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img52.png" data-src-retina="images/resp_images/_bio/img52@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x13"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img53.png" data-src-retina="images/resp_images/_bio/img53@High.png"   alt="">
+					</div>
+					<div class="dragimg xx" id="img4x14"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img55.png" data-src-retina="images/resp_images/_bio/img55@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x15">
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img58.png" data-src-retina="images/resp_images/_bio/img58@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x16"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img59.png" data-src-retina="images/resp_images/_bio/img59@High.png"   alt="">
+					</div>
+					<div class="dragimg mapobject" id="img4x17"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img6.png" data-src-retina="images/resp_images/_bio/img6@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x18"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img61.png" data-src-retina="images/resp_images/_bio/img61@High.png"   alt="">
+					</div>
+					<div class="dragimg" id="img4x19"  >
+						<img src="1x1-pixel.png" data-src="images/resp_images/_bio/img60.png" data-src-retina="images/resp_images/_bio/img60@High.png"   alt="">
+					</div>
+
+					<div class="content"></div>
+
+						<div id="testintro" class='threedee' style=''>
+
+							Riverdistrict plays true alt.pop with dashes of surf, alternative rock and indie folk. Atmospheric songs with catchy hooks.
+
+						</div>
+
+							<div style='font-size:24px;text-align:center;opacity:0;margin:0;left:50%;width:300px;margin-left:-150px;position:absolute;bottom:80px;'id='godown' >Down to the underground<br><br><img src='arrow_down.png'/></div>
+					</div>
+
+		</div>
+
+
+		<!-- wrpapper and croller -->
+		</div>
+		</div>
+
+
+
+
+
+	</body>
+</html>

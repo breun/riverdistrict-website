@@ -7,14 +7,26 @@ jQuery.noConflict();
 		$('html').addClass('mobile');
 	}
 
+function shuffle(o){ //v1.0
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+}
 	$(document).ready(function() {
 
+		var windowWidth = $(window).width();
+
+		$(window).resize(function() {
+		    if(windowWidth != $(window).width()){
+		    location.reload();
+		    return;
+		    }
+		});
 
 		$('area').hover(
    			 function() {
-    			newsrc = $(this).attr('data-image');
   			  	var mapname = $(this).parent().attr('name')+'selector';
   			  	orisrc = $("#"+mapname).attr('src');
+    			newsrc = $(this).attr('data-image');
   			  	$("#"+mapname).attr('src',newsrc);
   			  },
   			  function() {
@@ -29,94 +41,113 @@ jQuery.noConflict();
 			isPhone = true;
 		}
 
+
 		$(".dragimg").each(function() {
 			nb = Math.floor((Math.random() * 65) + 100) / 100; // 1-1.5
-			$(this).attr('data-stellar-ratio', nb);
-			// if ($(this).hasClass('mapobject') === false) {
-			// 	$(this).clone().prop({id: ""}).appendTo("#plaatjes5");
-			// 	$(this).clone().prop({id: ""}).appendTo("#plaatjes5");
-			// }
+			if (!isMobileWebkit){
+				$(this).attr('data-stellar-ratio', nb);
+			}
+			else{
+				nb = Math.floor((Math.random() * 30));
+				$(this).attr('data-stellar-ratio', nb);
+			}
+			if ($(this).hasClass('mapobject') === false) {
+				$(this).clone().prop({
+					id: ""
+				}).appendTo("#plaatjes5");
+				$(this).clone().prop({
+					id: ""
+				}).appendTo("#plaatjes5");
+
+			}
 		});
 
-		// $('#plaatjes5').css('overflow', 'visible');
-		// maxheight = 700;
-		// $("#underground .dragimg ").each(function() {
-		// 	nb = Math.floor((Math.random() * 230) + 50) / 100; // 1-1.5
-		// 	$(this).attr('data-stellar-ratio', nb);
-		// 	leftpos = Math.floor((Math.random() * 900)); // 0-700
-		// 	toppos = Math.floor((Math.random() * 7500)) + 100; // 0-1500
-		// 	rot = Math.floor((Math.random() * 360)); // 1-1.5
+		maxheight = 700;
+		$("#underground .dragimg ").each(function() {
 
-		// 	$(this).css('left', leftpos);
-		// 	$(this).css('top', toppos);
-		// 	$(this).rotate(rot);
+			nb = Math.floor((Math.random() * 230) + 50) / 100; // 1-1.5
 
-		// 	if (toppos > maxheight) {
-		// 		$("#plaatjes5").css('height', toppos + 200);
-		// 		maxheight = toppos + 200;
-		// 		$("#underground").css('height', toppos + 200);
-		// 	}
+			if (!isMobileWebkit){
+				$(this).attr('data-stellar-ratio', nb);
+			}
+			//console.log($(window).width()-200);
+			leftpos = Math.floor((Math.random() * ($(window).width()-500))); // 0-700
+			toppos = Math.floor((Math.random() * 7500)) + 100; // 0-1500
+			rot = Math.floor((Math.random() * 360)); // 1-1.5
 
-		// });
+			$(this).css('left', leftpos);
+			$(this).css('top', toppos);
+			$(this).rotate(rot);
+
+			if (toppos > maxheight) {
+				$("#plaatjes5").css('height', toppos + 200);
+				maxheight = toppos + 200;
+				$("#underground").css('height', toppos + 200);
+			}
+
+		});
 
 		if (!isMobileWebkit){
-		$("#home .dragimg img").unveil(0, function() {
+		$(".dragimg img").unveil(0, function() {
 			$(this).load(function() {
 				this.style.opacity = 1;
 			});
 		});
 
-		$("#music .dragimg img").unveil(200, function() {
-			$(this).load(function() {
-				this.style.opacity = 1;
-			});
-		});
-
-		$("#shows .dragimg img").unveil(200, function() {
-			$(this).load(function() {
-				this.style.opacity = 1;
-			});
-		});
-
-		$("#info .dragimg img").unveil(200, function() {
-			$(this).load(function() {
-				this.style.opacity = 1;
-			});
-		});
-
-		$("#underground .dragimg img").unveil(200, function() {
-			$(this).load(function() {
-				this.style.opacity = 1;
-			});
-		});
 	}else{
-		// $(".dragimg img").each(function(){
-		// 	$(this).attr('src', $(this).attr('data-src'));
-		// });
-		$(".dragimg img").css('opacity',1);
-		$(".dragimg").css('display','block');
+
+		$('.dragimg img').each(function(){
+			$(this).attr('src', $(this).attr('data-src'));
+			$(this).css('opacity',1);
+			if ($(this).parent().hasClass('mapobject')==false){
+				delay = $(this).parent().attr('data-stellar-ratio');
+				$(this).parent().css({animationDelay: (5*delay)+'s'}) // apply sequential trans delay to each character
+			}
+		});
+		$('.dragimg').css('display','block');
+
+		allimg = $('.dragimg img');
+		function myTimer(){
+
+		 	shuffle(allimg);
+		 	var randimg = allimg[0];
+		 	$(randimg).animate({'opacity':0.3},1500, function(){
+		 		$(randimg).animate({'opacity':1},1500);
+		 	});
+		//var oripao = $(randimg).css('left');
+		//var oripao2 = $(randimg).css('top');
+
+			//console.log(randimg);
+   		// 	$(randimg).parent().animate({
+   		// 		'left': oripao+Math.sin(30) * 20 ,
+   		// 		'top': oripao2+Math.cos(30) * 20
+   		// },500, function(){
+		 	 // 	$(randimg).parent().animate({
+		 	 // 	'left': oripao ,
+   		// 		'top': oripao2 },500);
+		 	 // });
+
+		}
+
+		 //setInterval(function(){myTimer()},100);
+
 
 	}
 
 
-
-		var iScrollInstance;
-
 		if (!isMobileWebkit) {
 			$.stellar({
 				horizontalScrolling: false,
-				hideElement: function($elem) {$elem.fadeOut();},
-				showElement: function($elem) {$elem.fadeIn();}
+				hideElement: function($elem) {
+					$elem.fadeOut();
+				},
+				showElement: function($elem) {
+					$elem.fadeIn();
+				}
 			});
 		}else{
-			 iScrollInstance = new iScroll('page');
+				// Something nice for ipads
 
-			 $('#scroller').stellar({
-			 	hideDistantElements: false,
-			 	scrollProperty: 'transform',
-			    positionProperty: 'transform',
-			 	horizontalScrolling: false
-			 });
 		}
 
 
@@ -126,13 +157,13 @@ jQuery.noConflict();
 			players = '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
 
 		}
-		// $('#players').html(players);
+		$('#players').html(players);
 
-		// ztot=10;
-		// $('.dragimg').click(function(){
-		// 	ztot=ztot+1;
-		// 	$(this).css('z-index', ztot);
-		// });
+		ztot=10;
+		$('.dragimg').click(function(){
+			ztot=ztot+1;
+			$(this).css('z-index', ztot);
+		});
 
 		// $('.dragimg').draggable();
 
@@ -149,69 +180,69 @@ jQuery.noConflict();
 
 
 
-		// function oldGigs(amount) {
-		// 	$.getJSON('http://api.songkick.com/api/3.0/artists/4597758-riverdistrict/gigography.json?apikey=91AN7asUxDaqHrrv&order=desc&per_page=' + amount + '&jsoncallback=?',
-		// 		function(data) {
-		// 			var gigs = data.resultsPage.results.event;
+		function oldGigs(amount) {
+			$.getJSON('http://api.songkick.com/api/3.0/artists/4597758-riverdistrict/gigography.json?apikey=91AN7asUxDaqHrrv&order=desc&per_page=' + amount + '&jsoncallback=?',
+				function(data) {
+					var gigs = data.resultsPage.results.event;
 
-		// 			$.each(gigs, function(index, gig) {
+					$.each(gigs, function(index, gig) {
 
-		// 				if (gig.series) {
-		// 					var place = gig.series.displayName;
-		// 				} else {
-		// 					var place = gig.venue.displayName;
-		// 				}
+						if (gig.series) {
+							var place = gig.series.displayName;
+						} else {
+							var place = gig.venue.displayName;
+						}
 
-		// 				date = Date.parse(gig.start.date).toString('MMMM d, yyyy');
+						date = Date.parse(gig.start.date).toString('MMMM d, yyyy');
 
-		// 				if (gig.performance && !gig.series && gig.performance[0].artist.displayName != "Riverdistrict") {
-		// 					var wit = "<br>w/ " + gig.performance[0].artist.displayName;
-		// 				} else {
-		// 					var wit = "";
-		// 				}
+						if (gig.performance && !gig.series && gig.performance[0].artist.displayName != "Riverdistrict") {
+							var wit = "<br>w/ " + gig.performance[0].artist.displayName;
+						} else {
+							var wit = "";
+						}
 
-		// 				$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + gig.location.city + " - " + place + wit + "</span></a></li>").appendTo("#gigs");
+						$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + gig.location.city + " - " + place + wit + "</span></a></li>").appendTo("#gigs");
 
-		// 			});
+					});
 
 
-		// 		});
-		// }
+				});
+		}
 
-		// $.getJSON('http://api.songkick.com/api/3.0/artists/4597758-riverdistrict/calendar.json?apikey=91AN7asUxDaqHrrv&per_page=100&page=1&jsoncallback=?',
-		// 	function(data) {
-		// 		$("#gigs").empty();
-		// 		var gigs = data.resultsPage.results.event;
-		// 		if (!gigs) {
-		// 			oldGigs(4);
-		// 		} else {
-		// 			$.each(gigs, function(index, gig) {
+		$.getJSON('http://api.songkick.com/api/3.0/artists/4597758-riverdistrict/calendar.json?apikey=91AN7asUxDaqHrrv&per_page=100&page=1&jsoncallback=?',
+			function(data) {
+				$("#gigs").empty();
+				var gigs = data.resultsPage.results.event;
+				if (!gigs) {
+					oldGigs(4);
+				} else {
+					$.each(gigs, function(index, gig) {
 
-		// 				if (gig.series) {
-		// 					var place = gig.series.displayName;
-		// 				} else {
-		// 					var place = gig.venue.displayName;
-		// 				}
+						if (gig.series) {
+							var place = gig.series.displayName;
+						} else {
+							var place = gig.venue.displayName;
+						}
 
-		// 				date = Date.parse(gig.start.date).toString('MMMM d, yyyy');
+						date = Date.parse(gig.start.date).toString('MMMM d, yyyy');
 
-		// 				if (gig.performance && !gig.series && gig.performance[0].artist.displayName != "Riverdistrict") {
-		// 					var wit = "<br>w/ " + gig.performance[0].artist.displayName;
-		// 				} else {
-		// 					var wit = "";
-		// 				}
+						if (gig.performance && !gig.series && gig.performance[0].artist.displayName != "Riverdistrict") {
+							var wit = "<br>w/ " + gig.performance[0].artist.displayName;
+						} else {
+							var wit = "";
+						}
 
-		// 				$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + gig.location.city + " - " + place + wit + "</span></a></li>").appendTo("#gigs");
+						$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + gig.location.city + " - " + place + wit + "</span></a></li>").appendTo("#gigs");
 
-		// 			});
-		// 		}
+					});
+				}
 
-		// 		if (gigs && gigs.length > 4) {
-		// 			oldGigs(4 - gigs.length);
-		// 		}
+				if (gigs && gigs.length > 4) {
+					oldGigs(4 - gigs.length);
+				}
 
-		// 	});
-/*
+			});
+
 		$('#goup').click(function() {
 			$(".wrapper_sidenav[rel='info']").click();
 		});
@@ -219,9 +250,13 @@ jQuery.noConflict();
 
 		$('.wrapper_sidenav').click(function() {
 			id = $(this).attr('rel');
-			$('html, body').animate({
-				scrollTop: $("#" + id).offset().top
-			}, 2000, 'swing');
+			if (!isMobileWebkit){
+				$('html, body').animate({
+					scrollTop: $("#" + id).offset().top
+				}, 2000, 'swing');
+			}else{
+				$('html, body').scrollTop( $("#" + id).offset().top);
+			}
 		});
 
 
@@ -245,7 +280,7 @@ jQuery.noConflict();
         			$('#godown').css('opacity', '0');
         		}
 			});
-/*
+
 		$(window).scroll(function() {
 			var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
 			var windowHeight = $(window).height(); // get the height of the window
@@ -290,7 +325,7 @@ jQuery.noConflict();
 			// }
 
 		});
-*/
+
 
 		//var controller = $.superscrollorama();
 
