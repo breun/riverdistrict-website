@@ -166,6 +166,14 @@
         height:50%;
     }
 }
+.mobiletitle{
+    display: none;
+    /*width: 200px!important;*/
+    position: relative;
+    font-size: 40px;
+    text-align: center;
+    margin:0px auto;
+}
 .mapobject a:hover{text-decoration: none!important;border:none !important;}
 /* OOCSS Grid
 * https://github.com/stubbornella/oocss/wiki/grids
@@ -240,7 +248,7 @@
     transition: all 0.3s ease-in;
 */
 }
-/*.dragimg img{width:100%;height:100%;}*/
+.dragimg img{ margin-top:-50px;}
  #player1 {
     z-index:1;
     position:absolute;
@@ -438,18 +446,21 @@ footer {
 /* max-device-width for devices
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen  and (max-width : 600px) {
-	body{color:#f00 !important;}
+@media only screen and (max-width : 600px),only screen and (max-device-width : 600px) {
 	    body {
-        max-width: 640px;
-    }
-    .main{min-height:200px;padding:25px 0px;}
+            max-width: 600px;
+        }
+    .mapobject{display:block!important;opacity:1!important;position:relative;}
+   /* .mapobject img {display:block!important;}*/
+    .mobiletitle{display:block;}
+    .main{min-height:200px;padding:25px 0px;overflow:visible !important;}
     .header {
         text-align:center;
         width:100%;
         margin: 0 auto;
-		background-color:rgb(34, 34, 34) !important;
+		/*background-color:rgb(34, 34, 34) !important;*/
 		padding-bottom:25px;
+        position:absolute;
     }
     #sidenav {
         display:none;
@@ -464,6 +475,10 @@ footer {
     .dragimg img {
         display:none;
     }
+    .mapobject .dragimg img {
+        display:block;
+    }
+    #testintro{display:none;}
     .footerborder{display:none;}
     .threedee {
         -moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
@@ -539,11 +554,15 @@ footer {
     #media-query-trigger {
         visibility: visible;
     }
+    #home{height:750px;}
+    #music{height:2000px;}
+    #info{height: 1270px;}
+    .lastborder{display: none;}
 /* Styles */
 }
 
 /* iPads (landscape) ----------- (orientation : landscape */
-@media only screen and (min-width : 600px) and (max-width : 767px) {
+@media only screen and (min-width : 600px) and (max-width : 767px) ,only screen and (min-device-width : 600px) and (max-device-width : 767px) {
 /* Styles */
 	/*body{color:yellow !important; }*/
     #home, #music, #shows,#info{height: 875px;width:100%;max-width: 767px;overflow:hidden;}
@@ -722,7 +741,7 @@ footer{background-color: #171717 !important;}
 
 
 /* iPads (portrait) ----- ----- and (orientation : portrait)*/
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
+@media  only screen and (min-width : 768px) and (max-width : 1023px), only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
 /* Styles */
 	/*body{color:pink !important;}*/
     #home, #music, #shows,#info{height: 930px;width:100%;max-width: 1023px;overflow:hidden;}
@@ -900,6 +919,12 @@ footer{background-color: #171717 !important;}
 	/*body{color:#0f0 !important;}*/
     #img2x4a,#img2x34,#img2x35,#img2x36,#img2x37,#img2x38{display:none!important;}
     #img4x20,#img4x21,#img4x22{display:none!important;}
+   /* html,body{height:100%;}*/
+/*    .main{height:700px;}
+*/
+    #plaatjes1, #plaatjes2,#plaatjes3, #plaatjes4, #plaatjes5, #plaatjes6{
+        overflow:visible;
+    }
 }
 
 
