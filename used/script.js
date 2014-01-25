@@ -122,7 +122,7 @@ function shuffle(o){ //v1.0
 					$(this).attr('src', $(this).attr('data-src'));
 					$(this).css('opacity',1);
 				});
-			});
+
 			}else{
 			$('.dragimg img').each(function(){
 				$(this).attr('src', $(this).attr('data-src'));
@@ -149,7 +149,7 @@ function shuffle(o){ //v1.0
 		 //setInterval(function(){myTimer()},100);
 
 
-	}
+	//}
 
 
 		if (!isMobileWebkit) {
