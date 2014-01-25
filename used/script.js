@@ -3,13 +3,11 @@ jQuery.noConflict();
 (function($) {
 	var ua = navigator.userAgent;
 	var isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
-
 	cc =  $('body').css('max-width');
 	if (cc =='600px'){
 		phone = true;
 		$('html').addClass('phone');
 		gigsContainer = $('#gigsmobile');
-		alert('phone');
 	}else{
 		phone=false;
 		gigsContainer = $('#gigs');
