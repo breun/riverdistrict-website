@@ -114,9 +114,13 @@ function shuffle(o){ //v1.0
 
 		}else {
 			if(phone){
-				$(".mobiletitle img").unveil(0, function() {
-				$(this).load(function() {
-					this.style.opacity = 1;
+				// $(".mobiletitle img").unveil(0, function() {
+				// $(this).load(function() {
+				// 	this.style.opacity = 1;
+				// });
+				$('.mobiletitle img').each(function(){
+					$(this).attr('src', $(this).attr('data-src'));
+					$(this).css('opacity',1);
 				});
 			});
 			}else{
