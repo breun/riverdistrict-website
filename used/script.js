@@ -117,7 +117,6 @@ jQuery.noConflict();
 					$(this).attr('src', $(this).attr('data-src'));
 					$(this).css('opacity',1);
 				});
-				alert('fasd');
 
 			}else{
 			$('.dragimg img').each(function(){
