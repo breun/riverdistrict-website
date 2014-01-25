@@ -9,6 +9,7 @@ jQuery.noConflict();
 		phone = true;
 		$('html').addClass('phone');
 		gigsContainer = $('#gigsmobile');
+		alert('phone');
 	}else{
 		phone=false;
 		gigsContainer = $('#gigs');
