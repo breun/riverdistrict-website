@@ -1,25 +1,28 @@
 jQuery.noConflict();
 
 (function($) {
-	var ua = navigator.userAgent,
-		isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
-		cc =  $('body').css('max-width');
-		if (cc =='600px'){
-			phone = true;
-			$('html').addClass('phone');
-			gigsContainer = $('#gigsmobile');
-		}else{
-			phone=false;
-			gigsContainer = $('#gigs');
-		}
+	var ua = navigator.userAgent;
+	var isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
+
+	cc =  $('body').css('max-width');
+	if (cc =='600px'){
+		phone = true;
+		$('html').addClass('phone');
+		gigsContainer = $('#gigsmobile');
+	}else{
+		phone=false;
+		gigsContainer = $('#gigs');
+	}
+
 	if (isMobileWebkit) {
 		$('html').addClass('mobile');
 	}
 
-function shuffle(o){ //v1.0
-    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    return o;
-}
+	function shuffle(o){ //v1.0
+	    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	    return o;
+	}
+
 	$(document).ready(function() {
 
 		var windowWidth = $(window).width();
@@ -53,13 +56,6 @@ function shuffle(o){ //v1.0
     		}
 		);
 
-
-		// var isPhone = false;
-		// if ($('#sidenav').css('display') == 'none') {
-		// 	isPhone = true;
-		// }
-
-
 		$(".dragimg").each(function() {
 			nb = Math.floor((Math.random() * 65) + 100) / 100; // 1-1.5
 			if (!isMobileWebkit){
@@ -88,7 +84,7 @@ function shuffle(o){ //v1.0
 			if (!isMobileWebkit){
 				$(this).attr('data-stellar-ratio', nb);
 			}
-			//console.log($(window).width()-200);
+
 			leftpos = Math.floor((Math.random() * ($(window).width()-500))); // 0-700
 			toppos = Math.floor((Math.random() * 7500)) + 100; // 0-1500
 			rot = Math.floor((Math.random() * 360)); // 1-1.5
@@ -149,7 +145,7 @@ function shuffle(o){ //v1.0
 		 //setInterval(function(){myTimer()},100);
 
 
-	//}
+	}
 
 
 		if (!isMobileWebkit) {
