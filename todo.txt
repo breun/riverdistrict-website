@@ -9,21 +9,11 @@ X uglify css
 X minify js
 X add blue button rollover images
 - add zip
-- remove undergound on mobile
+X remove undergound on mobile
 X query images 
 - center on big screen
 X new images
 X ipad scroll
-- ipad effect / CSS
+X ipad effect / CSS
 
-
-Jasper:
-- 4 nieuwe positievarianten
-    - 1024 = standaard huidige
-    - 1024 en kleiner dan 700 hoog = liggende tablet versie 1024x600
-    - tussen 700 en 1024 breed  = staande tablet versie 
-    - alles kleiner dan 700px = mobiele versie
-- voor mobiele versie, 4 header plaatjes + blauwe buttons
-- blauwe buttons - hover states
-- 
 

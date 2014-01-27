@@ -9,14 +9,12 @@
             max-width: 600px;
         }
     .mapobject{display:block!important;opacity:1!important;position:relative;}
-   /* .mapobject img {display:block!important;}*/
     .mobiletitle{display:block;}
     .main{min-height:200px;padding:25px 0px;overflow:visible !important;}
     .header {
         text-align:center;
         width:100%;
         margin: 0 auto;
-		/*background-color:rgb(34, 34, 34) !important;*/
 		padding-bottom:25px;
         position:absolute;
     }
@@ -116,13 +114,13 @@
     #music{height:2000px;}
     #info{height: 1270px;}
     .lastborder{display: none;}
-/* Styles */
 }
 
-/* iPads (landscape) ----------- (orientation : landscape */
+/* iPads (portrait) ----------- (orientation : portrait */
 @media only screen and (min-width : 600px) and (max-width : 767px) ,only screen and (min-device-width : 600px) and (max-device-width : 767px) {
-/* Styles */
-	/*body{color:yellow !important; }*/
+            body {
+            max-width: 767px;
+        }
     #home, #music, #shows,#info{height: 875px;width:100%;max-width: 767px;overflow:hidden;}
     #underground{max-width: 767px;overflow:hidden;}
     #plaatjes1, #plaatjes2, #plaatjes3, #plaatjes4, #plaatjes5, #plaatjes6 {
@@ -134,8 +132,7 @@
         left: 50%;
         margin-left: -300px;
         position: absolute;
-/*        border:1px solid white;
-*/    }
+    }
 /*    #plaatjes1{background-image: url('./images/600a.jpg');}
      #plaatjes2{background-image: url('./images/600b.jpg');}
       #plaatjes3{background-image: url('./images/600d.jpg');}
@@ -233,9 +230,6 @@ top: 251px;}
 #img2x38{left: 481px;z-index:32; top: 176px;}
 #img2x39{left: 294px;z-index:11; top: 642px;}
 
-
-
-
 #img2x4,#img2x5,#img2x6,#img2x7,#img2x10,#img2x9{display:none!important;}
 
 #img3x0{left: 46px;z-index:24; top: 259px;}
@@ -298,10 +292,11 @@ footer{background-color: #171717 !important;}
 }
 
 
-/* iPads (portrait) ----- ----- and (orientation : portrait)*/
+/* iPads (landscape) ----- ----- and (orientation : landscape)*/
 @media  only screen and (min-width : 768px) and (max-width : 1023px), only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
-/* Styles */
-	/*body{color:pink !important;}*/
+            body {
+            max-width: 1023px;
+        }
     #home, #music, #shows,#info{height: 930px;width:100%;max-width: 1023px;overflow:hidden;}
     #underground{width:100%;max-width: 1023px;overflow:hidden;}
     #plaatjes1, #plaatjes2, #plaatjes3, #plaatjes4, #plaatjes5, #plaatjes6 {
@@ -313,13 +308,8 @@ footer{background-color: #171717 !important;}
         left: 50%;
         margin-left: -384px;
         position: absolute;
-/*        border:1px solid white;
-*/}
-/*    #plaatjes1{background-image: url('./images/768a.jpg');}
-     #plaatjes2{background-image: url('./images/768b.jpg');}
-      #plaatjes3{background-image: url('./images/768c.jpg');}
-       #plaatjes4{background-image: url('./images/768d.jpg');}
-       .dragimg{opacity:0.5;}*/
+    }
+
 #player1{top: 501px;
 left: 132px;}
 #player2{top: 365px;
@@ -473,15 +463,16 @@ footer{background-color: #171717 !important;}
 
 /* Desktops and laptops -----------*/
 @media only screen and (min-width : 1024px) {
-
-	/*body{color:#0f0 !important;}*/
+            body {
+            width: 100%;
+            overflow-x:hidden;
+        }
     #img2x4a,#img2x34,#img2x35,#img2x36,#img2x37,#img2x38{display:none!important;}
     #img4x20,#img4x21,#img4x22{display:none!important;}
-   /* html,body{height:100%;}*/
-/*    .main{height:700px;}
-*/
+
     #plaatjes1, #plaatjes2,#plaatjes3, #plaatjes4, #plaatjes5, #plaatjes6{
-        overflow:visible;
+        /*overflow:visible;
+        overflow-x:hidden;*/
     }
 }
 
