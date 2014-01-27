@@ -178,6 +178,8 @@
 /* OOCSS Grid
 * https://github.com/stubbornella/oocss/wiki/grids
 */
+/*gigloc,.gigdate{font-family: sof}*/
+.gigloc{font-size: 18px;}
  .but {
     display:none;
     z-index:1000;
@@ -291,6 +293,8 @@ footer {
 }
 
 .threedee {
+     font-family: "SofiaProRegular";
+     /*letter-spacing: 1.005em;*/
     -moz-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
     -webkit-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
     -o-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
@@ -401,7 +405,7 @@ footer {
 }
 
 #testintro{position: relative;
-	left: 505px;top: 287px;width:300px;font-size:18px;font-family: SofiaProSemiBold}
+	left: 505px;top: 290px;width:300px;font-size:18px;}
 .main {
     /*padding: 40px 0 60px;*/
     min-height: 700px;

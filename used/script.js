@@ -120,7 +120,7 @@ jQuery.noConflict();
        			 snaps: '.snap',
         		 proximity: 150,
         		 duration: 400,
-        		 offset:-30
+        		 offset:-10
     		});
 
 		}else {
@@ -222,8 +222,8 @@ jQuery.noConflict();
 						} else {
 							var wit = "";
 						}
-
-						$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + gig.location.city + " - " + place + wit + "</span></a></li>").appendTo(gigsContainer);
+						//gig.location.city
+						$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + gig.venue.metroArea.displayName + " - " + place + wit + "</span></a></li>").appendTo(gigsContainer);
 
 					});
 
@@ -255,7 +255,7 @@ jQuery.noConflict();
 							var wit = "";
 						}
 
-						$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + gig.location.city + " - " + place + wit + "</span></a></li>").appendTo(gigsContainer);
+						$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + gig.venue.metroArea.displayName + " - " + place + wit + "</span></a></li>").appendTo(gigsContainer);
 
 					});
 				}
@@ -275,7 +275,7 @@ jQuery.noConflict();
 			id = $(this).attr('rel');
 			if (!isMobileWebkit){
 				$('html, body').animate({
-					scrollTop: $("#" + id).offset().top -30
+					scrollTop: $("#" + id).offset().top -10
 				}, 2000);
 			}else{
 				$('html, body').scrollTop( $("#" + id).offset().top);
