@@ -4,6 +4,8 @@ jQuery.noConflict();
 	var ua = navigator.userAgent;
 	var isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
 	cc =  $('body').css('max-width');
+	var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+	console.log(ua,isMobileWebkit, width);
 	if (cc =='600px'){
 		phone = true;
 		$('html').addClass('phone');
@@ -12,7 +14,6 @@ jQuery.noConflict();
 		phone=false;
 		gigsContainer = $('#gigs');
 	}
-
 	if (isMobileWebkit) {
 		$('html').addClass('mobile');
 	}
@@ -98,8 +99,9 @@ jQuery.noConflict();
 
 		});
 
+
 		if (!isMobileWebkit && !phone){
-			$(".dragimg img").unveil(0, function() {
+			$(".dragimg img").unveil(200, function() {
 				$(this).load(function() {
 					this.style.opacity = 1;
 				});
@@ -123,6 +125,13 @@ jQuery.noConflict();
         		 offset:-10
     		});
 
+
+		}else if(isMobileWebkit && !phone){
+			$(".dragimg img").unveil(3000, function() {
+				$(this).load(function() {
+					this.style.opacity = 1;
+				});
+			});
 		}else {
 			// mobile
 			if(phone){
@@ -145,31 +154,18 @@ jQuery.noConflict();
 				$('.dragimg').css('display','block');
 
 				allimg = $('.dragimg img');
-				function myTimer(){
+				// function myTimer(){
 
-				 	shuffle(allimg);
-				 	var randimg = allimg[0];
-				 	$(randimg).animate({'opacity':0.3},1500, function(){
-				 		$(randimg).animate({'opacity':1},1500);
-				 	});
-				}
+				//  	shuffle(allimg);
+				//  	var randimg = allimg[0];
+				//  	$(randimg).animate({'opacity':0.3},1500, function(){
+				//  		$(randimg).animate({'opacity':1},1500);
+				//  	});
+				// }
 			}
 
 		}
 
-
-		if (!isMobileWebkit) {
-			// $.stellar({
-			// 	horizontalScrolling: false,
-			// 	hideElement: function($elem) {
-			// 		$elem.fadeOut();
-			// 	},
-			// 	showElement: function($elem) {
-			// 		$elem.fadeIn();
-			// 	},
-			// 	verticalOffset: extramainheight
-			// });
-		}
 
 		// set bandcamp players
 		if (phone ==true) {
@@ -260,7 +256,7 @@ jQuery.noConflict();
 					});
 				}
 
-				if (gigs && gigs.length > 4) {
+				if (gigs && gigs.length < 4) {
 					oldGigs(4 - gigs.length);
 				}
 
@@ -273,13 +269,13 @@ jQuery.noConflict();
 
 		$('.wrapper_sidenav').click(function() {
 			id = $(this).attr('rel');
-			if (!isMobileWebkit){
+			//if (!isMobileWebkit){
 				$('html, body').animate({
 					scrollTop: $("#" + id).offset().top -10
 				}, 2000);
-			}else{
-				$('html, body').scrollTop( $("#" + id).offset().top);
-			}
+			//}else{
+				//$('html, body').scrollTop( $("#" + id).offset().top);
+			//}
 		});
 
 

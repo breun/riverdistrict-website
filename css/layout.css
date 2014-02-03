@@ -63,7 +63,7 @@
 }
 
 .mobile .dragimg{
-        animation-name: myfirst;
+/*        animation-name: myfirst;
     animation-duration: 18s;
 
     -webkit-animation-name: myfirst;
@@ -73,10 +73,10 @@
     animation-iteration-count: infinite;
 
     -webkit-animation-delay: 10s;
-    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;*/
 }
 .dragimg {
-
+    transition: opacity .3s ease-in;
 
     position:absolute;
     top:200px;
@@ -132,8 +132,13 @@ footer {
     background-color: black;
 }
 
+pre{
+    padding-left: 30px;
+    line-height: 16px;
+}
+
 .threedee {
-     font-family: "SofiaProRegular";
+     font-family: "SofiaProSemiBold";
      /*letter-spacing: 1.005em;*/
     -moz-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
     -webkit-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
