@@ -133,7 +133,7 @@ footer {
 }
 
 pre{
-    padding-left: 30px;
+    padding-left: 30px !important;
     line-height: 16px;
 }
 

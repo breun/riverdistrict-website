@@ -163,11 +163,11 @@
         margin-left: -300px;
         position: absolute;
     }
-    /*    #plaatjes1{background-image: url('./images/600a.jpg');}
+        #plaatjes1{background-image: url('./images/600a.jpg');}
      #plaatjes2{background-image: url('./images/600b.jpg');}
       #plaatjes3{background-image: url('./images/600d.jpg');}
        #plaatjes4{background-image: url('./images/600c.jpg');}
-       .dragimg{opacity:0.5;}*/
+       .dragimg{opacity:0.5;}
     #player1 {
         top: 464px;
         left: 109px;
@@ -835,7 +835,7 @@
     }
 }
 /* iPads (landscape) ----- ----- and (orientation : landscape)*/
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation: landscape) {
+@media only screen and (min-device-width : 768px) and not (max-device-width : 1024px) and (orientation: landscape) {
     body {
         max-width: 1023px;
     }
@@ -1523,6 +1523,15 @@
         background-color: #171717 !important;
     }
 }
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation: landscape) {
+    .lastborder, #underground {
+        display:none;
+    }
+    footer {
+        background-color: #171717 !important;
+    }
+}
 /* Desktops and laptops -----------*/
 @media only screen and (min-width : 1024px), only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
     body {
@@ -1539,4 +1548,8 @@
         /*overflow:visible;
         overflow-x:hidden;*/
     }
+}
+
+@media only screen and (min-width : 1280px){
+    #plaatjes5{width:100%;margin-left:-590px;}
 }
