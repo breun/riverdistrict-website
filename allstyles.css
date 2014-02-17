@@ -280,8 +280,8 @@
 
 #gigs {
     position: relative;
-    top: 450px;
-    left: 270px;
+    top: 445px;
+    left: 273px;
 }
 #plaatjes1 img {
     opacity: 0;
@@ -410,7 +410,7 @@ pre{
 }
 
 #testintro{position: relative;
-	left: 505px;top: 290px;width:300px;font-size:18px;}
+	left: 505px;top: 280px;width:300px;font-size:18px;}
 .main {
     /*padding: 40px 0 60px;*/
     min-height: 700px;
@@ -614,11 +614,11 @@ pre{
         margin-left: -300px;
         position: absolute;
     }
-        #plaatjes1{background-image: url('./images/600a.jpg');}
+/*        #plaatjes1{background-image: url('./images/600a.jpg');}
      #plaatjes2{background-image: url('./images/600b.jpg');}
       #plaatjes3{background-image: url('./images/600d.jpg');}
        #plaatjes4{background-image: url('./images/600c.jpg');}
-       .dragimg{opacity:0.5;}
+       .dragimg{opacity:0.5;}*/
     #player1 {
         top: 464px;
         left: 109px;
@@ -1328,8 +1328,8 @@ pre{
         left: 165px;
     }
     #testintro {
-        left: 399px;
-        top: 390px;
+        left: 402px;
+        top: 387px;
     }
     #img1x4 {
         left: 166px;
@@ -2002,7 +2002,7 @@ pre{
 }
 
 @media only screen and (min-width : 1280px){
-    #plaatjes5{width:100%;margin-left:-590px;}
+    #plaatjes5{width:100%;margin-left:0px;left:0px;}
 }
 
 /* This reset is loosely derived from HTML5 boilerplate 

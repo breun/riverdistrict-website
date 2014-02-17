@@ -163,11 +163,11 @@
         margin-left: -300px;
         position: absolute;
     }
-        #plaatjes1{background-image: url('./images/600a.jpg');}
+/*        #plaatjes1{background-image: url('./images/600a.jpg');}
      #plaatjes2{background-image: url('./images/600b.jpg');}
       #plaatjes3{background-image: url('./images/600d.jpg');}
        #plaatjes4{background-image: url('./images/600c.jpg');}
-       .dragimg{opacity:0.5;}
+       .dragimg{opacity:0.5;}*/
     #player1 {
         top: 464px;
         left: 109px;
@@ -877,8 +877,8 @@
         left: 165px;
     }
     #testintro {
-        left: 399px;
-        top: 390px;
+        left: 402px;
+        top: 387px;
     }
     #img1x4 {
         left: 166px;
@@ -1551,5 +1551,5 @@
 }
 
 @media only screen and (min-width : 1280px){
-    #plaatjes5{width:100%;margin-left:-590px;}
+    #plaatjes5{width:100%;margin-left:0px;left:0px;}
 }
