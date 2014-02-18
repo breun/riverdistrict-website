@@ -1,0 +1,6 @@
+# Enable mod_rewrite
+RewriteEngine on
+
+# Force redirect to www.riverdistrictmusic.com
+RewriteCond %{HTTP_HOST} !^www\.riverdistrictmusic\.com$ [NC]
+RewriteRule ^(.*)$ http://www.riverdistrictmusic.com/$1 [R=301,L]

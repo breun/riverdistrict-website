@@ -119,7 +119,7 @@
         border: 0;
         max-width:300px;
         width: 100%;
-        height: 500px;
+        height: 340px;
         margin-bottom:25px;
     }
     #media-query-trigger {
@@ -129,7 +129,7 @@
         height:750px;
     }
     #music {
-        height:2000px;
+        height:1330px;
     }
     #info {
         height: 1270px;
