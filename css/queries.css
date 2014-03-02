@@ -10,6 +10,8 @@
         opacity:1!important;
         position:relative;
     }
+    .leftmobile{display:block;}
+    .leftreg{display:none;}
     .mobiletitle {
         display:block;
     }
@@ -22,7 +24,7 @@
         text-align:center;
         width:100%;
         margin: 0 auto;
-        padding-bottom:25px;
+        padding-bottom:35px;
         position:absolute;
     }
     #sidenav {
@@ -36,7 +38,7 @@
         margin-left: 0px;
     }
     .header .inner img {
-        width:150px;
+        width:167px;
     }
     .dragimg img {
         display:none;
@@ -63,6 +65,8 @@
         width:80%;
         margin:0 auto;
     }
+    .gigdate{font-size:19px;line-height:28px;}
+    .gigloc{font-size:28px;line-height:28px;}
     #testintro {
         top:0;
         left:0;
@@ -119,7 +123,7 @@
         border: 0;
         max-width:300px;
         width: 100%;
-        height: 340px;
+        height: 500px;
         margin-bottom:25px;
     }
     #media-query-trigger {
@@ -138,8 +142,8 @@
         display: none;
     }
 }
-/* iPads (portrait) ----------- (orientation : portrait */
-@media only screen and (min-width : 600px) and (max-width : 767px), only screen and (min-device-width : 600px) and (max-device-width : 767px) {
+/* samsung staand */
+@media only screen and (min-width : 600px) and (max-width : 767px), only screen and (min-device-width : 600px) and (max-device-width : 767px){
     body {
         max-width: 767px;
     }
@@ -148,7 +152,12 @@
         width:100%;
         max-width: 767px;
         overflow:hidden;
+        margin-top:;
     }
+    #gigs{
+        line-height: 18px;
+    }
+
     #underground {
         max-width: 767px;
         overflow:hidden;
@@ -163,6 +172,7 @@
         margin-left: -300px;
         position: absolute;
     }
+    .dragimg{margin:0!important;}
 /*        #plaatjes1{background-image: url('./images/600a.jpg');}
      #plaatjes2{background-image: url('./images/600b.jpg');}
       #plaatjes3{background-image: url('./images/600d.jpg');}
@@ -295,12 +305,12 @@
     }
     #img1x26 {
         left: 114px;
-        z-index:46;
+        z-index:49;
         top: 449px;
     }
     #img1x27 {
         left: 332px;
-        z-index:19;
+        z-index:100;
         top: 278px;
     }
     #img1x28 {
@@ -571,18 +581,18 @@
     }
     #img3x0 {
         left: 46px;
-        z-index:24;
+        z-index:29;
         top: 259px;
     }
     #img3x1 {
         left: 429px;
         z-index:20;
-        top: 437px;
+        top: 424px;
     }
     #img3x2 {
         left: 487px;
         z-index:21;
-        top: 289px;
+        top: 274px;
     }
     #img3x3 {
         left: 0px;
@@ -592,11 +602,11 @@
     #img3x4 {
         left: 470px;
         z-index:19;
-        top: 365px;
+        top: 350px;
     }
     #img3x5 {
         left: 120px;
-        z-index:23;
+        z-index:28;
         top: 216px;
     }
     #img3x6 {
@@ -765,7 +775,7 @@
     #img4x10 {
         left: 150px;
         z-index:12;
-        top: 343px;
+        top: 346px;
     }
     #img4x11 {
         left: 445px;
@@ -834,8 +844,8 @@
         background-color: #171717 !important;
     }
 }
-/* iPads (landscape) ----- ----- and (orientation : landscape)*/
-@media only screen and (min-device-width : 768px) and not (max-device-width : 1024px) and (orientation: landscape) {
+/* iPads staand */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation: portrait) {
     body {
         max-width: 1023px;
     }
@@ -850,11 +860,12 @@
         max-width: 1023px;
         overflow:hidden;
     }
+    #plaatjes1 .dragimg img{margin-top:-50px;}
     #plaatjes1, #plaatjes2, #plaatjes3, #plaatjes4, #plaatjes5, #plaatjes6 {
         padding: 0;
         margin: 0;
         overflow: hidden;
-        width: 168px;
+        width: 768px;
         height: 930px;
         left: 50%;
         margin-left: -384px;
@@ -1135,12 +1146,12 @@
     }
     #img2x15 {
         left: 475px;
-        z-index:2;
+        z-index:51;
         top: 156px;
     }
     #img2x16 {
         left: 467px;
-        z-index:18;
+        z-index:50;
         top: 80px;
     }
     #img2x17 {
@@ -1150,7 +1161,7 @@
     }
     #img2x18 {
         left: 485px;
-        z-index:2;
+        z-index:60;
         top: 187px;
     }
     #img2x19 {
@@ -1263,7 +1274,7 @@
     }
     #img3x0 {
         left: 129px;
-        z-index:25;
+        z-index:52;
         top: 265px;
     }
     #img3x1 {
@@ -1288,7 +1299,7 @@
     }
     #img3x5 {
         left: 202px;
-        z-index:24;
+        z-index:51;
         top: 221px;
     }
     #img3x6 {
@@ -1348,7 +1359,7 @@
     }
     #img3x18 {
         left: 125px;
-        z-index:46;
+        z-index:55;
         top: 377px;
     }
     #img3x19 {
@@ -1453,8 +1464,8 @@
     }
     #img4x10 {
         left: 158px;
-        z-index:17;
-        top: 286px;
+        z-index:100;
+        top: 287px;
     }
     #img4x11 {
         left: 480px;
@@ -1493,12 +1504,12 @@
     }
     #img4x18 {
         left: 458px;
-        z-index:94;
+        z-index:96;
         top: 625px;
     }
     #img4x19 {
         left: 501px;
-        z-index:84;
+        z-index:97;
         top: 684px;
     }
     #img4x20 {
@@ -1534,22 +1545,39 @@
 }
 /* Desktops and laptops -----------*/
 @media only screen and (min-width : 1024px), only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-    body {
-        width: 100%;
-        overflow-x:hidden;
-    }
-    #img2x4a, #img2x34, #img2x35, #img2x36, #img2x37, #img2x38 {
+/*    * {
+        color:red!important;
+        overflow-x:hidden!important;
+        overflow-y:scroll;
+    }*/
+    #img1x20 {
         display:none!important;
     }
+    #img2x4a, #img2x34, #img2x35, #img2x36, #img2x37, #img2x38,  #img2x40 {
+        display:none!important;
+    }
+    #img3x22, #img3x28{display:none!important;}
     #img4x20, #img4x21, #img4x22 {
         display:none!important;
     }
-    #plaatjes1, #plaatjes2, #plaatjes3, #plaatjes4, #plaatjes5, #plaatjes6 {
-        /*overflow:visible;
-        overflow-x:hidden;*/
+
+    #plaatjes1, #plaatjes2, #plaatjes3, #plaatjes4 {
+        overflow:hidden;
+
     }
+     #plaatjes1, #plaatjes3,  #plaatjes4 {
+margin-top:15px;
+     }
+    .main,.onevenborder,.evenborder{overflow:hidden!important;}
+    #plaatjes5{width:100%;margin-left:0px;left:0px;}
+
+
 }
 
-@media only screen and (min-width : 1280px){
+@media only screen and (min-width : 1281px){
     #plaatjes5{width:100%;margin-left:0px;left:0px;}
+        #plaatjes1, #plaatjes2, #plaatjes3, #plaatjes4 {
+        overflow:visible;
+        /*overflow-x:hidden;*/
+    }
 }

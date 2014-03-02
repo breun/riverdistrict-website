@@ -6,6 +6,7 @@
         height:50%;
     }
 }
+.leftmobile{display:none;}
 .mobiletitle{
     display: none;
     /*width: 200px!important;*/
@@ -29,6 +30,7 @@
     background-color: red;
     right: 0px;
 }
+#plaatjes1 .dragimg img{ margin-top:-20px;}
 #plaatjes1, #plaatjes2, #plaatjes3, #plaatjes4, #plaatjes5, #plaatjes6 {
     padding:0;
     margin:0;
@@ -47,34 +49,7 @@
     border:none;
     margin-top:-50px;
 }
-@keyframes myfirst
-{
-0% {opacity: 1;}
-50% {opacity: 0;}
-100% {opacity: 1;}
-}
 
-@-webkit-keyframes myfirst /* Safari and Chrome */
-{
-0% {opacity: 1;}
-17% {opacity: 0;}
-33% {opacity: 1;}
-100% {opacity: 1;}
-}
-
-.mobile .dragimg{
-/*        animation-name: myfirst;
-    animation-duration: 18s;
-
-    -webkit-animation-name: myfirst;
-    -webkit-animation-duration: 18s;
-
-    animation-delay: 10s;
-    animation-iteration-count: infinite;
-
-    -webkit-animation-delay: 10s;
-    -webkit-animation-iteration-count: infinite;*/
-}
 .dragimg {
     transition: opacity .3s ease-in;
 
@@ -82,13 +57,6 @@
     top:200px;
     left:200px;
 
-
-    /*opacity: 0;*/
-    /*-moz-transition: all 0.3s ease-in;
-    -webkit-transition: all 0.3s ease-in;
-    -ms-transition: all 0.3s ease-in;
-    transition: all 0.3s ease-in;
-*/
 }
 .dragimg img{ margin-top:-50px;}
  #player1 {
@@ -103,7 +71,7 @@
     z-index:1;
     position:absolute;
     top:325px;
-    left:390px;
+    left:320px;
     width: 460px;
     height: 120px;
 }
@@ -134,8 +102,9 @@ footer {
 
 pre{
     padding-left: 30px !important;
-    line-height: 16px;
+    line-height: 15px;
 }
+.leftreg{font-size:13px;}
 
 .threedee {
      font-family: "SofiaProSemiBold";
@@ -248,9 +217,12 @@ pre{
     border-bottom: 3px solid rgba(255, 255, 255, 1);
     padding-bottom: 5px;
 }
-
+#sidenav .text:hover {
+    border-bottom: 3px solid rgba(255, 255, 255, 1);
+    padding-bottom: 5px;
+}
 #testintro{position: relative;
-	left: 505px;top: 280px;width:300px;font-size:18px;}
+	left: 500px;top: 250px;width:300px;font-size:18px;}
 .main {
     /*padding: 40px 0 60px;*/
     min-height: 700px;

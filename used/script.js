@@ -3,9 +3,10 @@ jQuery.noConflict();
 (function($) {
 	var ua = navigator.userAgent;
 	var isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
-	cc =  $('body').css('max-width');
+	var cc =  $('body').css('max-width');
 	var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-	//console.log(ua,isMobileWebkit, width);
+
+
 	if (cc =='600px'){
 		phone = true;
 		$('html').addClass('phone');
@@ -37,12 +38,19 @@ jQuery.noConflict();
 		var windowWidth = $(window).width();
 		var windowHeight = $(window).height();
 
-		extramainheight=0
-		if (windowHeight >768){
+		extramainheight=1;
+
+		if (windowHeight >768 && windowWidth >1024){
 			extramainheight = (windowHeight * 0.9-700)/2;
-			$('.main').css('padding-top',extramainheight);
+			$('.main').css('padding-top',extramainheight/2);
 			$('.main').css('min-height',(windowHeight*0.9)-extramainheight);
-			extramainheight+=30;
+			extramainheight+=20;
+		}
+		heightoffset=0;
+		if(windowHeight > $('#home').height()){
+
+			var heightoffset = (windowHeight - $('#home').height())/-4;
+			// $('#plaatjes1,#plaatjes2,#plaatjes3,#plaatjes4').css('margin-top',heightoffset);
 		}
 
 		$(window).resize(function() {
@@ -99,7 +107,11 @@ jQuery.noConflict();
 			}
 		});
 
-		maxheight = 700;
+		// window.onscroll = function () {
+ 	// 		window.scrollTo(0,$(document).scrollTop());
+		// }
+
+maxheight = 700;
 		$("#underground .dragimg ").each(function() {
 
 			nb = Math.floor((Math.random() * 230) + 50) / 100; // 1-1.5
@@ -109,7 +121,7 @@ jQuery.noConflict();
 			}
 
 			leftpos = Math.floor((Math.random() * ($(window).width()))); // 0-700
-			toppos = Math.floor((Math.random() * 7500)) + 100; // 0-1500
+			toppos = Math.floor((Math.random() * 7500)) + 150; // 150-7650
 			rot = Math.floor((Math.random() * 360)); // 1-1.5
 
 			$(this).css('left', leftpos);
@@ -145,12 +157,12 @@ jQuery.noConflict();
 
 			$(document).scrollsnap({
        			 snaps: '.snap',
-        		 proximity: 180,
+        		 proximity: 130,
         		 duration: 400,
-        		 offset:-10
+        		 offset: heightoffset
     		});
 
-
+			//ipad
 		}else if(isMobileWebkit && !phone){
 			$(".dragimg img").unveil(3000, function() {
 				$(this).load(function() {
@@ -161,13 +173,14 @@ jQuery.noConflict();
 			// mobile
 			if(phone){
 
-				$('.mobiletitle img').each(function(){
-					$(this).attr('src', $(this).attr('data-src'));
-					$(this).css('opacity',1);
+				$(".mobiletitle, .mobiletitle img").unveil(300, function() {
+					$(this).load(function() {
+						this.style.opacity = 1;
+					});
 				});
 
 			}else{
-				// ipad
+				// other
 				$('.dragimg img').each(function(){
 					$(this).attr('src', $(this).attr('data-src'));
 					$(this).css('opacity',1);
@@ -179,14 +192,7 @@ jQuery.noConflict();
 				$('.dragimg').css('display','block');
 
 				allimg = $('.dragimg img');
-				// function myTimer(){
 
-				//  	shuffle(allimg);
-				//  	var randimg = allimg[0];
-				//  	$(randimg).animate({'opacity':0.3},1500, function(){
-				//  		$(randimg).animate({'opacity':1},1500);
-				//  	});
-				// }
 			}
 
 		}
@@ -196,14 +202,14 @@ jQuery.noConflict();
 		if (phone ==true) {
 			//players = '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=e32c14/transparent=true/" seamless=""><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=e32c14/transparent=true/" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=e32c14/transparent=true/" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
 			//players = '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=e32c14/transparent=true/artwork=none" seamless=""><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=e32c14/transparent=true/artwork=none" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=e32c14/transparent=true/artwork=none" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
-			players = '<iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/artwork=none" seamless=""><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/artwork=none" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
+			players = '<iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
 
 			$('#players2').html(players);
 		} else {
 			//players = '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
 			//players = '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/artwork=none/" seamless><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/artwork=none" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/artwork=none" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
 
-			players = '<iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/artwork=none/" seamless><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/artwork=none" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
+			players = '<iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
 			$('#players').html(players);
 		}
 
@@ -215,7 +221,9 @@ jQuery.noConflict();
 		// });
 
 		// $('.dragimg').draggable();
+		// $('.but').css('display','block');
 
+		// $('header').css('display','none');
 		// $('.but').click(function(){
 		// 	pos='';
 		// 	$('.dragimg', $(this).parent()).each(function(){
@@ -301,7 +309,7 @@ jQuery.noConflict();
 		$('.wrapper_sidenav').click(function() {
 			id = $(this).attr('rel');
 				$('html, body').animate({
-					scrollTop: $("#" + id).offset().top -10
+					scrollTop: $("#" + id).offset().top + heightoffset
 				}, 2000);
 		});
 
@@ -321,7 +329,7 @@ jQuery.noConflict();
 
 		$(document).bind('mousemove',function(e){
 			if($('#underground').css('display') == 'none'){}else{
-        		if ( (godownpos-300) < e.pageY && e.pageY < (godownpos+300) ){
+        		if ( (godownpos-150) < e.pageY && e.pageY < (godownpos+150) ){
         			$('#godown').css('opacity', '1');
         		}else{
         			$('#godown').css('opacity', '0');
@@ -352,32 +360,7 @@ jQuery.noConflict();
 				$('#goup').css('display', 'none');
 			}
 
-			// if(windowPos + windowHeight == docHeight) {
-			//    y = $('#underground').height();
-			//    $('#underground').height(y+25);
-			//   	if (opened==false){
-			//   		$('.footer').animate({'bottom': '0'}, 2000);
-			//   		opened=true;
-			//   	}
-			//   	// if ((windowPos + windowHeight)%1000){
-			//   	// 	console.log((windowPos + windowHeight)%1000);
-			//   	// 	console.log('animate');
-			//   	// }
-			// }
-			// if(windowPos + windowHeight < oriheight){
-			// 	 if (opened==true){
-			// 	 	$('#underground').height(oriy);
-			//   		$('.footer').animate({'bottom': '-250'}, 2000);
-			//   		opened=false;
-			//   	}
-			// }
-
 		});
-
-
-		//var controller = $.superscrollorama();
-
-
 
 	});
 }(jQuery));
