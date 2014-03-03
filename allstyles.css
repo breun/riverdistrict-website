@@ -178,20 +178,59 @@
         height:50%;
     }
 }
+
+#map3acontainer{
+    top: -190px; left: 60px;
+}
+#players2{top: -180px;}
+
+#mob1{top: 40px;left: 5px;}
+#mob2{top: -180px;}
+#mob3{top: -491px; left: -100px; z-index:200;}
+#mob4{top: -50px;}
+
+#mob5{left: -70px; top:-80px;}
+#mob6{top: -110px;z-index:5;}
+#mob7{top:-310px}
+#mob8{top: -170px;}
+
+#mobmap2{left: 60px;top: 30px;}
+#mobmap1{top: -100px;left: 70px;}
+
+#dow{top: -185px;z-index:0;}
+
+#goup{font-size:24px;text-align:center;display:none;z-index:1100;margin:0;left:50%;width:300px;margin-left:-150px;position:fixed;top:50px;cursor:pointer;}
+
+#mobintro{text-align:left!important;line-height:22px;width: 290px;
+margin-left: -145px;left: 50%;position: relative;top: -20px;font-size: 19px;}
+
+.dragimg{
+   -webkit-backface-visibility: hidden;
+   -webkit-perspective: 1000;
+
+   -webkit-transform: translate3d(0, 0, 0);
+   -moz-transform: translate3d(0, 0, 0);
+   -ms-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+  /* Other transform properties here */
+}
+
+.mobile body {
+  overflow: hidden;
+}
+
+
+#sidenavmob{display:none;}
 .leftmobile{display:none;}
 .mobiletitle{
     display: none;
-    /*width: 200px!important;*/
     position: relative;
     font-size: 40px;
     text-align: center;
     margin:0px auto;
 }
 .mapobject a:hover{text-decoration: none!important;border:none !important;}
-/* OOCSS Grid
-* https://github.com/stubbornella/oocss/wiki/grids
-*/
-/*gigloc,.gigdate{font-family: sof}*/
+
 .gigloc{font-size: 18px;}
  .but {
     display:none;
@@ -256,13 +295,20 @@
     height: 120px;
 }
 
-
-
 #gigs {
     position: relative;
     top: 445px;
     left: 273px;
+    margin-left:25px;
 }
+#gigsmobile{
+   width: 280px;margin-left: -140px;left: 50%;position: relative;top: -30px;
+}
+
+#godown{font-size:24px;text-align:center;opacity:0;
+    margin:0;left:50%;width:300px;margin-left:-150px;position:absolute;bottom:80px;}
+
+
 #plaatjes1 img {
     opacity: 0;
     transition: opacity .3s ease-in;
@@ -280,7 +326,6 @@ pre{
 
 .threedee {
      font-family: "SofiaProSemiBold";
-     /*letter-spacing: 1.005em;*/
     -moz-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
     -webkit-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
     -o-transform: scale(1) rotate(30deg) translate(0px, 0px) skew(30deg, 0deg);
@@ -297,13 +342,11 @@ pre{
 /* MAIN LAYOUT */
  body {
     margin: 0 !important;
-    /*background: black;*/
     min-width: 240px;
     overflow-x:hidden;
     width:100%;
     background-color: rgb(23, 23, 23);
     -webkit-text-size-adjust: none;
-    /* The text size is not adjusted for Safari on iPhone */
 }
 .even {
     background-color:rgb(23, 23, 23);
@@ -395,15 +438,14 @@ pre{
 }
 #testintro{position: relative;
 	left: 500px;top: 250px;width:300px;font-size:18px;}
+
 .main {
-    /*padding: 40px 0 60px;*/
     min-height: 700px;
     overflow-x:hidden;
 }
+
 /* HEADER */
  .header {
-    /*	display: none;
-*/
     background-color: none;
     position: fixed;
     top: 0;
@@ -422,11 +464,8 @@ pre{
 /* DEVICE & RESPONSIVE LAYOUT */
  .header .nav-open-button {
     display: none;
-    /* removes the nav toggle button for desktop site */
 }
 #media-query-trigger {
-    /* instead of detecting the width of the window in simple/javascript/script.js it detects the visibility of this element (which is set using media queries)
-    instead to trigger the hiding/showing of nav and search in mobile mode */
     display: none;
     visibility: hidden;
 }
@@ -462,9 +501,21 @@ pre{
         padding-bottom:35px;
         position:absolute;
     }
-    #sidenav {
-        display:none;
+    #sidenav{display:none;}
+    #sidenavmob {
+        position:absolute;
+        top:35px;
+        right:35px;
+        left:auto;
+        display:block;
+        width:35px;
+        height:35px;
+        background:url('images/menu.png');
+        overflow: hidden;
     }
+    #sidenavmob {}
+
+
     .footer {
         background-color:rgb(23, 23, 23) !important;
         z-index:10000;
@@ -568,10 +619,14 @@ pre{
         height:750px;
     }
     #music {
-        height:1330px;
+        height:1190px;
     }
     #info {
         height: 1270px;
+    }
+
+    #shows {
+        height: 830px;
     }
     .lastborder {
         display: none;
@@ -1280,7 +1335,7 @@ pre{
     }
 }
 /* iPads staand */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation: portrait) {
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation: portrait), (min-width : 768px) and (max-width : 1024px) {
     body {
         max-width: 1023px;
     }
@@ -1969,15 +2024,24 @@ pre{
         background-color: #171717 !important;
     }
 }
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation: landscape) {
+/*
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation: landscape), only screen and (min-width : 768px) and (max-width : 1024px)  {
     .lastborder, #underground {
         display:none;
     }
     footer {
         background-color: #171717 !important;
     }
+        #img2x4a, #img2x34, #img2x35, #img2x36, #img2x37, #img2x38,  #img2x40 {
+        display:none !important;
+        opacity:0 !important;
+        visibility: hidden !important;
+    }
+        .main,.onevenborder,.evenborder{overflow:hidden!important;}
+    #plaatjes5{width:100%;margin-left:0px;left:0px;}
+
 }
+*/
 /* Desktops and laptops -----------*/
 @media only screen and (min-width : 1024px), only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
 /*    * {
@@ -1989,7 +2053,9 @@ pre{
         display:none!important;
     }
     #img2x4a, #img2x34, #img2x35, #img2x36, #img2x37, #img2x38,  #img2x40 {
-        display:none!important;
+        display:none !important;
+        opacity:0 !important;
+        visibility: hidden !important;
     }
     #img3x22, #img3x28{display:none!important;}
     #img4x20, #img4x21, #img4x22 {

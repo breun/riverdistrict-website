@@ -27,9 +27,21 @@
         padding-bottom:35px;
         position:absolute;
     }
-    #sidenav {
-        display:none;
+    #sidenav{display:none;}
+    #sidenavmob {
+        position:absolute;
+        top:35px;
+        right:35px;
+        left:auto;
+        display:block;
+        width:35px;
+        height:35px;
+        background:url('images/menu.png');
+        overflow: hidden;
     }
+    #sidenavmob {}
+
+
     .footer {
         background-color:rgb(23, 23, 23) !important;
         z-index:10000;
@@ -133,10 +145,14 @@
         height:750px;
     }
     #music {
-        height:1330px;
+        height:1190px;
     }
     #info {
         height: 1270px;
+    }
+
+    #shows {
+        height: 830px;
     }
     .lastborder {
         display: none;
@@ -845,7 +861,7 @@
     }
 }
 /* iPads staand */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation: portrait) {
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation: portrait), (min-width : 768px) and (max-width : 1024px) {
     body {
         max-width: 1023px;
     }
@@ -1534,15 +1550,24 @@
         background-color: #171717 !important;
     }
 }
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation: landscape) {
+/*
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation: landscape), only screen and (min-width : 768px) and (max-width : 1024px)  {
     .lastborder, #underground {
         display:none;
     }
     footer {
         background-color: #171717 !important;
     }
+        #img2x4a, #img2x34, #img2x35, #img2x36, #img2x37, #img2x38,  #img2x40 {
+        display:none !important;
+        opacity:0 !important;
+        visibility: hidden !important;
+    }
+        .main,.onevenborder,.evenborder{overflow:hidden!important;}
+    #plaatjes5{width:100%;margin-left:0px;left:0px;}
+
 }
+*/
 /* Desktops and laptops -----------*/
 @media only screen and (min-width : 1024px), only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
 /*    * {
@@ -1554,7 +1579,9 @@
         display:none!important;
     }
     #img2x4a, #img2x34, #img2x35, #img2x36, #img2x37, #img2x38,  #img2x40 {
-        display:none!important;
+        display:none !important;
+        opacity:0 !important;
+        visibility: hidden !important;
     }
     #img3x22, #img3x28{display:none!important;}
     #img4x20, #img4x21, #img4x22 {
