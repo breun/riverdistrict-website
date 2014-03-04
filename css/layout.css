@@ -200,6 +200,12 @@ pre{
     top: 50%;
     font-weight: normal;
 }
+
+#sidenav a,#sidenav a:hover, #sidenav a:visited{
+    color:#eee;
+    text-decoration:none;
+}
+
 #godown{
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -253,7 +259,7 @@ pre{
 #sidenav .wrapper_sidenav[rel='shows'] {
     width:110px;
 }
-#sidenav .wrapper_sidenav[rel='info'] {
+#sidenav .wrapper_sidenav[rel='bio'] {
     width:70px;
 }
 #sidenav .active .text {

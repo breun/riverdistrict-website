@@ -26,6 +26,15 @@ jQuery.noConflict();
 
 	$(document).ready(function() {
 
+		// var hash = window.location.hash;
+  // 		var link = $('a');
+  // 		$('#sidenav a').click(function(e) {
+  // 		  e.preventDefault();
+  //   		hash = link.attr("href");
+  //  			 window.location = hash;
+
+  // 		});
+
 		$.fn.preload = function() {
    			 this.each(function(){
     		    $('<img/>')[0].src = 'images/resp_images/'+this;
@@ -302,7 +311,7 @@ maxheight = 700;
 			});
 
 		$('#goup').click(function() {
-			$(".wrapper_sidenav[rel='info']").click();
+			$(".wrapper_sidenav[rel='bio']").click();
 		});
 
 

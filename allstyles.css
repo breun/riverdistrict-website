@@ -372,6 +372,12 @@ pre{
     top: 50%;
     font-weight: normal;
 }
+
+#sidenav a,#sidenav a:hover, #sidenav a:visited{
+    color:#eee;
+    text-decoration:none;
+}
+
 #godown{
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -425,7 +431,7 @@ pre{
 #sidenav .wrapper_sidenav[rel='shows'] {
     width:110px;
 }
-#sidenav .wrapper_sidenav[rel='info'] {
+#sidenav .wrapper_sidenav[rel='bio'] {
     width:70px;
 }
 #sidenav .active .text {
@@ -621,7 +627,7 @@ pre{
     #music {
        height: 1460px;
     }
-    #info {
+    #bio {
         height: 1270px;
     }
 
@@ -637,7 +643,7 @@ pre{
     body {
         max-width: 767px;
     }
-    #home, #music, #shows, #info {
+    #home, #music, #shows, #bio {
         height: 875px;
         width:100%;
         max-width: 767px;
@@ -1339,7 +1345,7 @@ pre{
     body {
         max-width: 1023px;
     }
-    #home, #music, #shows, #info {
+    #home, #music, #shows, #bio {
         height: 930px;
         width:100%;
         max-width: 1023px;
