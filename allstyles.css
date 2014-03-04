@@ -154,7 +154,7 @@
 #img4x9{left: 500px;z-index:14; top: 104px;}
 #img4x10{left: 266px;z-index:15; top: 147px;}
 #img4x11{left: 617px;z-index:19; top: 177px;}
-#img4x12{left: 583px;z-index:20; top: 90px;}
+#img4x12{left: 583px;z-index:20; top: 100px;}
 #img4x13{left: 558px;z-index:16; top: 146px;}
 #img4x14{left: 439px;z-index:12; top: 50px;}
 #img4x15{left: 595px;z-index:19; top: 441px;}
@@ -305,8 +305,8 @@ margin-left: -145px;left: 50%;position: relative;top: -20px;font-size: 19px;}
    width: 280px;margin-left: -140px;left: 50%;position: relative;top: -30px;
 }
 
-#godown{font-size:24px;text-align:center;opacity:0;
-    margin:0;left:50%;width:300px;margin-left:-150px;position:absolute;bottom:80px;}
+#godown{font-size:24px;line-height:30px;text-align:center;opacity:0;
+    margin:0;left:50%;width:300px;margin-left:-150px;position:absolute;bottom:100px;}
 
 
 #plaatjes1 img {

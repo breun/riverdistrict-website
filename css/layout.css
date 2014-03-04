@@ -133,8 +133,8 @@ margin-left: -145px;left: 50%;position: relative;top: -20px;font-size: 19px;}
    width: 280px;margin-left: -140px;left: 50%;position: relative;top: -30px;
 }
 
-#godown{font-size:24px;text-align:center;opacity:0;
-    margin:0;left:50%;width:300px;margin-left:-150px;position:absolute;bottom:80px;}
+#godown{font-size:24px;line-height:30px;text-align:center;opacity:0;
+    margin:0;left:50%;width:300px;margin-left:-150px;position:absolute;bottom:100px;}
 
 
 #plaatjes1 img {
