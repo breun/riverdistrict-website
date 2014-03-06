@@ -183,9 +183,11 @@ maxheight = 700;
 			if(phone){
 
 				$(".mobiletitle, .mobiletitle img").unveil(300, function() {
-					$(this).load(function() {
-						this.style.opacity = 1;
-					});
+					$(this).attr('src', $(this).attr('data-src'));
+					$(this).css('opacity',1);
+					// $(this).load(function() {
+					// 	this.style.opacity = 1;
+					// });
 				});
 
 			}else{
