@@ -346,7 +346,7 @@ maxheight = 700;
         			$('#godown').css('opacity', '0');
         		}
 
-        		if ( (godownpos-150) < e.pageY  ){
+        		if ( (godownpos+150) < e.pageY  ){
         			$('.contactbutton').css('display', 'none');
         		}else{
         			$('.contactbutton').css('display', 'block');
