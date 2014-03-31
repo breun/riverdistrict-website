@@ -95,7 +95,7 @@
 #img2x24{left: 423px;z-index:55; top: 257px;}
 #img2x25{left: 362px;z-index:52; top: 282px;}
 #img2x26{left: 386px;z-index:53; top: 292px;}
-#img2x27{left: 1375px;z-index:35; top: 271px;}
+#img2x27{left: 5375px;z-index:35; top: 271px;}
 #img2x28{left: 393px;z-index:54; top: 263px;}
 #img2x29{left: 335px;z-index:51; top: 311px;}
 #img2x30{left: 239px;z-index:29; top: 358px;}
@@ -133,13 +133,13 @@
 #img3x19{left: 482px;z-index:29; top: 573px;}
 #img3x20{left: 280px;z-index:69; top: 602px;}
 #img3x21{left: 375px;z-index:68; top: 585px;}
-#img3x22{left: 1667px;z-index:28; top: 482px;}
+#img3x22{left: 5667px;z-index:28; top: 482px;}
 #img3x23{left: 183px;z-index:65; top: 429px;}
 #img3x24{left: 155px;z-index:36; top: 429px;}
 #img3x25{left: 320px;z-index:61; top: 467px;}
 #img3x26{left: 751px;z-index:19; top: 496px;}
 #img3x27{left: 763px;z-index:26; top: 319px;}
-#img3x28{left: 1752px;z-index:12; top: 222px;}
+#img3x28{left: 5752px;z-index:12; top: 222px;}
 #img3x29{left: 142px;z-index:66; top: 530px;}
 #img3x30{left: 690px;z-index:21; top: 200px;}
 
@@ -179,10 +179,31 @@
     }
 }
 
+.contactbutton{
+    position:fixed;
+    bottom:20px;
+    left:30px;
+    z-index: 951;
+}
+.contactbutton div{
+    float:left;
+}
+.contactbutton .button{
+    position:relative;
+    top: 12px;
+}
+.contactbutton .text{
+    padding:8px;
+    font-size:18px;
+}
+.contactbutton a{
+    color: white !important;
+}
+
 #map3acontainer{
     top: -190px; left: 60px;
 }
-#players2{top: -180px;}
+#players2{top: -180px; }
 
 #mob1{top: 40px;left: 5px;}
 #mob2{top: -180px;}
@@ -368,7 +389,7 @@ pre{
     position: fixed;
     z-index: 950;
     left: 0px;
-    margin-top: -76px;
+    margin-top: -110px;
     top: 50%;
     font-weight: normal;
 }
@@ -434,6 +455,9 @@ pre{
 #sidenav .wrapper_sidenav[rel='bio'] {
     width:70px;
 }
+#sidenav .wrapper_sidenav[rel='contact'] {
+    width:130px;
+}
 #sidenav .active .text {
     border-bottom: 3px solid rgba(255, 255, 255, 1);
     padding-bottom: 5px;
@@ -490,6 +514,7 @@ pre{
         opacity:1!important;
         position:relative;
     }
+    .contactbutton{display:none;}
     .leftmobile{display:block;}
     .leftreg{display:none;}
     .mobiletitle {

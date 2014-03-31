@@ -7,10 +7,31 @@
     }
 }
 
+.contactbutton{
+    position:fixed;
+    bottom:20px;
+    left:30px;
+    z-index: 951;
+}
+.contactbutton div{
+    float:left;
+}
+.contactbutton .button{
+    position:relative;
+    top: 12px;
+}
+.contactbutton .text{
+    padding:8px;
+    font-size:18px;
+}
+.contactbutton a{
+    color: white !important;
+}
+
 #map3acontainer{
     top: -190px; left: 60px;
 }
-#players2{top: -180px;}
+#players2{top: -180px; }
 
 #mob1{top: 40px;left: 5px;}
 #mob2{top: -180px;}
@@ -196,7 +217,7 @@ pre{
     position: fixed;
     z-index: 950;
     left: 0px;
-    margin-top: -76px;
+    margin-top: -110px;
     top: 50%;
     font-weight: normal;
 }
@@ -261,6 +282,9 @@ pre{
 }
 #sidenav .wrapper_sidenav[rel='bio'] {
     width:70px;
+}
+#sidenav .wrapper_sidenav[rel='contact'] {
+    width:130px;
 }
 #sidenav .active .text {
     border-bottom: 3px solid rgba(255, 255, 255, 1);
