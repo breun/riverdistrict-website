@@ -1,4 +1,5 @@
 .DS_Store/
+.sublime-grunt.cache
 node_modules/
 old/
 aesop-core-dev.zip
