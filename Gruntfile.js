@@ -11,7 +11,7 @@ module.exports = function (grunt) {
             },
             js: {
                 src: [
-                    'used/*.js'
+                    'js/*.js'
                 ],
                 dest: 'combined.js'
             }
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
 		tasks: ['concat:css', 'cssmin']
 	    },
 	    js: {
-	        files: 'used/*.js',
+	        files: 'js/*.js',
                 tasks: ['concat:js', 'uglify']
 	    },
 	    main: {
