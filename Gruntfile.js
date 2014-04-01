@@ -31,7 +31,7 @@ module.exports = function (grunt) {
         },
 	copy: {
 	    main: {
-	        src: ['.htaccess', '1px.png', 'favicon.ico', 'images/**', 'index.html', 'jquery.min.js', 'riverdistrict-presskit.zip'],
+	        src: ['.htaccess', 'favicon.ico', 'images/**', 'index.html', 'jquery.min.js', 'riverdistrict-presskit.zip'],
 		dest: 'dest/'
 	    }
 	},
@@ -45,7 +45,7 @@ module.exports = function (grunt) {
                 tasks: ['concat:js', 'uglify']
 	    },
 	    "static": {
-	        files: ['.htaccess', '1px.png', 'favicon.ico', 'images/**', 'index.html', 'jquery.min.js', 'riverdistrict-presskit.zip'],
+	        files: ['.htaccess', 'favicon.ico', 'images/**', 'index.html', 'jquery.min.js', 'riverdistrict-presskit.zip'],
                 tasks: ['copy']
 	    }
         }
