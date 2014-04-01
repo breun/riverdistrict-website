@@ -31,7 +31,9 @@ module.exports = function (grunt) {
         },
 	copy: {
 	    main: {
-	        src: ['.htaccess', 'favicon.ico', 'images/**', 'index.html', 'jquery.min.js', 'riverdistrict-presskit.zip'],
+	        expand: true,
+	        cwd: 'static/',
+	        src: '**',
 		dest: 'dest/'
 	    }
 	},
@@ -44,9 +46,9 @@ module.exports = function (grunt) {
 	        files: 'used/*.js',
                 tasks: ['concat:js', 'uglify']
 	    },
-	    "static": {
-	        files: ['.htaccess', 'favicon.ico', 'images/**', 'index.html', 'jquery.min.js', 'riverdistrict-presskit.zip'],
-                tasks: ['copy']
+	    main: {
+	        files: 'static/**',
+                tasks: 'copy'
 	    }
         }
     });
@@ -57,5 +59,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'copy']);
+    grunt.registerTask('default', ['copy', 'concat', 'cssmin', 'uglify']);
 };
