@@ -5,3 +5,6 @@ rd-site-v0.6.zip
 .sublime-grunt.cache
 dest/
 allstyles.*
+RD-site-085.zip
+.DS_Store
+css/fonts/.DS_Store
