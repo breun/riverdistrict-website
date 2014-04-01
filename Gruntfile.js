@@ -1,4 +1,5 @@
 module.exports = function (grunt) {
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         concat: {
@@ -12,7 +13,7 @@ module.exports = function (grunt) {
                 src: [
                     'used/*.js'
                 ],
-                dest: 'dest/combined.js'
+                dest: 'combined.js'
             }
         },
         cssmin : {
@@ -24,25 +25,37 @@ module.exports = function (grunt) {
         uglify: {
             js: {
                 files: {
-                    'dest/combined.js': ['dest/combined.js']
+                    'dest/combined.min.js': ['combined.js']
                 }
             }
         },
 	copy: {
 	    main: {
-	        src: ['1px.png', 'favicon.ico', 'images/**', 'index.html', 'jquery.min.js', 'riverdistrict-presskit.zip'],
+	        src: ['.htaccess', '1px.png', 'favicon.ico', 'images/**', 'index.html', 'jquery.min.js', 'riverdistrict-presskit.zip'],
 		dest: 'dest/'
 	    }
 	},
         watch: {
-            files: ['./css/*.css', 'used/*.js'],
-            tasks: ['concat', 'cssmin', 'uglify']
+	    css: {
+	        files: 'css/*.css',
+		tasks: ['concat:css', 'cssmin']
+	    },
+	    js: {
+	        files: 'used/*.js',
+                tasks: ['concat:js', 'uglify']
+	    },
+	    "static": {
+	        files: ['.htaccess', '1px.png', 'favicon.ico', 'images/**', 'index.html', 'jquery.min.js', 'riverdistrict-presskit.zip'],
+                tasks: ['copy']
+	    }
         }
     });
+
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.registerTask('default', ['concat:css', 'cssmin:css', 'concat:js', 'uglify:js', 'copy']);
+
+    grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'copy']);
 };
