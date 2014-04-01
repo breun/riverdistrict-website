@@ -1,19 +1,13 @@
 {
-  "name": "SampleGrunt",
+  "name": "riverdistrict-website",
   "version": "0.1.0",
-  "author": "Brandon Random",
+  "author": "Timo Klok",
   "private": true,
   "devDependencies": {
     "grunt": "~0.4.0",
-    "grunt-concat-css": "~0.1.0",
-    "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-copy": "^0.5.0",
     "grunt-contrib-cssmin": "~0.7.0",
-    "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-cssc": "*",
-    "grunt-htmlhint": "*",
-    "matchdep": "*"
+    "grunt-contrib-watch": "~0.5.3"
   }
 }

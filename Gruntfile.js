@@ -2,25 +2,16 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        concat: {
-            css: {
-                src: [
-                    'css/*.css'
-                ],
-                dest: 'allstyles.css'
-            }
-        },
         cssmin : {
             css: {
-                src: 'allstyles.css',
+                src: 'css/*.css',
                 dest: 'dest/allstyles.min.css'
             }
         },
         uglify: {
             js: {
-                files: {
-                    'dest/combined.min.js': ['js/*.js']
-                }
+	        src: 'js/*.js',
+		dest: 'dest/combined.min.js'
             }
         },
 	copy: {
@@ -34,7 +25,7 @@ module.exports = function (grunt) {
         watch: {
 	    css: {
 	        files: 'css/*.css',
-		tasks: ['concat:css', 'cssmin']
+		tasks: 'cssmin'
 	    },
 	    js: {
 	        files: 'js/*.js',
@@ -47,11 +38,10 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['copy', 'concat', 'cssmin', 'uglify']);
+    grunt.registerTask('default', ['copy', 'cssmin', 'uglify']);
 };
