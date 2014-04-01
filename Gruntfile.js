@@ -1,17 +1,7 @@
-module.exports = function(grunt){
-
+module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-    //     concat_css: {
-    // 		options: {
-    // 		  // Task-specific options go here.
-    // 		},
-    // 		all: {
-    // 		  src: ["./css/*.css"],
-    // 		  dest: "allstyles.css"
-    // 		},
-  		// },
-concat: {
+        concat: {
             css: {
                 src: [
                     'css/*.css'
@@ -25,16 +15,12 @@ concat: {
                 dest: 'dest/combined.js'
             }
         },
-
-        //
-
         cssmin : {
-            css:{
+            css: {
                 src: 'allstyles.css',
                 dest: 'allstyles.min.css'
             }
         },
-
         uglify: {
             js: {
                 files: {
@@ -42,17 +28,14 @@ concat: {
                 }
             }
         },
-
         watch: {
-            files: ['./css/*.css','used/*.js'],
-            tasks: ['concat','cssmin', 'uglify' ]
-        },
+            files: ['./css/*.css', 'used/*.js'],
+            tasks: ['concat', 'cssmin', 'uglify']
+        }
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
-    //grunt.loadNpmTasks('grunt-concat-css');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.registerTask('default', ['concat:css', 'cssmin:css', 'concat:js', 'uglify:js']);
-
 };
