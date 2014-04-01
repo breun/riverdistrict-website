@@ -8,12 +8,6 @@ module.exports = function (grunt) {
                     'css/*.css'
                 ],
                 dest: 'allstyles.css'
-            },
-            js: {
-                src: [
-                    'js/*.js'
-                ],
-                dest: 'combined.js'
             }
         },
         cssmin : {
@@ -25,7 +19,7 @@ module.exports = function (grunt) {
         uglify: {
             js: {
                 files: {
-                    'dest/combined.min.js': ['combined.js']
+                    'dest/combined.min.js': ['js/*.js']
                 }
             }
         },
@@ -44,7 +38,7 @@ module.exports = function (grunt) {
 	    },
 	    js: {
 	        files: 'js/*.js',
-                tasks: ['concat:js', 'uglify']
+                tasks: 'uglify'
 	    },
 	    main: {
 	        files: 'static/**',
