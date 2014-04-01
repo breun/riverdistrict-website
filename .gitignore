@@ -4,3 +4,6 @@ node_modules/
 old/
 aesop-core-dev.zip
 rd-site-v0.6.zip
+dest/
+allstyles.css
+allstyles.min.css

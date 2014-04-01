@@ -18,7 +18,7 @@ module.exports = function (grunt) {
         cssmin : {
             css: {
                 src: 'allstyles.css',
-                dest: 'allstyles.min.css'
+                dest: 'dest/allstyles.min.css'
             }
         },
         uglify: {
@@ -28,14 +28,21 @@ module.exports = function (grunt) {
                 }
             }
         },
+	copy: {
+	    main: {
+	        src: ['1px.png', 'favicon.ico', 'images/**', 'index.html', 'jquery.min.js', 'riverdistrict-presskit.zip'],
+		dest: 'dest/'
+	    }
+	},
         watch: {
             files: ['./css/*.css', 'used/*.js'],
             tasks: ['concat', 'cssmin', 'uglify']
         }
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.registerTask('default', ['concat:css', 'cssmin:css', 'concat:js', 'uglify:js']);
+    grunt.registerTask('default', ['concat:css', 'cssmin:css', 'concat:js', 'uglify:js', 'copy']);
 };
