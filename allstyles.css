@@ -179,6 +179,28 @@
     }
 }
 
+#overlay{
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    color: white;
+    position:fixed;
+    z-index:100000;
+    font-size:20px;
+    line-height:26px;
+
+}
+#overlaycontent{margin:auto; position:absolute; width:804px; margin-left:-402px; left:50%; margin-top:-202px; height:404px; top:50%;}
+#overlaytext{vertical-align:middle; width:380px; height:380px;  float:left; text-align: center;
+padding:10px;}
+#overlayimg{cursor:pointer;width:400px; height:400px; float:left;}
+#overlayimg img{width:350px; height:350px; float:left; margin-left:25px;}
+
+#overlaytext a{color:white; text-decoration:underline; }
+.closebutton { color:white; position: absolute; right: 30px; top:30px; font-size: 40px; cursor: pointer;}
+
 .contactbutton{
     position:fixed;
     bottom:20px;
@@ -481,7 +503,7 @@ pre{
     top: 0;
     left: 0;
     width: 300px;
-    z-index:1000000;
+    z-index:9000;
 }
 .header .inner {
     position: relative;
@@ -509,6 +531,13 @@ pre{
     body {
         max-width: 600px;
     }
+
+    #overlaycontent{margin:auto; position:absolute; width:404px; margin-left:-202px; left:50%; margin-top:-402px; height:804px; top:50%;}
+#overlaytext{margin-top:0px;vertical-align:middle; width:380px; height:380px;  float:left; text-align: center;
+padding:10px;}
+#overlayimg{width:400px; height:305px; float:left;}
+#overlayimg img{width:200px; height:200px; float:left;margin:100px;}
+
     .mapobject {
         display:block!important;
         opacity:1!important;
@@ -650,7 +679,7 @@ pre{
         height:750px;
     }
     #music {
-       height: 1460px;
+       height: 2010px;
     }
     #bio {
         height: 1270px;
@@ -668,6 +697,14 @@ pre{
     body {
         max-width: 767px;
     }
+
+    #overlaycontent{margin:auto; position:absolute; width:404px; margin-left:-202px; left:50%; margin-top:-402px; height:804px; top:50%;}
+    #overlaytext{vertical-align:middle; width:380px; height:380px;  float:left; text-align: center;
+padding:10px;margin-top:0px;}
+    #overlayimg{width:400px; height:305px; float:left;}
+    #overlayimg img{width:200px; height:200px; float:left;margin:100px;}
+
+
     #home, #music, #shows, #bio {
         height: 875px;
         width:100%;

@@ -5,6 +5,13 @@
     body {
         max-width: 600px;
     }
+
+    #overlaycontent{margin:auto; position:absolute; width:404px; margin-left:-202px; left:50%; margin-top:-402px; height:804px; top:50%;}
+#overlaytext{margin-top:0px;vertical-align:middle; width:380px; height:380px;  float:left; text-align: center;
+padding:10px;}
+#overlayimg{width:400px; height:305px; float:left;}
+#overlayimg img{width:200px; height:200px; float:left;margin:100px;}
+
     .mapobject {
         display:block!important;
         opacity:1!important;
@@ -146,7 +153,7 @@
         height:750px;
     }
     #music {
-       height: 1460px;
+       height: 2010px;
     }
     #bio {
         height: 1270px;
@@ -164,6 +171,14 @@
     body {
         max-width: 767px;
     }
+
+    #overlaycontent{margin:auto; position:absolute; width:404px; margin-left:-202px; left:50%; margin-top:-402px; height:804px; top:50%;}
+    #overlaytext{vertical-align:middle; width:380px; height:380px;  float:left; text-align: center;
+padding:10px;margin-top:0px;}
+    #overlayimg{width:400px; height:305px; float:left;}
+    #overlayimg img{width:200px; height:200px; float:left;margin:100px;}
+
+
     #home, #music, #shows, #bio {
         height: 875px;
         width:100%;
