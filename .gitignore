@@ -2,3 +2,6 @@ node_modules/
 old/
 aesop-core-dev.zip
 rd-site-v0.6.zip
+.sublime-grunt.cache
+dest/
+allstyles.*
