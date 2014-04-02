@@ -28,4 +28,6 @@ To have Grunt serve the contents of the target folder:
 Deploy
 ======
 
-Copy the contents of the target folder to the webserver document root.
+All good? Let's show it to the world!
+
+    $ grunt rsync
