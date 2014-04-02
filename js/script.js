@@ -264,14 +264,17 @@ jQuery.noConflict();
 						}
 
 						date = Date.parse(gig.start.date).toString('MMMM d, yyyy');
-
+                        if (gig.start.time) {
+                            date += ' ' + Date.parse(gig.start.time).toString('h:mm tt');
+                        }
+                        
 						if (gig.performance && !gig.series && gig.performance[0].artist.displayName != "Riverdistrict") {
 							var wit = "<br>w/ " + gig.performance[0].artist.displayName;
 						} else {
 							var wit = "";
 						}
 						//gig.location.city
-						$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + gig.venue.metroArea.displayName + " - " + place + wit + "</span></a></li>").appendTo(gigsContainer);
+						$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + place + " - " + gig.venue.metroArea.displayName + wit + "</span></a></li>").appendTo(gigsContainer);
 
 					});
 
@@ -296,6 +299,9 @@ jQuery.noConflict();
 						}
 
 						date = Date.parse(gig.start.date).toString('MMMM d, yyyy');
+                        if (gig.start.time) {
+                            date += ' ' + Date.parse(gig.start.time).toString('h:mm tt');
+                        }
 
 						if (gig.performance && !gig.series && gig.performance[0].artist.displayName != "Riverdistrict") {
 							var wit = "<br>w/ " + gig.performance[0].artist.displayName;
@@ -303,7 +309,7 @@ jQuery.noConflict();
 							var wit = "";
 						}
 
-						$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + gig.venue.metroArea.displayName + " - " + place + wit + "</span></a></li>").appendTo(gigsContainer);
+						$li = $("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + place + " - " + gig.venue.metroArea.displayName + wit + "</span></a></li>").appendTo(gigsContainer);
 
 					});
 				}
