@@ -64,7 +64,20 @@ module.exports = function (grunt) {
                 files: 'static/**',
                 tasks: 'copy'
             }
-        }
+        },
+
+	rsync: {
+	    options: {
+	        args: ['--recursive', '--compress', '--checksum', '--delete', '--verbose']
+	    },
+	    prod: {
+	        options: {
+		    src: 'dest/',
+		    dest: '/riverdistrictmusic.com/',
+		    host: 'breun@breun.nl'
+		}
+	    }
+	}
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -74,6 +87,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks("grunt-rsync");
 
     grunt.registerTask('default', ['clean', 'copy', 'cssmin', 'uglify', 'compress']);
 };
