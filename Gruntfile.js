@@ -1,64 +1,69 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
+        
         pkg: grunt.file.readJSON('package.json'),
 
         connect: {
-	    server: {
+            server: {
                 options: {
                     base: 'dest/',
                     keepalive: true
-	        }
+                }
             }
         },
 
         copy: {
-	    main: {
-	        expand: true,
-	        cwd: 'static/',
-	        src: '**',
-		dest: 'dest/'
-	    }
-	},
+            main: {
+                expand: true,
+                cwd: 'static/',
+                src: '**',
+                dest: 'dest/'
+            }
+        },
+        
         cssmin : {
             css: {
                 src: 'css/*.css',
                 dest: 'dest/allstyles.min.css'
             }
         },
+        
         uglify: {
             js: {
-	        src: 'js/*.js',
-		dest: 'dest/combined.min.js'
+                src: 'js/*.js',
+                dest: 'dest/combined.min.js'
             }
         },
-	compress: {
-	    presskit: {
-	        options: {
-		    archive: 'dest/riverdistrict-presskit.zip'
-		},
-	        expand: true,
-		cwd: 'presskit/',
-		src: '**'
-	    }
-	},
+        
+        compress: {
+            presskit: {
+                options: {
+                    archive: 'dest/riverdistrict-presskit.zip'
+                },
+                expand: true,
+                cwd: 'presskit/',
+                src: '**'
+            }
+        },
+        
         watch: {
             presskit: {
                 files: 'presskit/**',
                 tasks: 'compress'
             },
-	    css: {
-	        files: 'css/*.css',
-		tasks: 'cssmin'
-	    },
-	    js: {
-	        files: 'js/*.js',
+            css: {
+                files: 'css/*.css',
+                tasks: 'cssmin'
+            },
+            js: {
+                files: 'js/*.js',
                 tasks: 'uglify'
-	    },
-	    main: {
-	        files: 'static/**',
+            },
+            main: {
+                files: 'static/**',
                 tasks: 'copy'
-	    }
+            }
         }
     });
 
