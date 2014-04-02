@@ -1,9 +1,9 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
-        
-        pkg: grunt.file.readJSON('package.json'),
 
+        clean: ['dest/'],
+        
         connect: {
             server: {
                 options: {
@@ -67,6 +67,7 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-copy');
@@ -74,5 +75,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['copy', 'cssmin', 'uglify', 'compress']);
+    grunt.registerTask('default', ['clean', 'copy', 'cssmin', 'uglify', 'compress']);
 };
