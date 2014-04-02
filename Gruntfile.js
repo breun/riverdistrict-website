@@ -2,6 +2,16 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        connect: {
+	    server: {
+                options: {
+                    base: 'dest/',
+                    keepalive: true
+	        }
+            }
+        },
+
         copy: {
 	    main: {
 	        expand: true,
@@ -53,6 +63,7 @@ module.exports = function (grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
