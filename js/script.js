@@ -70,7 +70,7 @@ jQuery.noConflict();
         }
         
         function renderUpcomingShowHtml(show) {
-            return $("<li><a href='" + show.uri + "' target='_blank'><span class='gigdate'>" + show.date + "</span><br><span class='gigloc'>" + show.place + " - " + show.metroArea + (show.wit ? (' (' + show.wit + ')') : '') + "</span></a></li>");
+            return $("<li><a href='" + show.uri + "' target='_blank'><span class='gigdate'>" + show.date + "</span><br><span class='gigloc'>" + show.place + " - " + show.metroArea + (show.wit ? (' (with ' + show.wit + ')') : '') + "</span></a></li>");
         }
         
         function addUpcomingEvents(songkickData) {
