@@ -22,11 +22,82 @@ jQuery.noConflict();
     if (isMobileWebkit) {
 		$('html').addClass('mobile');
 	}
+    
+    function addBandcampPlayers() {
+		if (phone) {
+			$('#players2').html('<iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1379670177/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="http://shop.riverdistrictmusic.com/album/heartbreakers-7-single">Heartbreakers (7&quot; single) by Riverdistrict</a></iframe>' +
+                '<iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe>' +
+                '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>');
+		} else {
+			$('#players').html('<iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1379670177/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="http://shop.riverdistrictmusic.com/album/heartbreakers-7-single">Heartbreakers (7&quot; single) by Riverdistrict</a></iframe>' +
+                '<iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe>' +
+                '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>');
+		}
+    }
+    
+    function addShows() {
+        var numGigs = 0,
+            maxGigs = 4,
+            songkick_artist_id = '4597758-riverdistrict',
+            songkick_api_key = '91AN7asUxDaqHrrv';
+        
+        function getShows(songkickData) {
+            var shows = [];
 
-//	function shuffle(o) { //v1.0
-//	    for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-//	    return o;
-//	}
+            $.each(songkickData.resultsPage.results.event, function (index, gig) {
+                var place = gig.venue.displayName,
+                    date = Date.parse(gig.start.date).toString('MMMM d, yyyy'),
+                    wit = "";
+                        
+                if (gig.series) {
+                    place = gig.series.displayName;
+                }
+
+                if (gig.start.time) {
+                    date += ' ' + Date.parse(gig.start.time).toString('h:mm tt');
+                }
+                        
+                if (gig.performance && !gig.series && gig.performance[0].artist.displayName !== "Riverdistrict") {
+                    wit = gig.performance[0].artist.displayName;
+                }
+                
+                shows.push({ uri: gig.uri, date: date, place: place, metroArea: gig.venue.metroArea.displayName, wit: wit });
+                
+                numGigs += 1;
+            });
+            
+            return shows;
+        }
+        
+        function renderUpcomingShowHtml(show) {
+            return $("<li><a href='" + show.uri + "' target='_blank'><span class='gigdate'>" + show.date + "</span><br><span class='gigloc'>" + show.place + " - " + show.metroArea + (show.wit ? (' (' + show.wit + ')') : '') + "</span></a></li>");
+        }
+        
+        function addUpcomingEvents(songkickData) {
+            getShows(songkickData).forEach(function (show) {
+                gigsContainer.append(renderUpcomingShowHtml(show));
+            });
+        }
+        
+        function renderPastShowHtml(show) {
+            return renderUpcomingShowHtml(show).css('opacity', '0.7');
+        }
+        
+        function addPastEvents(songkickData) {
+            getShows(songkickData).reverse().forEach(function (show) {
+                gigsContainer.prepend(renderPastShowHtml(show));
+            });
+        }
+
+        // Add upcoming shows
+		$.getJSON('http://api.songkick.com/api/3.0/artists/' + songkick_artist_id + '/calendar.json?apikey=' + songkick_api_key + '&per_page=' + maxGigs + '&page=1&jsoncallback=?', addUpcomingEvents)
+            .then(function () {
+                // Add past shows if there is room left
+                if (numGigs < maxGigs) {
+                    $.getJSON('http://api.songkick.com/api/3.0/artists/' + songkick_artist_id + '/gigography.json?apikey=' + songkick_api_key + '&per_page=' + (maxGigs - numGigs) + '&order=desc&jsoncallback=?', addPastEvents);
+                }
+            });
+    }
 
 	$(document).ready(function () {
 //        var hash = window.location.hash;
@@ -120,7 +191,6 @@ jQuery.noConflict();
 		});
 
 		$("#underground .dragimg ").each(function () {
-
 			var nb = Math.floor((Math.random() * 230) + 50) / 100, // 1-1.5
                 leftpos = Math.floor((Math.random() * ($(window).width()))), // 0-700
                 toppos = Math.floor((Math.random() * 7500)) + 150, // 150-7650
@@ -139,9 +209,7 @@ jQuery.noConflict();
 				maxheight = toppos + 200;
 				$("#underground").css('height', toppos + 300);
 			}
-
 		});
-
 
 		if (!isMobileWebkit && !phone) {
 			$(".dragimg img").unveil(200, function () {
@@ -167,9 +235,8 @@ jQuery.noConflict();
                 duration: 400,
                 offset: heightoffset
             });
-
-			//ipad
 		} else if (isMobileWebkit && !phone) {
+            //ipad
 			$(".dragimg img").unveil(3000, function () {
 				$(this).load(function () {
 					this.style.opacity = 1;
@@ -196,27 +263,10 @@ jQuery.noConflict();
 					}
 				});
 				$('.dragimg').css('display', 'block');
-
-//				var allimg = $('.dragimg img');
 			}
 		}
 
-		// set bandcamp players
-		if (phone) {
-			//players = '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=e32c14/transparent=true/" seamless=""><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=e32c14/transparent=true/" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=e32c14/transparent=true/" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
-			//players = '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=e32c14/transparent=true/artwork=none" seamless=""><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=e32c14/transparent=true/artwork=none" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=e32c14/transparent=true/artwork=none" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
-
-			$('#players2').html('<iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1379670177/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="http://shop.riverdistrictmusic.com/album/heartbreakers-7-single">Heartbreakers (7&quot; single) by Riverdistrict</a></iframe>' +
-                '<iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe>' +
-                '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>');
-		} else {
-			//players = '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
-			//players = '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/artwork=none/" seamless><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe><iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/artwork=none" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe><iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true/artwork=none" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>';
-
-			$('#players').html('<iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1379670177/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="http://shop.riverdistrictmusic.com/album/heartbreakers-7-single">Heartbreakers (7&quot; single) by Riverdistrict</a></iframe>' +
-                '<iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe>' +
-                '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>');
-		}
+		addBandcampPlayers();
 
 //        var ztot = 10;
 //        $('.dragimg').click(function () {
@@ -238,78 +288,12 @@ jQuery.noConflict();
 //            });
 //            alert(pos);
 //        });
-
-
-
-		function oldGigs(amount) {
-			$.getJSON('http://api.songkick.com/api/3.0/artists/4597758-riverdistrict/gigography.json?apikey=91AN7asUxDaqHrrv&order=desc&per_page=' + amount + '&jsoncallback=?',
-				function (data) {
-					var gigs = data.resultsPage.results.event;
-
-					$.each(gigs, function (index, gig) {
-                        
-                        var place = gig.venue.displayName,
-                            date = Date.parse(gig.start.date).toString('MMMM d, yyyy'),
-                            wit = "";
-                        
-						if (gig.series) {
-							place = gig.series.displayName;
-						}
-
-                        if (gig.start.time) {
-                            date += ' ' + Date.parse(gig.start.time).toString('h:mm tt');
-                        }
-                        
-						if (gig.performance && !gig.series && gig.performance[0].artist.displayName !== "Riverdistrict") {
-							wit = " (with " + gig.performance[0].artist.displayName + ")";
-						}
-						//gig.location.city
-						$("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + place + " - " + gig.venue.metroArea.displayName + wit + "</span></a></li>").appendTo(gigsContainer);
-					});
-				});
-		}
-
-		$.getJSON('http://api.songkick.com/api/3.0/artists/4597758-riverdistrict/calendar.json?apikey=91AN7asUxDaqHrrv&per_page=100&page=1&jsoncallback=?',
-			function (data) {
-
-				gigsContainer.empty();
-				var gigs = data.resultsPage.results.event;
-				if (!gigs) {
-					oldGigs(4);
-				} else {
-					$.each(gigs, function (index, gig) {
-                        
-                        var place = gig.venue.displayName,
-                            date = Date.parse(gig.start.date).toString('MMMM d, yyyy'),
-                            wit = "";
-
-						if (gig.series) {
-							place = gig.series.displayName;
-						}
-
-                        if (gig.start.time) {
-                            date += ' ' + Date.parse(gig.start.time).toString('h:mm tt');
-                        }
-
-						if (gig.performance && !gig.series && gig.performance[0].artist.displayName !== "Riverdistrict") {
-							wit = " (with " + gig.performance[0].artist.displayName + ")";
-						}
-
-						$("<li><a href='" + gig.uri + "' target='_blank'><span class='gigdate'>" + date + "</span><br><span class='gigloc'>" + place + " - " + gig.venue.metroArea.displayName + wit + "</span></a></li>").appendTo(gigsContainer);
-
-					});
-				}
-
-				if (gigs && gigs.length < 4) {
-					oldGigs(4 - gigs.length);
-				}
-
-			});
+    
+        addShows();
 
 		$('#goup').click(function () {
 			$(".wrapper_sidenav[rel='bio']").click();
 		});
-
 
 		$('.wrapper_sidenav').click(function () {
 			var id = $(this).attr('rel');
@@ -324,17 +308,8 @@ jQuery.noConflict();
 
 		$(document).bind('mousemove', function (e) {
 			if ($('#underground').css('display') !== 'none') {
-                if ((godownpos - 150) < e.pageY && e.pageY < (godownpos + 150)) {
-                    $('#godown').css('opacity', '1');
-                } else {
-                    $('#godown').css('opacity', '0');
-                }
-
-                if ((godownpos + 150) < e.pageY) {
-                    $('.contactbutton').css('display', 'none');
-                } else {
-                    $('.contactbutton').css('display', 'block');
-                }
+                $('#godown').css('opacity', (godownpos - 150) < e.pageY && e.pageY < (godownpos + 150) ? '1' : '0');
+                $('.contactbutton').css('display', (godownpos + 150) < e.pageY ? 'none' : 'block');
             }
 		});
 
@@ -352,12 +327,8 @@ jQuery.noConflict();
 					$(".wrapper_sidenav[rel='" + theID + "']").removeClass("active");
 				}
 			});
-
-            if (windowPos > 3600) {
-				$('#goup').css('display', 'block');
-			} else {
-				$('#goup').css('display', 'none');
-			}
+            
+            $('#goup').css('display', windowPos > 3600 ? 'block' : 'none');
 		});
 	});
 }(jQuery));
