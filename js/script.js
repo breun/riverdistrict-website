@@ -86,7 +86,7 @@ jQuery.noConflict();
         }
         
         function addPastEvents(songkickData) {
-            getShows(songkickData).reverse().forEach(function (show) {
+            getShows(songkickData).forEach(function (show) {
                 gigsContainer.prepend(renderPastShowHtml(show));
             });
         }
