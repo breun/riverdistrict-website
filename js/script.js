@@ -43,28 +43,30 @@ jQuery.noConflict();
         
         function getShows(songkickData) {
             var shows = [];
+            
+            if (songkickData.resultsPage.results.event) {
+                $.each(songkickData.resultsPage.results.event, function (index, gig) {
+                    var place = gig.venue.displayName,
+                        date = Date.parse(gig.start.date).toString('MMMM d, yyyy'),
+                        wit = "";
 
-            $.each(songkickData.resultsPage.results.event, function (index, gig) {
-                var place = gig.venue.displayName,
-                    date = Date.parse(gig.start.date).toString('MMMM d, yyyy'),
-                    wit = "";
-                        
-                if (gig.series) {
-                    place = gig.series.displayName;
-                }
+                    if (gig.series) {
+                        place = gig.series.displayName;
+                    }
 
-                if (gig.start.time) {
-                    date += ' ' + Date.parse(gig.start.time).toString('h:mm tt');
-                }
-                        
-                if (gig.performance && !gig.series && gig.performance[0].artist.displayName !== "Riverdistrict") {
-                    wit = gig.performance[0].artist.displayName;
-                }
-                
-                shows.push({ uri: gig.uri, date: date, place: place, metroArea: gig.venue.metroArea.displayName, wit: wit });
-                
-                numGigs += 1;
-            });
+                    if (gig.start.time) {
+                        date += ' ' + Date.parse(gig.start.time).toString('h:mm tt');
+                    }
+
+                    if (gig.performance && !gig.series && gig.performance[0].artist.displayName !== "Riverdistrict") {
+                        wit = gig.performance[0].artist.displayName;
+                    }
+
+                    shows.push({ uri: gig.uri, date: date, place: place, metroArea: gig.venue.metroArea.displayName, wit: wit });
+
+                    numGigs += 1;
+                });
+            }
             
             return shows;
         }
