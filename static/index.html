@@ -678,13 +678,61 @@ musician is to compose no music,
 <script type="text/javascript" src="combined.min.js">
 </script>
 
+<!-- https://developers.google.com/webmasters/structured-data/customize/social-profiles -->
 <!-- https://developers.google.com/webmasters/structured-data/events/performers#option_3_delegate_your_event_listings_to_another_website -->
 <script type="application/ld+json">
-{"@context" : "http://schema.org",
- "@type" : "MusicGroup",
- "name" : "Riverdistrict",
- "url" : "http://www.riverdistrictmusic.com",
- "event" : "https://www.songkick.com/artists/4597758-riverdistrict"
+{ "@context" : "http://schema.org",
+  "@type" : "MusicGroup",
+  "name" : "Riverdistrict",
+  "url" : "http://www.riverdistrictmusic.com",
+  "email" : "contact@riverdistrictmusic.com",
+  "event" : "https://www.songkick.com/artists/4597758-riverdistrict",
+  "sameAs" : [
+    "https://www.facebook.com/riverdistrictmusic",
+    "https://twitter.com/riverdistrict",
+    "https://www.youtube.com/user/riverdistrictmusic",
+    "http://open.spotify.com/artist/6PRh3i9dak7mxXn5hhBfuG",
+    "https://itunes.apple.com/ca/artist/riverdistrict/id419122874",
+    "http://shop.riverdistrictmusic.com/",
+    "https://soundcloud.com/riverdistrict",
+    "http://www.songkick.com/artists/4597758-riverdistrict"
+  ],
+  "founder" : {
+    "@type" : "Person",
+    "givenName" : "Tim",
+    "familyName" : "Nolet"
+  },
+  "foundingLocation" : {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Utrecht",
+      "addressCountry" : "NL"
+    }
+  },
+  "logo" : "http://www.riverdistrictmusic.com/images/logo.png",
+  "member" : [
+    {
+      "@type": "Person",
+      "givenName" : "Tim",
+      "familyName" : "Nolet"
+    },
+    {
+      "@type": "Person",
+      "givenName" : "Nils",
+      "familyName" : "Breunese"
+    },
+    {
+      "@type": "Person",
+      "givenName" : "Timo",
+      "familyName" : "Klok"
+    },
+    {
+      "@type": "Person",
+      "givenName" : "Gijs",
+      "familyName" : "van Wiechen"
+    }
+  ]
 }
 </script>
 
