@@ -82,7 +82,7 @@ jQuery.noConflict();
         }
         
         function renderPastShowHtml(show) {
-            return renderUpcomingShowHtml(show).css('opacity', '0.7');
+            return renderUpcomingShowHtml(show, past).css('opacity', '0.7');
         }
         
         function addPastEvents(songkickData) {
@@ -95,7 +95,10 @@ jQuery.noConflict();
 		$.getJSON('http://api.songkick.com/api/3.0/artists/' + songkick_artist_id + '/calendar.json?apikey=' + songkick_api_key + '&per_page=' + maxGigs + '&page=1&jsoncallback=?', addUpcomingEvents)
             .then(function () {
                 // Add past shows if there is room left
-                if (numGigs < maxGigs) {
+				if (numGigs == 0) {
+					$.getJSON('http://api.songkick.com/api/3.0/artists/' + songkick_artist_id + '/gigography.json?apikey=' + songkick_api_key + '&per_page=' + (maxGigs - numGigs) + '&order=desc&jsoncallback=?', addUpcomingEvents);
+				}
+                else if (numGigs < maxGigs) {
                     $.getJSON('http://api.songkick.com/api/3.0/artists/' + songkick_artist_id + '/gigography.json?apikey=' + songkick_api_key + '&per_page=' + (maxGigs - numGigs) + '&order=desc&jsoncallback=?', addPastEvents);
                 }
             });
@@ -151,23 +154,21 @@ jQuery.noConflict();
 		$('area').hover(
             function () {
                 var mapname = $(this).parent().attr('name') + 'selector',
-                    orisrc = $("#" + mapname).attr('src'),
                     newsrc = $(this).attr('data-image');
                 $("#" + mapname).attr('src', newsrc);
             },
             function () {
                 var mapname = $(this).parent().attr('name') + 'selector',
-                    orisrc = $("#" + mapname).attr('src');
+                    orisrc = $("#" + mapname).data('src');
                 $("#" + mapname).attr('src', orisrc);
             }
 		);
 
-//        $('area').bind('touchstart', function() {
-//            var mapname = $(this).parent().attr('name')+'selector';
-//            orisrc = $("#"+mapname).attr('src');
-//            newsrc = $(this).attr('data-image');
-//            $("#"+mapname).attr('src',newsrc);
-//        });
+        //$('area').on('click', function() {
+			//var mapname = $(this).parent().attr('name') + 'selector',
+			//	orisrc = $("#" + mapname).data('orisrc');
+			//$("#" + mapname).attr('src', orisrc);
+        //});
 
 
 //        $('area').bind('touchend', function() {
@@ -269,27 +270,6 @@ jQuery.noConflict();
 		}
 
 		addBandcampPlayers();
-
-//        var ztot = 10;
-//        $('.dragimg').click(function () {
-//            ztot = ztot + 1;
-//            $(this).css('z-index', ztot);
-//        });
-
-//		 $('.dragimg').draggable();
-//		 $('.but').css('display','block');
-
-//		 $('header').css('display','none');
-//        $('.but').click(function () {
-//            var pos = '';
-//            $('.dragimg', $(this).parent()).each(function () {
-//                var posi = $(this).position(),
-//                    id = $(this).attr('id'),
-//                    zid = $(this).css('z-index');
-//                pos = pos + '#' + id + "{left: " + Math.floor(posi.left) + "px;z-index:" + zid + "; top: " + Math.floor(posi.top) + 'px;} \n';
-//            });
-//            alert(pos);
-//        });
     
         addShows();
 
@@ -304,6 +284,12 @@ jQuery.noConflict();
             }, 2000);
 		});
 
+		$('.logo').click(function () {
+			$('html, body').animate({
+				scrollTop: $("#home").offset().top + heightoffset
+			}, 2000);
+		});
+
         $("#sidenav").children().each(function () {
             aArray.push($(this).attr('rel'));
         });
@@ -315,7 +301,7 @@ jQuery.noConflict();
             }
 		});
 
-		$(window).scroll(function () {
+		$(window).scroll(function (e) {
 			var windowPos = $(window).scrollTop(), // get the offset of the window from the top of page
 			    windowHeight = $(window).height(), // get the height of the window
 			    docHeight = $(document).height();
@@ -331,6 +317,11 @@ jQuery.noConflict();
 			});
             
             $('#goup').css('display', windowPos > 3600 ? 'block' : 'none');
+
+			if ($('#underground').css('display') === 'none') {
+
+				$('.contactbutton').css('display', ((windowPos + windowHeight) > (docHeight - 200)) ? 'none' : 'block');
+			}
 		});
 	});
 }(jQuery));
