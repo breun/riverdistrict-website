@@ -164,17 +164,18 @@ jQuery.noConflict();
             }
 		);
 
-        //$('area').on('click', function() {
-			//var mapname = $(this).parent().attr('name') + 'selector',
-			//	orisrc = $("#" + mapname).data('orisrc');
-			//$("#" + mapname).attr('src', orisrc);
-        //});
+		$('area').bind('click', function() {
+			var mapname = $(this).parent().attr('name')+'selector',
+				orisrc = $("#" + mapname).data('src');
+			$("#"+mapname).attr('src', orisrc);
+		});
 
 
-//        $('area').bind('touchend', function() {
-//            var mapname = $(this).parent().attr('name')+'selector';
-//            $("#"+mapname).attr('src', orisrc);
-//        });
+        $('area').bind('touchend', function() {
+            var mapname = $(this).parent().attr('name')+'selector',
+			orisrc = $("#" + mapname).data('src');
+            $("#"+mapname).attr('src', orisrc);
+        });
 
 		$(".dragimg").each(function () {
 			var nb = Math.floor((Math.random() * 65) + 100) / 100; // 1-1.5
@@ -318,9 +319,8 @@ jQuery.noConflict();
             
             $('#goup').css('display', windowPos > 3600 ? 'block' : 'none');
 
-			if ($('#underground').css('display') === 'none') {
-
-				$('.contactbutton').css('display', ((windowPos + windowHeight) > (docHeight - 200)) ? 'none' : 'block');
+			if ($('#underground').css('display') === 'none' && phone == false) {
+				$('.contactbutton').css('display', ((windowPos + windowHeight) > (docHeight - 300)) ? 'none' : 'block');
 			}
 		});
 	});
