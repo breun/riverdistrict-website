@@ -82,7 +82,7 @@ jQuery.noConflict();
         }
         
         function renderPastShowHtml(show) {
-            return renderUpcomingShowHtml(show, past).css('opacity', '0.7');
+            return renderUpcomingShowHtml(show).css('opacity', '0.7');
         }
         
         function addPastEvents(songkickData) {
