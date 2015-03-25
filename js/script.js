@@ -285,6 +285,13 @@ jQuery.noConflict();
             }, 2000);
 		});
 
+		$('.contactbutton').click(function () {
+
+			$('html, body').animate({
+				scrollTop: $("#contactdetails" ).offset().top + heightoffset
+			}, 2000);
+		});
+
 		$('.logo').click(function () {
 			$('html, body').animate({
 				scrollTop: $("#home").offset().top + heightoffset
