@@ -319,10 +319,15 @@ jQuery.noConflict();
 				    divHeight = $('#' + theID).height(); // get the height of the div in question
 				if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
 					$(".wrapper_sidenav[rel='" + theID + "']").addClass("active");
-				} else {
+				}else {
 					$(".wrapper_sidenav[rel='" + theID + "']").removeClass("active");
 				}
 			});
+
+			if(windowPos + windowHeight == docHeight ){
+				$(".wrapper_sidenav[rel='contact']").addClass("active");
+				$(".wrapper_sidenav[rel='bio']").removeClass("active");
+			}
             
             $('#goup').css('display', windowPos > 3600 ? 'block' : 'none');
 
