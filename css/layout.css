@@ -169,6 +169,10 @@
     text-decoration: underline;
 }
 
+#contactdetails{
+    display:none;
+}
+
 #map3acontainer {
     top: -190px;
     left: 60px;

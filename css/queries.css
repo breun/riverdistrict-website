@@ -62,6 +62,7 @@
 
     #contactdetails {
         float: none;
+        display:block;
     }
 
     .leftreg {
