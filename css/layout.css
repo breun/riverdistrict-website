@@ -614,3 +614,7 @@ body {
 }
 
 
+.text-link{
+    color:white;
+    text-decoration: underline;
+}
