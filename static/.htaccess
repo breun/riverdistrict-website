@@ -1,6 +1,10 @@
 # Enable mod_rewrite
 #RewriteEngine on
 
+# Froce HTTPS
+RewriteCond %{HTTPS} != on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+
 # Force redirect to riverdistrict.breun.nl
 RewriteCond %{HTTP_HOST} !^riverdistrict\.breun\.nl$ [NC]
-RewriteRule ^(.*)$ http://riverdistrict.breun.nl/$1 [R=301,L]
+RewriteRule ^(.*)$ https://riverdistrict.breun.nl/$1 [R=301,L]
