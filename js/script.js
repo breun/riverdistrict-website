@@ -25,13 +25,13 @@ jQuery.noConflict();
 
     function addBandcampPlayers() {
         if (phone) {
-            $('#players2').html('<iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2477009346/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="http://shop.riverdistrictmusic.com/album/kansas-anymore">Kansas Anymore by Riverdistrict</a></iframe>' +
-                '<iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe>' +
-                '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>');
+            $('#players2').html('<iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2477009346/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore">Kansas Anymore by Riverdistrict</a></iframe>' +
+                '<iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe>' +
+                '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>');
         } else {
-            $('#players').html('<iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2477009346/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="http://shop.riverdistrictmusic.com/album/kansas-anymore">Kansas Anymore by Riverdistrict</a></iframe>' +
-                '<iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="http://shop.riverdistrictmusic.com/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe>' +
-                '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="http://shop.riverdistrictmusic.com/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>');
+            $('#players').html('<iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2477009346/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/kansas-anymore">Kansas Anymore by Riverdistrict</a></iframe>' +
+                '<iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe>' +
+                '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>');
         }
     }
 

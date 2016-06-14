@@ -1,6 +1,6 @@
 # Enable mod_rewrite
 #RewriteEngine on
 
-# Force redirect to www.riverdistrictmusic.com
-RewriteCond %{HTTP_HOST} !^www\.riverdistrictmusic\.com$ [NC]
-RewriteRule ^(.*)$ http://www.riverdistrictmusic.com/$1 [R=301,L]
+# Force redirect to riverdistrict.breun.nl
+RewriteCond %{HTTP_HOST} !^riverdistrict\.breun\.nl$ [NC]
+RewriteRule ^(.*)$ http://riverdistrict.breun.nl/$1 [R=301,L]
