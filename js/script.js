@@ -25,13 +25,13 @@ jQuery.noConflict();
 
     function addBandcampPlayers() {
         if (phone) {
-            $('#players2').html('<iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2477009346/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore">Kansas Anymore by Riverdistrict</a></iframe>' +
-                '<iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe>' +
-                '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>');
+            $('#players2').html('<iframe id="player2" style="" src="https://bandcamp.com/EmbeddedPlayer/album=2477009346/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore">Kansas Anymore by Riverdistrict</a></iframe>' +
+                '<iframe id="player3" style="" src="https://bandcamp.com/EmbeddedPlayer/album=1250167618/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe>' +
+                '<iframe id="player1" style="" src="https://bandcamp.com/EmbeddedPlayer/album=2208739686/size=large/bgcol=333333/linkcol=0f91ff/transparent=true" seamless=""><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>');
         } else {
-            $('#players').html('<iframe id="player3" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2477009346/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/kansas-anymore">Kansas Anymore by Riverdistrict</a></iframe>' +
-                '<iframe id="player2" style="" src="http://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe>' +
-                '<iframe id="player1" style="" src="http://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>');
+            $('#players').html('<iframe id="player3" style="" src="https://bandcamp.com/EmbeddedPlayer/album=2477009346/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/kansas-anymore">Kansas Anymore by Riverdistrict</a></iframe>' +
+                '<iframe id="player2" style="" src="https://bandcamp.com/EmbeddedPlayer/album=1250167618/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/canvas-holes-2">Canvas Holes by Riverdistrict</a></iframe>' +
+                '<iframe id="player1" style="" src="https://bandcamp.com/EmbeddedPlayer/album=2208739686/size=medium/bgcol=333333/linkcol=0f91ff/transparent=true" seamless><a href="https://riverdistrict.bandcamp.com/album/kansas-anymore/album/portrait-of-portraits">Portrait of Portraits by Riverdistrict</a></iframe>');
         }
     }
 
@@ -98,13 +98,13 @@ jQuery.noConflict();
         }
 
         // Add upcoming shows
-        $.getJSON('http://api.songkick.com/api/3.0/artists/' + songkick_artist_id + '/calendar.json?apikey=' + songkick_api_key + '&per_page=' + maxGigs + '&page=1&jsoncallback=?', addUpcomingEvents)
+        $.getJSON('https://api.songkick.com/api/3.0/artists/' + songkick_artist_id + '/calendar.json?apikey=' + songkick_api_key + '&per_page=' + maxGigs + '&page=1&jsoncallback=?', addUpcomingEvents)
             .then(function () {
                 // Add past shows if there is room left
                 if (numGigs === 0) {
-                    $.getJSON('http://api.songkick.com/api/3.0/artists/' + songkick_artist_id + '/gigography.json?apikey=' + songkick_api_key + '&per_page=' + (maxGigs - numGigs) + '&order=desc&jsoncallback=?', addUpcomingEvents);
+                    $.getJSON('https://api.songkick.com/api/3.0/artists/' + songkick_artist_id + '/gigography.json?apikey=' + songkick_api_key + '&per_page=' + (maxGigs - numGigs) + '&order=desc&jsoncallback=?', addUpcomingEvents);
                 } else if (numGigs < maxGigs) {
-                    $.getJSON('http://api.songkick.com/api/3.0/artists/' + songkick_artist_id + '/gigography.json?apikey=' + songkick_api_key + '&per_page=' + (maxGigs - numGigs) + '&order=desc&jsoncallback=?', addPastEvents);
+                    $.getJSON('https://api.songkick.com/api/3.0/artists/' + songkick_artist_id + '/gigography.json?apikey=' + songkick_api_key + '&per_page=' + (maxGigs - numGigs) + '&order=desc&jsoncallback=?', addPastEvents);
                 }
             });
     }
