@@ -73,7 +73,7 @@ module.exports = function (grunt) {
 	    prod: {
 	        options: {
 		    src: 'dest/',
-		    dest: '/riverdistrictmusic.com/',
+		    dest: '/riverdistrict.breun.nl/',
 		    host: 'breun@breun.nl'
 		}
 	    }
