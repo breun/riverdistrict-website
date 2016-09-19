@@ -53,7 +53,7 @@
     z-index: 100000;
     font-size: 20px;
     line-height: 26px;
-
+    display: none;
 }
 
 #overlaycontent {
