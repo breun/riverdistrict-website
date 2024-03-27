@@ -1,5 +1,5 @@
 .DS_Store
 .sublime-grunt.cache
 css/fonts/.DS_Store
-dest/
+#dest/
 node_modules/
